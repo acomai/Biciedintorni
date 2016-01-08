@@ -64,11 +64,11 @@ if (is_numeric($_GET['iscr']))
 		<td valign="top">1)&nbsp;&nbsp;&nbsp;</td>
 		<td>L'iscrizione del non socio deve essere confermata con il saldo entro
 				e non oltre le ore 19:00 del venerdi antecedente presso la sede di via Andorno 35/B
-   				o presso la libreria della montagna via sacchi 28.
+   				o presso la libreria La Montagna, via Sacchi 28 a Torino.
    		</td>
 	</tr>
 	<tr>
-		<td valign="top">2)&nbsp;&nbsp;&nbsp;</td><td>2)   </td><td>Il saldo per il non socio comprende una maggiorazione di &euro; 8,00 , restituibile nel caso che poi decida di diventare socio.</td>
+		<td valign="top">2)&nbsp;&nbsp;&nbsp;</td><td>2)ï¿½ï¿½ï¿½</td><td>Il saldo per il non socio comprende una maggiorazione di &euro; 8,00 , restituibile nel caso che poi decida di diventare socio.</td>
 	</tr>
 	<tr>
 		<td valign="top">3)&nbsp;&nbsp;&nbsp;</td><td>Il non socio ha diritto a partecipare ad una sola gita.</td>
