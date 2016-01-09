@@ -62,17 +62,17 @@ if (is_numeric($_GET['iscr']))
 <table align="center">
 	<tr>
 		<td valign="top">1)&nbsp;&nbsp;&nbsp;</td>
-		<td>L'iscrizione di un non socio alla gita comporta una maggiorazione di 5 euro, se non è diversamente 
+		<td>L'iscrizione di un non socio alla gita comporta una maggiorazione di 5 euro, se non diversamente 
 		specificato nella scheda della gita.
    		</td>
 	</tr>
 	<tr>
 		<td valign="top">2)&nbsp;&nbsp;&nbsp;</td><td>Per le gite con trasporto (bici + treno oppure bici + bus) e/o 
-		con pernottamento il saldo della quota va versato entro le ore 18,30 del venerdì precedente alla gita, presso 
+		con pernottamento il saldo della quota va versato entro le ore 18,30 del venerdi' precedente alla gita, presso 
 		la sede di via Andorno 35/b a Torino, oppure con bonifico (IBAN IT27T0760101000000033663105, indicando nella 
 		causale “iscrizione alla gita XXXXXX”.<br><br>
-		Per le gite che non richiedono trasporto né pernottamento la quota gita, maggiorata di 5 euro per i non soci,
-		può essere versata al Capogita prima della partenza.</td>
+		Per le gite che non richiedono trasporto ne' pernottamento la quota gita, maggiorata di 5 euro per i non soci,
+		puo' essere versata al Capogita prima della partenza.</td>
 	</tr>
 	<tr>
 		<td valign="top">3)&nbsp;&nbsp;&nbsp;</td><td>Il non socio deve in ogni caso contattare appena possibile il Capogita, per email o per 
