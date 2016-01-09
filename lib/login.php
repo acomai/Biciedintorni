@@ -62,19 +62,21 @@ if (is_numeric($_GET['iscr']))
 <table align="center">
 	<tr>
 		<td valign="top">1)&nbsp;&nbsp;&nbsp;</td>
-		<td>L'iscrizione del non socio deve essere confermata con il saldo entro
-				e non oltre le ore 19:00 del venerdi antecedente presso la sede di via Andorno 35/B
-   				o presso la libreria La Montagna, via Sacchi 28 a Torino.
+		<td>L'iscrizione di un non socio alla gita comporta una maggiorazione di 5 euro, se non è diversamente 
+		specificato nella scheda della gita.
    		</td>
 	</tr>
 	<tr>
-		<td valign="top">2)&nbsp;&nbsp;&nbsp;</td><td>2)���</td><td>Il saldo per il non socio comprende una maggiorazione di &euro; 8,00 , restituibile nel caso che poi decida di diventare socio.</td>
+		<td valign="top">2)&nbsp;&nbsp;&nbsp;</td><td>Per le gite con trasporto (bici + treno oppure bici + bus) e/o 
+		con pernottamento il saldo della quota va versato entro le ore 18,30 del venerdì precedente alla gita, presso 
+		la sede di via Andorno 35/b a Torino, oppure con bonifico (IBAN IT27T0760101000000033663105, indicando nella 
+		causale “iscrizione alla gita XXXXXX”.<br><br>
+		Per le gite che non richiedono trasporto né pernottamento la quota gita, maggiorata di 5 euro per i non soci,
+		può essere versata al Capogita prima della partenza.</td>
 	</tr>
 	<tr>
-		<td valign="top">3)&nbsp;&nbsp;&nbsp;</td><td>Il non socio ha diritto a partecipare ad una sola gita.</td>
-	</tr>
-	<tr>
-		<td valign="top">4)&nbsp;&nbsp;&nbsp;</td><td>Contattare il Capo Gita.<br><br><br></td>
+		<td valign="top">3)&nbsp;&nbsp;&nbsp;</td><td>Il non socio deve in ogni caso contattare appena possibile il Capogita, per email o per 
+		telefono, e comunque prima di procedere al pagamento della quota.</td>
 	</tr>
 	<tr>
 		<td colspan="2">
