@@ -70,7 +70,7 @@ if (is_numeric($_GET['iscr']))
 		<td valign="top">2)&nbsp;&nbsp;&nbsp;</td><td>Per le gite con trasporto (bici + treno oppure bici + bus) e/o 
 		con pernottamento il saldo della quota va versato entro le ore 18,30 del venerdi' precedente alla gita, presso 
 		la sede di via Andorno 35/b a Torino, oppure con bonifico (IBAN IT27T0760101000000033663105, indicando nella 
-		causale “iscrizione alla gita XXXXXX”.<br><br>
+		causale 'iscrizione alla gita XXXXXX'.<br><br>
 		Per le gite che non richiedono trasporto ne' pernottamento la quota gita, maggiorata di 5 euro per i non soci,
 		puo' essere versata al Capogita prima della partenza.</td>
 	</tr>
