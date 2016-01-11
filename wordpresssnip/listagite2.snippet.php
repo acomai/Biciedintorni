@@ -15,12 +15,12 @@ else
 	<a style="font-size: 16px;"
 		href="http://www.biciedintorni.it/application/index.php?limit=0"
 		title="Elenco gite">[Visualizza tutte le gite del <?php echo date("Y");?>]
-	</a>     
+	</a>ï¿½ï¿½ï¿½ï¿½ï¿½
 	<?php if(date("m") >= 11) {?>
 	<a style="font-size: 16px;"
 		href="http://www.biciedintorni.it/application/index.php?limit=<?php echo (date("Y")+1);?>"
 		title="Elenco gite">[Visualizza tutte le gite del <?php echo (date("Y")+1);?>]
-	</a>     
+	</a>ï¿½ï¿½ï¿½ï¿½ï¿½
 	<?php } ?>
 	<a style="font-size: 16px;"
 		href="http://www.biciedintorni.it/application/index.php?fun=creadoc"
@@ -33,7 +33,7 @@ else
 			<th class="data">Data</th>
 			<th class="facili">Descrizione</th>
 			<th class="facili" align="center">Km</th>
-			<th class="medie">Difficoltà</th>
+			<th class="medie">Difficoltï¿½</th>
 		</tr>
 		<?php 
 while ($snipdb->next_record()) {
