@@ -112,7 +112,7 @@ function iscr_gita()
 			if (((date("Y") == date("Y",$db->record['data'])) && (date("n") == date("n",$db->record['data'])) && ((date("j",$db->record['data']))-(date("j")) <= 1)) OR (($numisc >= $db->record['maxp']) && ($db->record['maxp'] > 0)))
 			{
 				makeHead("Gestione Gite","<meta http-equiv=\"refresh\" content=\"5;url=index.php?id=".$_GET['iscr']."\">");
-				echo "<br><br><div id=\"msg\" align=\"center\" style=\"font-size:16px; color: #FF0000\">Le iscrizioni alla gita sono terminate o è stato raggiunto il numero massimo di partecipanti. Contattare il capogita.</div>\n";
+				echo "<br><br><div id=\"msg\" align=\"center\" style=\"font-size:16px; color: #FF0000\">Le iscrizioni alla gita sono terminate o ï¿½ stato raggiunto il numero massimo di partecipanti. Contattare il capogita.</div>\n";
 				echo "<br><br><div id=\"msg\" align=\"center\" style=\"font-size:16px;\">Fra 5 secondi sarete rimandati alla gita.</div>\n";
 				$db->close();
 				unset($db);
@@ -171,7 +171,7 @@ function iscr_gita()
 			if($db->next_record())
 			{
 				makeHead("Gite");
-				echo "<br><br><div id=\"msg\" align=\"center\" style=\"font-size:16px; color: #FF0000\">Attenzione c'è già una persona iscritta con i tuoi stessi dati. Le iscrizioni alle gite per i non soci sono possibili UNA sola volta. Se è la prima volta che ti iscrivi ad una gita, ti prego di contattare il capogita.</div>\n";
+				echo "<br><br><div id=\"msg\" align=\"center\" style=\"font-size:16px; color: #FF0000\">Attenzione c'ï¿½ giï¿½ una persona iscritta con i tuoi stessi dati. Le iscrizioni alle gite per i non soci sono possibili UNA sola volta. Se ï¿½ la prima volta che ti iscrivi ad una gita, ti prego di contattare il capogita.</div>\n";
 				echo "<br><br><div id=\"msg\" align=\"center\" style=\"font-size:16px;\"><a style='color: #0000FF;' href='index.php?id=".$_GET['iscr']."'>Ritorna alla gita.</a></div>\n";
 				$db->close();
 				unset($db);
@@ -341,7 +341,7 @@ function makeHead( $title = "", $metatag = "", $body = "")
 		<title><?php echo $title; ?></title>
 		<link rel="stylesheet" type="text/css" href="lib/css/stile.css">
 		<script type="text/javascript" src="lib/js/ajax.js"></script>
-		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 		<?php echo $metatag."\n"; ?>
 
 <script type="text/javascript">
@@ -366,7 +366,7 @@ function makeTail()
 {
 ?>
 <br><br><br><br><br><br>
-<div style="margin-bottom: 0px; text-align:center; color: #000000;">Powered By <a style="color:green;" href="http://www.uebix.com">Di Bella Antonino</a></div>
+<div style="margin-bottom: 0px; text-align:center; color: #000000;">Powered by <a style="color:green;" href="http://www.uebix.com">Di Bella Antonino</a></div>
 </body>
 </html>
 <?php

@@ -47,7 +47,7 @@ if (is_numeric($_GET['iscr']))
 {
 ?>
 <div style="height:600px; font-weight: bold;font-size:12px;" align="center" id="scelta">
-	Prima di proseguire,scegli una
+	Prima di proseguire, scegli una
 	<br>
 	tra le seguenti opzioni:
 	<br><br><br>
@@ -68,11 +68,11 @@ if (is_numeric($_GET['iscr']))
 	</tr>
 	<tr>
 		<td valign="top">2)&nbsp;&nbsp;&nbsp;</td><td>Per le gite con trasporto (bici + treno oppure bici + bus) e/o 
-		con pernottamento il saldo della quota va versato entro le ore 18,30 del venerdi' precedente alla gita, presso 
+		con pernottamento il saldo della quota va versato entro le ore 18,30 del venerdì precedente alla gita, presso 
 		la sede di via Andorno 35/b a Torino, oppure con bonifico (IBAN IT27T0760101000000033663105, indicando nella 
-		causale 'iscrizione alla gita XXXXXX'.<br><br>
-		Per le gite che non richiedono trasporto ne' pernottamento la quota gita, maggiorata di 5 euro per i non soci,
-		puo' essere versata al Capogita prima della partenza.</td>
+		causale "iscrizione alla gita XXXXXX").<br><br>
+		Per le gite che non richiedono trasporto né pernottamento la quota gita, maggiorata di 5 euro per i non soci,
+		può essere versata al Capogita prima della partenza.</td>
 	</tr>
 	<tr>
 		<td valign="top">3)&nbsp;&nbsp;&nbsp;</td><td>Il non socio deve in ogni caso contattare appena possibile il Capogita, per email o per 
@@ -84,7 +84,7 @@ if (is_numeric($_GET['iscr']))
 			  <table align="center" style="text-align: left;" border="0" cellpadding="2" cellspacing="2">
 			    <tbody>
 			      <tr>
-			        <td colspan="2">* i campi sono obbligatori per potersi iscrivere.</td>
+			        <td colspan="2">* i campi con asterisco sono obbligatori.</td>
 			      </tr>
 			      <tr>
 			        <td class="obbligatori">Nome*: </td>
