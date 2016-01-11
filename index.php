@@ -13,7 +13,7 @@
     	$db->query("SELECT anagrafiche.id as 'resp',nome,cognome,tel1,email,gite.*,UNIX_TIMESTAMP(dataeora) as 'data' FROM anagrafiche, gite WHERE YEAR(dataeora) >= ".date("Y")." AND anagrafiche.id = gite.idresp AND approvata = 1 ORDER BY dataeora;");
     	$doc = new clsMsDocGenerator();
     	//$doc->addParagraph('Elenco gite approvate '.date("Y"), array('text-align' => 'center', 'font-size' => '16pt', 'font-weight' => 'bold'));
-    	$doc->addParagraph('Elenco gite approvate 2010', array('text-align' => 'center', 'font-size' => '16pt', 'font-weight' => 'bold'));
+    	$doc->addParagraph('Elenco gite approvate', array('text-align' => 'center', 'font-size' => '16pt', 'font-weight' => 'bold'));
     	$doc->addParagraph('');
     	$doc->addParagraph('');
     	while ($db->next_record()) {
