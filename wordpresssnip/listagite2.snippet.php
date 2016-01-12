@@ -33,7 +33,7 @@ else
 			<th class="data">Data</th>
 			<th class="facili">Descrizione</th>
 			<th class="facili" align="center">Km</th>
-			<th class="medie">Difficolt�</th>
+			<th class="medie">Difficoltà</th>
 		</tr>
 		<?php 
 while ($snipdb->next_record()) {

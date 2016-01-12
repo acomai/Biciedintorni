@@ -3,6 +3,7 @@ if (file_exists("lib/config.php"))
 	require_once("lib/config.php");
 else
 	require_once("config.php");
+
 class db_local {
   var $host = DB_HOST;  
   var $user = DB_USER;  

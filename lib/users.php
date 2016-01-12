@@ -1197,7 +1197,7 @@ class Amministratore extends CapoGita {
 
 		mail("dibella.antonino@gmail.com","Errore eliminazione gita Applicazione Bici&Dintorni.",
 		"Ciao Antonino,\n".
-		"qualcuno sta cercando di eliminare una gita ma non ci è riuscito.\n".
+		"qualcuno sta cercando di eliminare una gita ma non ci ï¿½ riuscito.\n".
 		"-----ERRORE-----\n".
 		"$vartest".
 		"----------------\n".
@@ -1670,6 +1670,11 @@ class Amministratore extends CapoGita {
 		$a2013 = intval($_POST['a2013']);
 		$a2014 = intval($_POST['a2014']);
 		$a2015 = intval($_POST['a2015']);
+		$a2016 = intval($_POST['a2016']);
+		$a2017 = intval($_POST['a2017']);
+		$a2018 = intval($_POST['a2018']);
+		$a2019 = intval($_POST['a2019']);
+		$a2020 = intval($_POST['a2020']);
 		$dataiscrizione = $annoisc."-".$meseisc."-".$giornoisc;
 		$datanascita = $annonasc."-".$mesenasc."-".$giornonasc;
 		$approvato = intval($_POST['approvato']);
@@ -1712,7 +1717,12 @@ class Amministratore extends CapoGita {
 			"a2012 = '".$a2012."',".
 			"a2013 = '".$a2013."',".
 			"a2014 = '".$a2014."',".
-			"a2015 = '".$a2015."' WHERE id = ".$id." LIMIT 1";
+			"a2015 = '".$a2015."',".
+			"a2016 = '".$a2016."',".
+			"a2017 = '".$a2017."',".
+			"a2018 = '".$a2018."',".
+			"a2019 = '".$a2019."',".
+			"a2020 = '".$a2020."' WHERE id = ".$id." LIMIT 1";
 	}
 	
 	function newcartina()
@@ -2510,7 +2520,7 @@ if(is_numeric($_GET['list']))
 
 		mail("dibella.antonino@gmail.com","Errore eliminazione E-email Applicazione Bici&Dintorni.",
 		"Ciao Antonino,\n".
-		"qualcuno sta cercando di eliminare un E-Mail ma non ci è riuscito.\n".
+		"qualcuno sta cercando di eliminare un E-Mail ma non ci ï¿½ riuscito.\n".
 		"-----ERRORE-----\n".
 		"$vartest".
 		"----------------\n".
@@ -2710,7 +2720,7 @@ if(is_numeric($_GET['list']))
 
 		mail("dibella.antonino@gmail.com","Errore eliminazione gruppo email Applicazione Bici&Dintorni.",
 		"Ciao Antonino,\n".
-		"qualcuno sta cercando di eliminare un gruppo ma non ci è riuscito.\n".
+		"qualcuno sta cercando di eliminare un gruppo ma non ci ï¿½ riuscito.\n".
 		"-----ERRORE-----\n".
 		"$vartest".
 		"----------------\n".
