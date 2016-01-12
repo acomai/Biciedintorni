@@ -1680,7 +1680,16 @@ class Amministratore extends CapoGita {
 		$approvato = intval($_POST['approvato']);
 		$id = $_POST['matricola'];
 		if($_GET['fun'] == 'newass')
-			$query = "INSERT INTO anagrafiche (nome,cognome,user,pass,pw,sesso,passch,via,cap,citta,prov,datanascita,tel1,tel2,cell,email,emailinv,carica,saldo,approvato,dataiscrizione,tiposocio,cauzione,note,idcreat,idcapo,a2007,a2008,a2009,a2010,a2011,a2012,a2013,a2014,a2015) VALUES ('".$nome."','".$cognome."','".$user."','".$pass."','".$pw."','".$sesso."','".$passch."','".$via."','".$cap."','".$citta."','".$prov."','".$datanascita."','".$tel1."','".$tel2."','".$cell."','".$email."','".$emailinv."','".$carica."','".$saldo."','".$approvato."','".$dataiscrizione."','".$tiposocio."','".$cauzione."','".$note."','".$idcreat."','".$idcapo."','".$a2007."','".$a2008."','".$a2009."','".$a2010."','".$a2011."','".$a2012."','".$a2013."','".$a2014."','".$a2015."');";
+			$query = "INSERT INTO anagrafiche (nome,cognome,user,pass,pw,sesso,passch,via,cap,citta,
+				prov,datanascita,tel1,tel2,cell,email,emailinv,carica,saldo,approvato,dataiscrizione,
+				tiposocio,cauzione,note,idcreat,idcapo,a2007,a2008,a2009,a2010,a2011,a2012,a2013,a2014,
+				a2015,a2016,a2017,a2018,a2019,a2020) VALUES ('".$nome."','".$cognome."','".$user."',
+			'".$pass."','".$pw."','".$sesso."','".$passch."','".$via."','".$cap."','".$citta."','".$prov."',
+					'".$datanascita."','".$tel1."','".$tel2."','".$cell."','".$email."','".$emailinv."',
+					'".$carica."','".$saldo."','".$approvato."','".$dataiscrizione."','".$tiposocio."',
+					'".$cauzione."','".$note."','".$idcreat."','".$idcapo."','".$a2007."','".$a2008."',
+					'".$a2009."','".$a2010."','".$a2011."','".$a2012."','".$a2013."','".$a2014."','".$a2015."',
+						'".$a2016."','".$a2017."','".$a2018."','".$a2019."','".$a2020."');";
 		else
 			$query = "UPDATE anagrafiche SET ".
 			"nome = '".$nome."',".
