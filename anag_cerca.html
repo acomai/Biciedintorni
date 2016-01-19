@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+
+		<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame
+		Remove this if you use the .htaccess -->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+		<title>fatture</title>
+		<meta name="description" content="">
+		<meta name="author" content="Adriano">
+
+		<meta name="viewport" content="width=device-width; initial-scale=1.0">
+
+		<!-- Replace favicon.ico & apple-touch-icon.png in the root of your domain and delete these references -->
+		<link rel="shortcut icon" href="/favicon.ico">
+		<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+	</head>
+
+	<body>
+		<div>
+			<header>
+				<h1>Ricerca tra anagrafiche nell'archivio di Bici e Dintorni</h1>
+			</header>
+			<nav>
+				<p>
+					<a href="/">Home</a>
+				</p>
+				<p><a href="anag_elenco_completo.php">Elenco completo anagrafiche ordinate per cognome</a></p>
+				<p><a href="anag_elenco_maisoci.php">Elenco anagrafiche mai iscritte all'associazione</a></p>
+				<p>Ricerca anagrafica per cognome: <input id="cognome" type="text"> 
+					<output id="demo"></output> <button type="button" onclick="cercaAnagraficaPerCognome()">Cerca</button></p>
+
+				
+				<button type="button" onclick="esci()">Esci</button>
+				<!-- <form method="post" action="anag_cerca_sql.php" name="f1"> 
+					<input type="hidden" name="cognome">
+					<input type="submit" class="button" id="boo" name="nuova" value="Cerca con SQL"> </form> -->
+</div>
+
+
+
+<script>
+function esci() {
+	//sostituisce la finestra con una di saluto. Così comunque non funziona (lo script rimane attivo).
+	var myWindow = window.open("", "_self");
+    myWindow.document.write("<p>Arrivederci.</p>");
+}
+
+function cercaAnagraficaPerCognome() {
+	//da fare.
+	// Get the value of the input field with id="numb"
+    cognome = document.getElementById("cognome").value;
+    // inizializza output
+    document.getElementById("demo").innerHTML = "";
+    // scrive in output l'input digitato
+    document.getElementById("demo").innerHTML = "cognome digitato: " + cognome;
+    //preparazione per richiamo funzione php con parametro cognome. 
+	window.location.href = "anag_cerca_per_cognome.php?cognome=" + cognome;
+}
+</script>
+
+
+			<footer>
+				<p>
+					&copy; Copyright  by Adriano
+				</p>
+			</footer>
+		</div>
+		
+
+	</body>
+</html>

@@ -27,6 +27,7 @@
 				<p>
 					<a href="/">Home</a>
 				</p>
+				<p> <a href="anag_cerca.html">Ricerca anagrafica per cognome</a>
 				<p>
 					<a href="/contact">Contact</a>
 				</p>
@@ -36,67 +37,38 @@
 				<a href="ElencoClienti.php">Elenco clienti</a> - Nuovo cliente<br />
 				<a href="ElencoFatture.php">Elenco fatture</a>  - <a href="jsFattura.html">Nuova fattura</a> <br />
 				profilo
-				<?php echo 'While this is going to be parsed.'; ?>
+				
 			</div>
+<p>Digitare cognome: <input id="cognome" type="text"> <output id="demo"></output></p>
 
-			<footer>
-				<p>
-					&copy; Copyright  by Adriano
-				</p>
-			</footer>
-		</div>
-<?php
-$servername = "localhost";
-$username = "root";
-$password = "root";
-$dbname = "Fatture";
+ <!-- PROVVISORIO: bisogna selezionare il cliente da una lista -->
+<p>Digitare numero cliente: <input id="cliente" type="number"> <output id="demo2"></output></p>	
 
-// Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
+<button type="button" onclick="verificaAnagrafica()">Calcola</button>
+<button type="button" onclick="esci()">Esci</button>
+
+
+
+<script>
+function esci() {
+	//sostituisce la finestra con una di saluto. Così comunque non funziona (lo script rimane attivo).
+	var myWindow = window.open("", "_self");
+    myWindow.document.write("<p>Arrivederci.</p>");
 }
 
-
-$sql = "SELECT id, rag_sociale, indirizzo, cap, comune, provincia, stato, cod_fiscale FROM Clienti";
-$result = $conn->query($sql);
-echo "<table style='width:100%'>";
-if ($result->num_rows > 0) {
-    // output data of each row
-    echo "<tr>" . 
-    "<th>" . "id" . "</th>" . 
-    "<th>" . "Ragione sociale" . "</th>" .
-	"<th>" . "Indirizzo" . "</th>" .
-	"<th>" . "Cap" . "</th>" .
-	"<th>" . "Comune" . "</th>" . 
-	"<th>" . "Provincia" . "</th>" .
-	"<th>" . "Stato" . "</th>" .
-	"<th>" . "Codice fiscale" . "</th>" .
-	"</tr>";
-    while($row = $result->fetch_assoc()) {
-        echo 
-        "<tr>" .
-        "<td>" . $row["id"]. "</td>" .
-        "<td>" . $row["rag_sociale"]. "</td>" .
-        "<td>" . $row["indirizzo"]. "</td>" .
-        "<td>" . $row["cap"]. "</td>" .
-        "<td>" . $row["comune"]. "</td>" .
-        "<td>" . $row["provincia"]. "</td>" .
-        "<td>" . $row["stato"]. "</td>" .
-        "<td>" . $row["cod_fiscale"]. "</td>" .
-        "</tr>";
-        //"id: " . $row["id"]. " - Ragione sociale: " . $row["rag_sociale"]. " - Indirizzo: " . $row["indirizzo"]. "<br>";
-    }
-} else {
-    echo "0 results";
+function verificaAnagrafica() {
+	//da fare.
+	// Get the value of the input field with id="numb"
+    cognome = document.getElementById("cognome").value;
+    // inizializza output
+    document.getElementById("demo").innerHTML = "";
+    // scrive in output l'input digitato
+    document.getElementById("demo").innerHTML = "cognome digitato: " + x;
 }
-echo "</table>";
+</script>
 
-$conn->close();
+<h1>Elenco Gite</h1>
 
-?>		
-<hr />
 <?php
 $servername = "localhost";
 $username = "root";
@@ -111,16 +83,15 @@ if ($conn->connect_error) {
 }
 
 
-$sql = "SELECT id, titolo, tipogita, socio_2016 FROM gite WHERE YEAR(dataeora) = ".date("Y");
+$sql = "SELECT id, titolo, tipogita FROM gite LIMIT 0,10 ;" ;
 $result = $conn->query($sql);
 echo "<table style='width:100%'>";
 if ($result->num_rows > 0) {
     // output data of each row
     echo "<tr>" . 
     "<th>" . "id" . "</th>" . 
-    "<th>" . "Titolo" . "</th>" .
-	"<th>" . "Tipogita" . "</th>" .
-	"<th>" . "Socio 2016" . "</th>" .
+    "<th>" . "titolo" . "</th>" .
+	"<th>" . "tipogita" . "</th>" .
 	"</tr>";
     while($row = $result->fetch_assoc()) {
         echo 
@@ -128,7 +99,6 @@ if ($result->num_rows > 0) {
         "<td>" . $row["id"]. "</td>" .
         "<td>" . $row["titolo"]. "</td>" .
         "<td>" . $row["tipogita"]. "</td>" .
-        "<td>" . $row["2016"]. "</td>" .
         "</tr>";
         //"id: " . $row["id"]. " - Ragione sociale: " . $row["rag_sociale"]. " - Indirizzo: " . $row["indirizzo"]. "<br>";
     }
@@ -137,8 +107,73 @@ if ($result->num_rows > 0) {
 }
 echo "</table>";
 
+// PROTOTIPO per ricerca anagrafiche non legata ad anno iscrizione
+echo "<h1>Elenco Soci</h1>";
+$sql = "SELECT id, nome, cognome FROM anagrafiche WHERE cognome = 'Agnese' LIMIT 0,5 ;" ;
+$result = $conn->query($sql);
+echo "<table style='width:100%'>";
+if ($result->num_rows > 0) {
+	// output data of each row
+	echo "<tr>" .
+			"<th>" . "id" . "</th>" .
+			"<th>" . "nome" . "</th>" .
+			"<th>" . "cognome" . "</th>" .
+			"</tr>";
+	while($row = $result->fetch_assoc()) {
+		echo
+		"<tr>" .
+		"<td>" . $row["id"]. "</td>" .
+		"<td>" . $row["nome"]. "</td>" .
+		"<td>" . $row["cognome"]. "</td>" .
+		"</tr>";
+		//"id: " . $row["id"]. " - Ragione sociale: " . $row["rag_sociale"]. " - Indirizzo: " . $row["indirizzo"]. "<br>";
+	}
+} else {
+	echo "0 results";
+}
+echo "</table>";
+
+// Elenco soci senza iscrizioni
+echo "<h1>Elenco Soci senza iscrizioni</h1>";
+$sql = "SELECT id, nome, cognome FROM anagrafiche WHERE a2007 = '0' && a2008 = '0' && a2009 = '0' 
+        		 && a2010 = '0' && a2011 = '0' && a2012 = '0' && a2013 = '0'  && a2014 = '0' 
+        		&& a2015 = '0'  ;" ;
+$result = $conn->query($sql);
+echo "<table style='width:100%'>";
+if ($result->num_rows > 0) {
+	// output data of each row
+	echo "<tr>" .
+			"<th>" . "id" . "</th>" .
+			"<th>" . "nome" . "</th>" .
+			"<th>" . "cognome" . "</th>" .
+			"</tr>";
+	while($row = $result->fetch_assoc()) {
+		echo
+		"<tr>" .
+		"<td>" . $row["id"]. "</td>" .
+		"<td>" . $row["nome"]. "</td>" .
+		"<td>" . $row["cognome"]. "</td>" .
+		"</tr>";
+		//"id: " . $row["id"]. " - Ragione sociale: " . $row["rag_sociale"]. " - Indirizzo: " . $row["indirizzo"]. "<br>";
+	}
+} else {
+	echo "0 results";
+}
+echo "</table>";
+
+
+
+
 $conn->close();
 
-?>		
+?>
+			<footer>
+				<p>
+					&copy; Copyright  by Adriano
+				</p>
+			</footer>
+		</div>
+		
+
 	</body>
 </html>
