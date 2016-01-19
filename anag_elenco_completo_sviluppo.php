@@ -24,13 +24,13 @@
 				<h1>Elenco completo anagrafiche in archivio Bici e Dintorni</h1>
 			</header>
 
-<button type="button" onclick="javascript:location.href='http://www.biciedintorni.it/application/admin.php?fun=modass'">Menu anagrafiche</button>
+<button type="button" onclick="javascript:location.href='anag_cerca.html'">Menu locale Bici e Dintorni</button>
 
 <?php
-$servername = "62.149.150.56";
-$username = "Sql145958";
-$password = "c36d0fc2";
-$dbname = "Sql145958_1";
+$servername = "localhost";
+$username = "root";
+$password = "root";
+$dbname = "Biciedintorni";
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
@@ -49,7 +49,6 @@ if ($result->num_rows > 0) {
 			"<th>" . "id" . "</th>" .
 			"<th>" . "nome" . "</th>" .
 			"<th>" . "cognome" . "</th>" .
-			"<th>" . "Modifica" . "</th>" .
 			"</tr>";
 	while($row = $result->fetch_assoc()) {
 		echo
@@ -57,7 +56,6 @@ if ($result->num_rows > 0) {
 		"<td>" . $row["id"]. "</td>" .
 		"<td>" . $row["nome"]. "</td>" .
 		"<td>" . $row["cognome"]. "</td>" .
-		"<td><a href=\"admin.php?fun=modass&id=".$row['id']."\">Modifica</a></td>" .
 		"</tr>";
 		//"id: " . $row["id"]. " - Ragione sociale: " . $row["rag_sociale"]. " - Indirizzo: " . $row["indirizzo"]. "<br>";
 	}

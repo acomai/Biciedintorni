@@ -21,19 +21,17 @@
 	<body>
 		<div>
 			<header>
-				<h1>Ricerca tra anagrafiche nell'archivio di Bici e Dintorni</h1>
+				<h1>Ricerca per cognome nell'archivio anagrafiche di Bici e Dintorni</h1>
 			</header>
 			<nav>
 				<p>
 					<a href="/">Home</a>
 				</p>
-				<p><a href="anag_elenco_completo.php">Elenco completo anagrafiche ordinate per cognome</a></p>
-				<p><a href="anag_elenco_maisoci.php">Elenco anagrafiche mai iscritte all'associazione</a></p>
 				<p>Ricerca anagrafica per cognome: <input id="cognome" type="text"> 
 					<output id="demo"></output> <button type="button" onclick="cercaAnagraficaPerCognome()">Cerca</button></p>
 
 				
-				<button type="button" onclick="esci()">Esci</button>
+				<button type="button" onclick="javascript:location.href='http://www.biciedintorni.it/application/admin.php?fun=modass'">Menu anagrafiche</button>
 				<!-- <form method="post" action="anag_cerca_sql.php" name="f1"> 
 					<input type="hidden" name="cognome">
 					<input type="submit" class="button" id="boo" name="nuova" value="Cerca con SQL"> </form> -->
@@ -61,12 +59,6 @@ function cercaAnagraficaPerCognome() {
 }
 </script>
 
-
-			<footer>
-				<p>
-					&copy; Copyright  by Adriano
-				</p>
-			</footer>
 		</div>
 		
 
