@@ -7,7 +7,7 @@
 		Remove this if you use the .htaccess -->
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-		<title>fatture</title>
+		<title>Bici e Dintorni - Elenco completo anagrafiche</title>
 		<meta name="description" content="">
 		<meta name="author" content="Adriano">
 

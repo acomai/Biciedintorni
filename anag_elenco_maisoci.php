@@ -7,7 +7,7 @@
 		Remove this if you use the .htaccess -->
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-		<title>fatture</title>
+		<title>Bici e Dintorni - Anagrafiche dei mai soci</title>
 		<meta name="description" content="">
 		<meta name="author" content="Adriano">
 
@@ -46,7 +46,7 @@ if ($conn->connect_error) {
 
 $sql = "SELECT id, nome, cognome FROM anagrafiche WHERE a2007 = '0' && a2008 = '0' && a2009 = '0' 
         		 && a2010 = '0' && a2011 = '0' && a2012 = '0' && a2013 = '0'  && a2014 = '0' 
-        		&& a2015 = '0'  ;" ;
+        		&& a2015 = '0' && a2016 = '0' ;" ;
 $result = $conn->query($sql);
 echo "<table style='width:100%'>";
 if ($result->num_rows > 0) {
