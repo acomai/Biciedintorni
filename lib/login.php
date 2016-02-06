@@ -179,9 +179,7 @@ if (is_numeric($_GET['iscr']))
 <center><h3><?php echo $area; ?></h3></center>
 <div align="center" style="font-style: italic;"><h3>Gestione Gite ed Eventi - Interfaccia di autenticazione</h3></div><br>
 <table align="center" cellpadding="0" cellspacing="0">
-	<tr>
-  		<td colspan="2" align="center"><br><img src="img/infologin.jpg" title="Dovete loggarvi" alt="Dovete loggarvi"><br><br></td>
-  	</tr>
+	
 	<tr>
   		<td width="177px" height="268px" background="img/sfondologin_left.jpg">&nbsp;</td>
   		<td class="intestazionel" width="281px" height="268px" align="center" background="img/sfondologin_right.jpg">
@@ -201,15 +199,16 @@ if (is_numeric($_GET['iscr']))
 			  </tr>
 			  <tr>
 				<td align="right">
-					<button type="submit" style="background: #e5e5dd; width:90px;height:30px;border:none;outline: none;"><img alt="Entra" src="img/entra.jpg"></button>
+				    <br>
+					<button type="submit" style="background: #e5e5dd; width:90px;height:30px;outline: none;"><img alt="Entra" src="img/entra.jpg"></button>
 					<!-- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -->
 				</td>
 			  </tr>
 			  <tr>
-			  	<td align="right"><a style="text-decoration:none;" href="http://www.biciedintorni.it/index.php?option=com_contact&task=view&contact_id=1&Itemid=11">Se riscontrate problemi di accesso,<br>cliccate [qui] e scrivete al WebMaster.</a><br><br></td>
+			  	<td align="right"> <br><br><br></td>
 			  </tr>
 			  <tr>
-    			<td colspan="2" align="right"><a style="text-decoration:none;" href="http://www.biciedintorni.it/wordpress/">Torna alla Home Page del sito.</a></td>
+    			<td colspan="2" align="right"> </td>
   			  </tr>
 			  <tr>
     			<td colspan="2" align="right"><a style="text-decoration:none;" href="http://www.biciedintorni.it/application/admin.php?reqpass=1">Hai dimenticato la password? [clicca qui].</a></td>

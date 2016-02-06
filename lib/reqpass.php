@@ -1,4 +1,17 @@
 <?php
+/**
+ * Reqpass.php File Doc Comment
+ *
+ * PHP version 5.3
+ * Programma che permette di inviare una email all'utente che
+ * non ricorda la password
+ *
+ * @category Programma
+ * @package  /lib
+ * @author   Antonino Di Bella 
+ * @license  Proprietà FIAB Torino Bici e Dintorni
+ * @link     http://www.biciedintorni.it/
+ */
 include_once(dirname(__FILE__)."/class.php");
  makeHead("Amministrazione - Recupero password"); ?>
 <div align="center" style="font-style: italic;"><h3>Amministrazione - Recupero password</h3></div><br>
@@ -22,7 +35,7 @@ include_once(dirname(__FILE__)."/class.php");
 		</td>
 	  </tr>
 	  <tr>
-		<td colspan="2" align="right"><a style="text-decoration:none;" href="http://www.biciedintorni.it/">Torna alla Home Page del sito.</a></td>
+		<td colspan="2" align="right"><a style="text-decoration:none;" href="http://www.biciedintorni.it/wordpress/">Torna alla Home Page del sito.</a></td>
 	  </tr>
 	  <tr>
 		<td colspan="2" align="right"><? echo $message; ?></td>
