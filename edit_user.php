@@ -95,10 +95,10 @@ if(!$err)
 		if(!$err)
 		{
 			if(!$_GET['mod'])
-				$db->query("SELECT * FROM user WHERE user = '".mysql_escape_string($_POST['user'])."';");
+				$db->query("SELECT * FROM user WHERE user = '".mysqli_escape_string($_POST['user'])."';");
 			else
 				if(is_numeric($_GET['mod']))
-					$db->query("SELECT * FROM user WHERE user = '".mysql_escape_string($_POST['user'])."' AND id_user != '".$_GET['mod']."';");
+					$db->query("SELECT * FROM user WHERE user = '".mysqli_escape_string($_POST['user'])."' AND id_user != '".$_GET['mod']."';");
 			//echo "result query:".$db->query_id."<<br>";
 			if($db->next_record())
 			{
@@ -112,23 +112,23 @@ if(!$err)
 				exit;
 			}//if($db->next_record())
 			if(!isset($_GET['mod']))
-				$Query = "INSERT INTO user (cognome,nome,cf,ragSoc,pIva,tipoUser,attivo,user,pass)VALUES ('".mysql_escape_string($_POST['cognome'])."','".mysql_escape_string($_POST['nome'])."','".mysql_escape_string($_POST['cf'])."','".mysql_escape_string($_POST['ragSoc'])."','".mysql_escape_string($_POST['pIva'])."','".mysql_escape_string($_POST['tipoUser'])."','".mysql_escape_string($_POST['attivo'])."','".mysql_escape_string($_POST['user'])."','".md5(mysql_escape_string($_POST['pass']))."');";
+				$Query = "INSERT INTO user (cognome,nome,cf,ragSoc,pIva,tipoUser,attivo,user,pass)VALUES ('".mysqli_escape_string($_POST['cognome'])."','".mysqli_escape_string($_POST['nome'])."','".mysqli_escape_string($_POST['cf'])."','".mysqli_escape_string($_POST['ragSoc'])."','".mysqli_escape_string($_POST['pIva'])."','".mysqli_escape_string($_POST['tipoUser'])."','".mysqli_escape_string($_POST['attivo'])."','".mysqli_escape_string($_POST['user'])."','".md5(mysqli_escape_string($_POST['pass']))."');";
 			else
 				if(is_numeric($_GET['mod']))
 					if(!isset($_POST['pass']))
-						$Query = "UPDATE user SET cognome = '".mysql_escape_string($_POST['cognome'])."',nome = '".mysql_escape_string($_POST['nome'])."',cf = '".mysql_escape_string($_POST['cf'])."',ragSoc = '".mysql_escape_string($_POST['ragSoc'])."',pIva = '".mysql_escape_string($_POST['pIva'])."',tipoUser = '".mysql_escape_string($_POST['tipoUser'])."',attivo = '".mysql_escape_string($_POST['attivo'])."',user = '".mysql_escape_string($_POST['user'])."' WHERE id_user = '".(int)$_GET['mod']."';";
+						$Query = "UPDATE user SET cognome = '".mysqli_escape_string($_POST['cognome'])."',nome = '".mysqli_escape_string($_POST['nome'])."',cf = '".mysqli_escape_string($_POST['cf'])."',ragSoc = '".mysqli_escape_string($_POST['ragSoc'])."',pIva = '".mysqli_escape_string($_POST['pIva'])."',tipoUser = '".mysqli_escape_string($_POST['tipoUser'])."',attivo = '".mysqli_escape_string($_POST['attivo'])."',user = '".mysqli_escape_string($_POST['user'])."' WHERE id_user = '".(int)$_GET['mod']."';";
 					else
-						$Query = "UPDATE user SET cognome = '".mysql_escape_string($_POST['cognome'])."',nome = '".mysql_escape_string($_POST['nome'])."',cf = '".mysql_escape_string($_POST['cf'])."',ragSoc = '".mysql_escape_string($_POST['ragSoc'])."',pIva = '".mysql_escape_string($_POST['pIva'])."',tipoUser = '".mysql_escape_string($_POST['tipoUser'])."',attivo = '".mysql_escape_string($_POST['attivo'])."',user = '".mysql_escape_string($_POST['user'])."',pass = '".md5(mysql_escape_string($_POST['pass']))."' WHERE id_user = '".(int)$_GET['mod']."';";
+						$Query = "UPDATE user SET cognome = '".mysqli_escape_string($_POST['cognome'])."',nome = '".mysqli_escape_string($_POST['nome'])."',cf = '".mysqli_escape_string($_POST['cf'])."',ragSoc = '".mysqli_escape_string($_POST['ragSoc'])."',pIva = '".mysqli_escape_string($_POST['pIva'])."',tipoUser = '".mysqli_escape_string($_POST['tipoUser'])."',attivo = '".mysqli_escape_string($_POST['attivo'])."',user = '".mysqli_escape_string($_POST['user'])."',pass = '".md5(mysqli_escape_string($_POST['pass']))."' WHERE id_user = '".(int)$_GET['mod']."';";
 			//echo ">\n\tQuery di inserimento impostata\n<br>\n >".$Query."<";
 			$db->query($Query);
 			//echo ">\n\tQuery di inserimento effettuata\n<br>\n";
 			if($db->errno == 0)
 			{
 				$err = 0;
-				//echo ">\n\tUsername inserito>".mysql_escape_string($_POST['user'])."<<br>";
-				//$Query = "SELECT * FROM user WHERE user = '".mysql_escape_string($_POST['user'])."'";
+				//echo ">\n\tUsername inserito>".mysqli_escape_string($_POST['user'])."<<br>";
+				//$Query = "SELECT * FROM user WHERE user = '".mysqli_escape_string($_POST['user'])."'";
 				//$db->query($Query);
-				$db->query("SELECT * FROM user WHERE user = '".mysql_escape_string($_POST['user'])."'");
+				$db->query("SELECT * FROM user WHERE user = '".mysqli_escape_string($_POST['user'])."'");
 				//echo ">\n\tQuery di controllo effettuata\n<br>\n";
 				if($db->next_record())				
 				{
@@ -193,7 +193,7 @@ if(!$err)
 						else
 							if ($_GET['sosp'] == 2)
 								$attivo = 2;
-					$Query = "UPDATE user SET attivo = '".$attivo."' WHERE id_user = '".mysql_escape_string($_GET['id'])."'";
+					$Query = "UPDATE user SET attivo = '".$attivo."' WHERE id_user = '".mysqli_escape_string($_GET['id'])."'";
 					$db->query($Query);
 					echo "onload=\"javascript:\">\n";
 					//echo ">".$Query."<";

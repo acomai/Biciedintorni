@@ -975,7 +975,7 @@ class Amministratore extends CapoGita {
 		$testo = '"ID";"Cognome";"Nome";"User";"Sesso";"Via";"Cap";"Citta";"Prov";"Data di nascita";"Tel1";"Tel2";"Cell";"Email";"Carica";"Tipo socio";"Cauzione";"Note";"Capo Famiglia"'.($intest == "" ? '' : ';'.$intest )."\n";
 		if($db->query($sqlqry))
 		{
-			while($db->next_record(MYSQL_ASSOC))
+			while($db->next_record(MYSQLI_ASSOC))
 			{
 				foreach ($db->record as $key => $value)
 				{

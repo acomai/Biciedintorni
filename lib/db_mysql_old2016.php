@@ -26,7 +26,6 @@ class db_local {
   }
 
 # connessione al Database.
-// funzione non più usata, la connessione è ora direttamente nella funzione query.
   function connect($new_conn = false) {
 	if ( 0 == $this->link_id ) {
 		$this->link_id = mysql_connect($this->host, $this->user, $this->password,$new_conn);
@@ -42,20 +41,12 @@ class db_local {
   }
 
   function query($query_string,$new_conn = false) {
-  	$conn = new mysqli($this->host, $this->user, $this->password, $this->database);
-  	// Check connection
-  	if ($conn->connect_error) {
-  		die("Connection failed: " . $conn->connect_error);
-  	}
-	//$this->connect($new_conn);
-  	$result = $conn->query($query_string);
-  	$this->query_id = $conn->query($query_string);
-  	$this->link_id = $conn;
+	$this->connect($new_conn);
 
-	//$this->query_id = mysql_query($query_string,$this->link_id);
+	$this->query_id = mysql_query($query_string,$this->link_id);
 	$this->row   = 0;
-	//$this->errno = mysqli_errno($conn);
-	//$this->error = mysql_error($conn);
+	$this->errno = mysql_errno();
+	$this->error = mysql_error();
 	
 	if (!$this->query_id)
 	  $this->halt("invalid sql: ".$query_string);
@@ -63,27 +54,26 @@ class db_local {
 	return $this->query_id;
   }
 
-  function next_record($result_type = MYSQLI_BOTH)
+  function next_record($result_type = MYSQL_BOTH)
   {
-	$this->record = mysqli_fetch_array($this->query_id,$result_type);
+	$this->record = mysql_fetch_array($this->query_id,$result_type);
 	$this->row   += 1;
-	//$this->errno = mysql_errno();
-	//$this->error = mysql_error();
+	$this->errno = mysql_errno();
+	$this->error = mysql_error();
 
 	$stat = is_array($this->record);
 	if (!$stat) {
-	  mysqli_free_result($this->query_id);
+	  mysql_free_result($this->query_id);
 	  $this->query_id = 0;
 	}
 	return $stat;
   }
 
   function num_rows() {
-	return mysqli_num_rows($this->query_id);
+	return mysql_num_rows($this->query_id);
   }
   
   # restituisce in un vettore i nomi dei campi della tabella specificata.
-  // funzione da modificare per adeguarla a mysqli_
   function name_fields($table) {
 	$vet = array ();
 	$campi = mysql_list_fields($this->database, $table, $this->link_id);
@@ -99,7 +89,7 @@ class db_local {
   {
 	#if($this->link_id)
 	  #mysql_free_result($this->query_id);
-	mysqli_close($this->link_id);
+	mysql_close($this->link_id);
   }	
 }
 ?>
