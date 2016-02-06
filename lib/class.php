@@ -5,7 +5,8 @@
  *
  * PHP version 5.3
  * Programma che raggruppa una serie di funzioni, tra cui quella che gestisce
- * l'iscrizione alle gite. Scritto da Antonino Di Bella.
+ * l'iscrizione alle gite, e le impostazioni di testata e di piè di pagina per ogni pagina. 
+ * Scritto da Antonino Di Bella.
  *
  * @category Programma
  * @package  Root
@@ -387,7 +388,7 @@ function makeTail()
 {
 ?>
 <br><br><br><br><br><br>
-<div style="margin-bottom: 0px; text-align:center; color: #000000;">Powered by <a style="color:green;" href="http://www.uebix.com">Di Bella Antonino</a></div>
+<div style="margin-bottom: 0px; text-align:center; color: #000000;">Pagina iniziale: <a href="http://www.biciedintorni.it/wordpress/">FIAB Torino Bici e Dintorni</a> - Email: <a href="mailto:info@biciedintorni.it">info@biciedintorni.it</a></div>
 </body>
 </html>
 <?php
