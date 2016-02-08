@@ -31,7 +31,7 @@
 makeHead("","<script type=\"text/javascript\" src=\"../js/ajax.js\"></script>");
 */
 ?>
-<div id="title" align="center">Modifica Associato</div>
+<div id="title" align="center">Inserimento Associato</div>
 <br>
 <form id="newass" method="post" action="admin.php?fun=newass&amp;save=1" name="newass">
   <table align="center" style="text-align: left;" border="1" cellpadding="2" cellspacing="2">
@@ -52,11 +52,11 @@ makeHead("","<script type=\"text/javascript\" src=\"../js/ajax.js\"></script>");
       </tr>
       <tr>
         <td>Nome</td>
-        <td><input id="nome" maxlength="50" size="20" name="nome" onchange="creaNick();creaPass();" onkeyup="creaNick();creaPass();" onkeydown="creaNick();creaPass();"></td>
+        <td><input id="nome" maxlength="50" size="20" type="text" name="nome" onchange="creaNick();creaPass();" onkeyup="creaNick();creaPass();" onkeydown="creaNick();creaPass();" required></td>
       </tr>
       <tr>
         <td>Cognome</td>
-        <td><input id="cognome" maxlength="50" size="20" name="cognome" onchange="creaNick();" onkeyup="creaNick();" onkeydown="creaNick();"></td>
+        <td><input id="cognome" maxlength="50" size="20" type="text" name="cognome" onchange="creaNick();" onkeyup="creaNick();" onkeydown="creaNick();" required></td>
       </tr>
       <tr>
         <td>Data di nascita</td>
@@ -131,7 +131,7 @@ makeHead("","<script type=\"text/javascript\" src=\"../js/ajax.js\"></script>");
       </tr>
       <tr>
         <td>Comune</td>
-        <td><input maxlength="50" size="20" name="citta"></td>
+        <td><input maxlength="50" size="20" type="text" name="citta" required></td>
       </tr>
       <tr>
         <td>CAP</td>
@@ -143,7 +143,7 @@ makeHead("","<script type=\"text/javascript\" src=\"../js/ajax.js\"></script>");
       </tr>
       <tr>
         <td>Indirizzo</td>
-        <td><input maxlength="255" size="20" name="indirizzo"></td>
+        <td><input maxlength="255" size="20" type="text" name="indirizzo" required></td>
       </tr>
       <tr>
         <td>Data iscrizione</td>
