@@ -1,3 +1,6 @@
+<?php
+include("index_prova1.php");
+?>
 <!DOCTYPE html>
 <html lang="en">
 	<head>
