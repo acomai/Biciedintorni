@@ -12,20 +12,20 @@
 		<meta name="author" content="Adriano">
 
 		<meta name="viewport" content="width=device-width; initial-scale=1.0">
-
-		<!-- Replace favicon.ico & apple-touch-icon.png in the root of your domain and delete these references -->
-		<link rel="shortcut icon" href="/favicon.ico">
-		<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+		<!-- Uso di Bootstrap per rendere la pagina responsive -->
+		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 	</head>
 
 	<body>
-		<div>
+		<div class="container-fluid">
 			<header>
 				<h1>Elenco anagrafiche senza iscrizioni in archivio Bici e Dintorni</h1>
 			</header>
 
+				<button class="btn" type="button" onclick="javascript:location.href='http://www.biciedintorni.it/application/admin.php?fun=modass'">Menu anagrafiche</button>
 
-<button type="button" onclick="javascript:location.href='http://www.biciedintorni.it/application/admin.php?fun=modass'">Menu anagrafiche</button>
+
+
 			
 
 
@@ -92,7 +92,7 @@ $conn->close();
 ?>
 			<footer>
 				<hr />
-				<button type="button" onclick="javascript:location.href='http://www.biciedintorni.it/application/admin.php?fun=modass'">Menu anagrafiche</button>
+				<button class="btn" type="button" onclick="javascript:location.href='http://www.biciedintorni.it/application/admin.php?fun=modass'">Menu anagrafiche</button>
 				<p>
 					<a href="http://www.biciedintorni.it/wordpress">FIAB Torino Bici e Dintorni - Home page</a>
 				</p>

@@ -388,7 +388,7 @@ function makeTail()
 {
 ?>
 <br><br><br><br><br><br>
-<div style="margin-bottom: 0px; text-align:center; color: #000000;">Pagina iniziale: <a href="http://www.biciedintorni.it/wordpress/">FIAB Torino Bici e Dintorni</a> - Email: <a href="mailto:info@biciedintorni.it">info@biciedintorni.it</a></div>
+<div style="margin-bottom: 30px; text-align:center; color: #000000;">Pagina iniziale: <a href="http://www.biciedintorni.it/wordpress/">FIAB Torino Bici e Dintorni</a> - Email: <a href="mailto:info@biciedintorni.it">info@biciedintorni.it</a></div>
 </body>
 </html>
 <?php

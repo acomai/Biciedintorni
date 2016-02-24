@@ -7,11 +7,12 @@
 		Remove this if you use the .htaccess -->
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-		<title>fatture</title>
+		<title>Elenco mai soci sviluppo con Bootstrap</title>
 		<meta name="description" content="">
 		<meta name="author" content="Adriano">
 
 		<meta name="viewport" content="width=device-width; initial-scale=1.0">
+		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 
 		<!-- Replace favicon.ico & apple-touch-icon.png in the root of your domain and delete these references -->
 		<link rel="shortcut icon" href="/favicon.ico">
@@ -19,14 +20,16 @@
 	</head>
 
 	<body>
-		<div>
+		<div class="container-fluid">
 			<header>
+			<div class="row">
 				<h1>Elenco anagrafiche senza iscrizioni in archivio Bici e Dintorni</h1>
+			</div>
 			</header>
 
-
-<button type="button" onclick="javascript:location.href='anag_cerca.html'">Menu locale Bici e Dintorni</button>
-			
+<div class=row">
+	<button class="btn btn-block" type="button" onclick="javascript:location.href='anag_cerca.html'">Menu locale Bici e Dintorni</button>
+</div>			
 
 
 <?php
