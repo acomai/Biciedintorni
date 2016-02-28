@@ -1,3 +1,17 @@
+<!DOCTYPE html>
+<html lang="it">
+<!-- Gestisce l'autenticazione all'applicativo di Bici e Dintorni.
+	Ci si arriva dalle pagine delle gite, con "Iscriviti", oppure chiedendo di entrare
+	nell'area riservata.  -->
+<head>
+  <title>FIAB Torino Bici e Dintorni - login soci</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container-fluid">
+
 <?php
 
 include_once(dirname(__FILE__)."/class.php");
@@ -32,10 +46,13 @@ $azzera = ''.
 "		</script>";
 
 if (($dove == "admin.php") && (!$_GET['iscr']))
-	$area = "Login Amministrazione";
+	/**
+	 * se la login non è legata ad una specifica gita
+	 */
+	$area = "Login Area Soci";
 elseif ($_GET['iscr'])
 {
-	$area = "Login Amministrazione";
+	$area = "Login Area Soci";
 	$dove = "admin.php?iscr=".$_GET['iscr'];
 	makeHead($area,$azzera,"onload=\"azzera()\"");
 	}else {
@@ -177,41 +194,41 @@ if (is_numeric($_GET['iscr']))
 ?>
 <div id="login">
 <center><h3><?php echo $area; ?></h3></center>
-<div align="center" style="font-style: italic;"><h3>Gestione Gite ed Eventi - Interfaccia di autenticazione</h3></div><br>
+<div align="center"><h3>FIAB Torino Bici e Dintorni</h3></div><br>
 <table align="center" cellpadding="0" cellspacing="0">
 	
 	<tr>
-  		<td width="177px" height="268px" background="img/sfondologin_left.jpg">&nbsp;</td>
+  		<!-- <td width="177px" height="268px" background="img/sfondologin_left.jpg">&nbsp;</td>
   		<td class="intestazionel" width="281px" height="268px" align="center" background="img/sfondologin_right.jpg">
+  		<td width="177px" height="268px">&nbsp;</td>  -->
+  		
+  		<td class="intestazionel" width="281px" height="268px" align="center">
 		  <form name="login" method="post" action="<?php echo $dove; ?>">
 			<table align="center">
 			  <tr>
-				<td align="right">Username:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+				<td>Username:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
 			  </tr>
 			  <tr>
-				<td align="right"><input class="inp" type="text" size="20" name="entered_user" maxlength="50"></td>
+				<td><input type="text" class="form-control" size="20" name="entered_user" maxlength="50" required></td>
+				<!-- <td align="right"><input class="inp" type="text" size="20" name="entered_user" maxlength="50"></td>  -->
 			  </tr>
 			  <tr>
-				<td align="right">Password:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+				<td>Password:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
 			  </tr>
 			  <tr>
-				<td align="right"><input class="inp" type="password" size="20" name="entered_password" maxlength="20"></td>
+				<td><input class="form-control" type="password" size="20" name="entered_password" maxlength="20" required></td>
 			  </tr>
 			  <tr>
 				<td align="right">
 				    <br>
-					<button type="submit" style="background: #e5e5dd; width:90px;height:30px;outline: none;"><img alt="Entra" src="img/entra.jpg"></button>
-					<!-- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -->
+					<button class="btn" type="submit" style="background: #e5e5dd; width:90px;height:30px;outline: none;">Entra</button>
 				</td>
 			  </tr>
 			  <tr>
-			  	<td align="right"> <br><br><br></td>
-			  </tr>
-			  <tr>
-    			<td colspan="2" align="right"> </td>
+    			<td colspan="2" align="right"><br> </td>
   			  </tr>
 			  <tr>
-    			<td colspan="2" align="right"><a style="text-decoration:none;" href="http://www.biciedintorni.it/application/admin.php?reqpass=1">Hai dimenticato la password? [clicca qui].</a></td>
+    			<td colspan="2" align="right"><a style="text-decoration:none;" href="http://www.biciedintorni.it/application/admin.php?reqpass=1">Hai dimenticato la password? Clicca qui.</a></td>
   			  </tr>
 			</table>
 		  </form>
@@ -227,3 +244,6 @@ if (is_numeric($_GET['iscr']))
 	echo "</div>";
 }
  makeTail(); ?>
+  </div>
+ </body>
+</html>

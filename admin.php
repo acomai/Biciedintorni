@@ -35,7 +35,7 @@
 							"Reply-To: <webmaster@biciedintorni.it>\r\n" .
 							"X-Mailer: Mailer/Bici&Dintorni\r\n");
 					if(mail($email, "Richiesta Password - Bici&Dintorni", "Qualcuno ha richiesto la modifica della propria password.<br>".
-							"Se questa richiesta � autentica, cliccare sul link seguente per ricevere un'e-mail con i dati.<br>".
+							"Se questa richiesta è autentica, cliccare sul link seguente per ricevere un'e-mail con i dati.<br>".
 							"<a href='http://www.biciedintorni.it/application/admin.php?reqpass=1&sub=2&code=".$reqpass."'>Richiedi nuova password</a>",
 							"From: WebMaster Bici&Dintorni <webmaster@biciedintorni.it>\r\n" .
 							"Reply-To: <webmaster@biciedintorni.it>\r\n" .
@@ -88,7 +88,7 @@
 							"From: WebMaster Bici&Dintorni <webmaster@biciedintorni.it>\r\n" .
 							"Reply-To: <webmaster@biciedintorni.it>\r\n" .
 							"X-Mailer: Mailer/Bici&Dintorni\r\n");
-					if(mail($email, "Modifica Password - Bici&Dintorni", "La modifica della propria password � avenuta correttamente.<br>".
+					if(mail($email, "Modifica Password - Bici&Dintorni", "La modifica della propria password è avvenuta correttamente.<br>".
 							"Ecco i suoi nuovi dati:<br>".
 							"User: ".$user."\r\n<br>".
 							"Password: ".$pass."\r\n<br>",
@@ -169,7 +169,8 @@
 <p>Consulta i <a href="http://www.biciedintorni.it/wordpress/associazione/verbali/">verbali delle assemblee e dei consigli direttivi</a></p>
 <p>Scarica la <a href="http://www.biciedintorni.it/wordpress/associazione/modulistica-interna/">modulistica ad uso interno</a></p>
 <div align="center"><?php echo $user->get_area(); ?></div>
-<div align="center" style="text-align: center;height:536px;background-image: url(img/sfondo.jpg);background-repeat: no-repeat;">
+<!-- <div align="center" style="text-align: center;height:536px;background-image: url(img/sfondo.jpg);background-repeat: no-repeat;">  -->
+<div align="center" style="text-align: center;height:536px;background-repeat: no-repeat;">
 <table border="1" align="center">
 <tr><th>Menu Gite &amp; Eventi</th><th>Menu Amministrativo</th><th>Menu Biblioteca</th></tr>
 <?php 
