@@ -1,0 +1,243 @@
+/* CSS Document */
+
+body, html {
+	margin:0px;
+	padding: 0px;
+	height: 100%;
+	width: 100%;
+	/*height: 100%;*/
+
+}
+body {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	/*font-size: 0.8em;*/
+}
+h1 {
+	color: #FFFFFF;
+	background-color: #7dcf61;
+	padding: 0px 0px 0px 60px;
+	height: 60px;
+	font-family: Georgia, "Times New Roman", Times, serif;
+	line-height: 60px;
+	margin: 0px;
+	background-image: url(logo_associazione-h50.png);
+	background-repeat: no-repeat;
+	background-position: 10px 5px;
+}
+/*a:hover {text-decoration:none;}
+
+a:visited {text-decoration:none;}*/
+
+/*		VISGITA		*/
+
+#tddata {
+		/*font-size: 12px;*/
+		font-weight:bold;
+}
+#title {
+		font-size: 14px;
+		font-weight:bold;
+		height: 36px;
+		padding-left:12px;
+}
+#title.title_newgita, #title.title_modgita {
+	color: #FFFFFF;
+	background-color: #6699FF;
+}
+#tdresp {
+		font-weight:bold;
+}
+#Tviewgita{
+	color: #333333;
+}
+
+/*		FINE VIS GITA		*/
+
+.title{
+	border: none;
+	font-weight: bold;
+	margin: 0px;
+	padding: 0.8px;
+
+/*font-weight:bold;*/
+
+/*color: #333333;*/
+
+}
+
+.data{
+	/*color: #006600;
+	background-color:#FFFFFF;*/
+	color: #000000;
+	background-color:#eeeeff;
+}
+.desc
+{
+	/*color: #006600;
+	background-color:#FFFFFF;*/
+	color: #000000;
+	background-color:#eeeeff;
+}
+
+.facili
+{
+	/*color: #006600;
+	background-color:#FFFFFF;*/
+	color: #000000;
+	background-color:#eeffee;
+}
+
+.medie{
+	/*color: #660000;
+	background-color:#FFFFFF;*/
+	color: #000000;
+
+	background-color:#ddffdd;
+
+}
+
+.difficili{
+	/*color: #000066;
+
+	background-color:#FFFFFF;*/
+	color: #000000;
+	background-color:#ccffcc;
+}
+
+/*#searchform input.inp
+	{
+
+	border: 1px solid #ddd;
+	width: 225px;
+	background: #f2f2f2;
+	font: 11px verdana, sans-serif;
+	color: #443;
+	padding: 3px;
+	outline: none;
+	}*/
+
+.dati	{
+
+		background: #CCCCFF;
+
+	}
+
+select,input
+	{
+		padding: 3px;
+		/*font-size: 12px;*/
+		color: #443;
+		font: 11px verdana, sans-serif;
+		background: #CCCCFF;
+		/*background: #f2f2f2;*/
+		/*width: 100%;*/
+		border: 1px solid #ddd;
+		outline: none;
+	}
+
+/*input[disabled] {color:red!important;}*/
+.obbligatori
+{
+	color: #FF0000;
+}
+
+input:hover
+	{
+		border: 1px solid #aaa;
+	}
+input:focus
+	{
+		border: 1px solid #0000ff;
+	}
+input[disabled]
+	{
+		/*color:red;*/
+		display: none;
+		/*background: #e0e0e0;*/
+	}
+select:hover
+	{
+		border: 1px solid #aaa;
+	}
+
+select:focus
+	{
+		border: 1px solid #0000ff;
+	}
+textarea {
+	font: 11px verdana, sans-serif;
+	background: #CCCCFF;
+	/*background: #f2f2f2;*/
+	color: #443;
+	height:100px;
+	border:1px solid #ddd;
+	outline:none;
+}
+textarea:hover
+	{
+		border: 1px solid #aaa;
+	}
+textarea:focus
+	{
+		border: 1px solid #0000ff;
+	}
+button
+	{
+	font:11px Arial, Helvetica, sans-serif;
+	color:#757575;
+	border:none;
+	width: 68px;
+	height: 20px;
+	background: #e5e5dd url(../../img/btn_search.gif) no-repeat;
+	outline: none;
+	}
+button:hover
+	{
+	color:#2e2e2e;
+	background: #c9c9c2 url(../../img/btn_search.gif) no-repeat 0 -20px;
+	}
+button.bottonimenu
+	{
+	font:11px Arial, Helvetica, sans-serif;
+	color:#0000FF;
+	border:none;
+	width: 222px;
+	height: 28px;
+	background: #0000FF url(../../img/bottonelungo2.jpg) center no-repeat;
+	}
+
+button.bottonimenu:hover
+	{
+	color:#00FF00;
+	background-color:#00FF00;
+	}
+table {
+	width: auto;
+}
+td {
+	/* border-bottom: 1px solid #666666; */
+	vertical-align: top;
+	/*height: 40px;*/
+	margin: 0px;
+	/*padding: 0.6em;*/
+}
+th {
+	color: #FFFFFF;
+	background-color: #336699;
+	text-align: center;
+	vertical-align: middle;
+	height: 30px;
+	margin: 0px;
+	padding: 2px;
+}
+form#frmnewgita table, form#frmnewgita td,
+form#modgita table, form#modgita td {
+	width: auto;
+	border: none;
+}
+.mandatory_newgita, .mandatory_modgita{
+	font-size: 90%;
+	color: #993300;
+	height: 50px;
+	padding-left: 15px;
+}

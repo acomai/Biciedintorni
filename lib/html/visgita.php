@@ -1,3 +1,16 @@
+<!DOCTYPE html>
+<html lang="it">
+<!-- Gestisce la visualizzazione gite nell'applicativo di Bici e Dintorni.
+	Consente l'iscrizione.  -->
+<head>
+  <title>FIAB Torino Bici e Dintorni - gita</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container-fluid">
+
 <?php
 if($db->next_record())
 { 
@@ -206,3 +219,6 @@ else
 <?php 
 }
 ?>
+  </div>
+ </body>
+</html>
