@@ -1,3 +1,12 @@
+<!DOCTYPE html>
+<html lang="it">
+<!-- Punto di accesso alla biblioteca di Bici e Dintorni.  -->
+<head>
+  <title>FIAB Torino Bici e Dintorni - biblioteca.php</title>
+  <meta charset="utf-8">
+</head>
+<body>
+
 <?php
 /**
  * Biblioteca.php File Doc Comment
@@ -178,3 +187,5 @@ while ($db->next_record()) {
 <?php  
 makeTail();
 ?>
+</body>
+</html>

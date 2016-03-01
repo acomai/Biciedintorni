@@ -1,3 +1,11 @@
+<!DOCTYPE html>
+<html lang="it">
+<!-- Lista dei libri nella biblioteca di Bici e Dintorni.  -->
+<head>
+  <title>FIAB Torino Bici e Dintorni - listalibri.php</title>
+  <meta charset="utf-8">
+</head>
+<body>
 	<div align="center" id="title"><h4><a href="biblioteca.php">&#60;&#60;Indietro</a></h4></div>
 	<table>
 	  <tr>
@@ -40,3 +48,5 @@
 	$db->close();
 	unset($db);
 ?>
+</body>
+</html>
