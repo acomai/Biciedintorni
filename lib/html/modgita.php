@@ -1,4 +1,25 @@
+<!DOCTYPE html>
+<html lang="it">
+<!-- Gestisce la modifica di una gita nell'applicativo di Bici e Dintorni. -->
+<head>
+  <title>FIAB Torino Bici e Dintorni - gita</title>
+  <meta charset="utf-8">
+</head>
+<body>
+
 <?php
+/**
+ * Modgita.php File Doc Comment
+ *
+ * PHP version 5.3
+ * Programma che gestisce l'interazione utente per modificare una gita
+ *
+ * @category Programma
+ * @package  Root
+ * @author   Antonino Di Bella, modificato da Adriano Comai <adriano-liste@fastwebnet.it>
+ * @license  Proprietà FIAB Torino Bici e Dintorni
+ * @link     http://www.biciedintorni.it/
+ */
 if($db->next_record())
 { 
 	?>
@@ -251,11 +272,11 @@ if($db->next_record())
          ?><input size="10" type="file" name="file"></td>
       </tr>
       <tr>
-        <td id="tditinerario" class="title">Itinerario<br>(caratteri disponibili <span align="center" id="cariti">200</span>)<br>Puoi inserire pi&uacute; caratteri di quelli indicati,<br>ma in fase di approvazione potr&agrave; essere tagliato qualche pezzo.</td>
+        <td id="tditinerario" class="title">Itinerario<br>(caratteri disponibili <span align="center" id="cariti">200</span>)<br>Puoi inserire più caratteri di quelli indicati,<br>ma in fase di approvazione potr&agrave; essere tagliato qualche pezzo.</td>
         <td colspan="3"><textarea id="iti" onchange="refreshcar('cariti','iti');" onkeyup="refreshcar('cariti','iti');" onkeydown="refreshcar('cariti','iti');" cols="100" rows="2" name="itinerario"><?php echo $db->record['itinerario']; ?></textarea></td>
       </tr>
       <tr>
-        <td id="tddescrizione" class="title">Descrizione<br>(caratteri disponibili <span align="center" id="cardesc">350</span>)<br>Puoi inserire pi&uacute; caratteri di quelli indicati,<br>ma in fase di approvazione potr&agrave; essere tagliato qualche pezzo.</td>
+        <td id="tddescrizione" class="title">Descrizione<br>(caratteri disponibili <span align="center" id="cardesc">350</span>)<br>Puoi inserire più caratteri di quelli indicati,<br>ma in fase di approvazione potr&agrave; essere tagliato qualche pezzo.</td>
         <td colspan="3"><textarea id="desc" onchange="refreshcar('cardesc','desc');" onkeyup="refreshcar('cardesc','desc');" onkeydown="refreshcar('cardesc','desc');" cols="100" rows="2" name="descrizione"><?php echo $db->record['descrizione']; ?></textarea></td>
       </tr>
       <tr>
@@ -304,3 +325,5 @@ else
 				"password: ".$this->pass);
 }
 ?>
+ </body>
+</html>

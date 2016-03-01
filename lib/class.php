@@ -1,3 +1,13 @@
+<!DOCTYPE html>
+<html lang="it">
+<!-- Programma che raggruppa una serie di funzioni, tra cui quella che gestisce
+l'iscrizione alle gite, e le impostazioni di testata e di piè di pagina per ogni pagina.  -->
+<head>
+  <title>FIAB Torino Bici e Dintorni - class.php</title>
+  <meta charset="utf-8">
+</head>
+<body>
+
 <?php
 
 /**
@@ -10,7 +20,7 @@
  *
  * @category Programma
  * @package  Root
- * @author   Adriano Comai <adriano-liste@fastwebnet.it>
+ * @author   Antonino Di Bella, modificato da Adriano Comai <adriano-liste@fastwebnet.it>
  * @license  Proprietà FIAB Torino Bici e Dintorni
  * @link     http://www.biciedintorni.it/
  */

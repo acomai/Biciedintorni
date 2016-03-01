@@ -1,3 +1,13 @@
+<!DOCTYPE html>
+<html lang="it">
+<!-- Gestisce la maggior parte delle funzioni nell'applicativo di Bici e Dintorni.
+Le funzioni sono associate a ruoli: Associato, Capogita, Amministratore -->
+<head>
+  <title>FIAB Torino Bici e Dintorni - gita</title>
+  <meta charset="utf-8">
+</head>
+<body>
+
 <?php 
 include_once("lib/db_mysql.php");
 include_once("lib/class.php");
@@ -780,7 +790,7 @@ class CapoGita extends Associato {
 			{
 				$id = $_POST['invio'];
 				if($db->query("INSERT INTO modifiche_gite (idgita,idmodificatore) VALUES ('".$id."','".$this->matricola."');"))
-				echo "<div align=\"center\" style=\"color: #0000FF;font-size:16\">Modifica gita avvenuto con successo.</div>";
+				echo "<div align=\"center\" style=\"color: #0000FF;font-size:16\">Modifica gita effettuata.</div>";
 				else
 				echo "<div align=\"center\" style=\"color: #FF0000;font-size:16\">Errore nella modifica della gita. (inserimento modifica, query falsa)</div>";
 			}
@@ -2773,3 +2783,5 @@ class Segretaria extends Amministratore {
 	}
 }
 ?>
+ </body>
+</html>
