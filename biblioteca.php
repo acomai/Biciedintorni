@@ -89,103 +89,47 @@ orari di apertura....vi auguriamo una buona lettura.</div>
 <br>
 <!--<div align= "right"><a href="admin.php" target="_parent"><img alt="Amministrazione" src="img/lucchetto.jpg" width="50" height="50"></a></div>-->
 <?php  
+// elenco argomenti
+$servername = "62.149.150.56";
+$username = "Sql145958";
+$password = "c36d0fc2";
+$dbname = "Sql145958_1";
+
+
+
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+// Check connection
+if ($conn->connect_error) {
+	die("Connection failed: " . $conn->connect_error);
+}
+
+$sql = "SELECT id, nome FROM argomenti ORDER BY nome;" ;
+$result = $conn->query($sql);
+echo "<table style='width:100%'>";
+if ($result->num_rows > 0) {
+	// output data of each row
+	echo "<tr>" .
+			"<th align='left'>" . "id" . "</th>" .
+			"<th align='left'>" . "Argomenti" . "</th>" .
+			"</tr>";
+	while ($row = $result->fetch_assoc()) {
+		echo
+		"<tr>" .
+		"<td>" . $row["id"]. "</td>" .
+		"<td>" . $row["nome"]. "</td>" .
+		//"<td><a href=\"admin.php?fun=modass&id=".$row['id']."\">Modifica</a></td>" .
+		"</tr>";
+		//"id: " . $row["id"]. " - Ragione sociale: " . $row["rag_sociale"]. " - Indirizzo: " . $row["indirizzo"]. "<br>";
+	}
+} else {
+	echo "0 results";
+}
+echo "</table>";
+
 makeTail();
 exit;
 ?>
-<table width="40%" border="1" align="center" cellpadding="2">
-	<tr>
-		<td colspan="7" style="color:green" align="center">GITE</td>
-	</tr>
-	<tr>
-		<td class="data" width="13%">Data</td>
-		<td class="facili" colspan="2">Facili</td> 
-		<td class="medie" colspan="2">Medie</td> 
-		<td class="difficili" colspan="2">Impegnative</td>
-	</tr>
-<?php
-        require_once "lib/db_mysql.php";
-        $db = new db_local();
-if ($_GET['limit'] == '0') {
-    $db->query("SELECT *,UNIX_TIMESTAMP(dataeora) as 'data' FROM gite WHERE DATE(dataeora) >= CURDATE() AND approvata = 1 ORDER BY dataeora;"); 
-}
-else {
-    $db->query("SELECT *,UNIX_TIMESTAMP(dataeora) as 'data' FROM gite WHERE DATE(dataeora) >= CURDATE() AND approvata = 1 ORDER BY dataeora LIMIT 0,10 ;"); 
-}
-while ($db->next_record()) {
-    /*if($db->record['data'] < time())
-				continue;*/
-    echo 
-    "<tr>\n".
-    "	<td class=\"data\">".date("d/m/Y", $db->record['data'])."</td>\n	";
-    if ($db->record['difficolta'] == 'D') {
-                echo
-                "<td class=\"facili\" width=\"22%\">&nbsp;</td>\n	".
-                "<td class=\"facili\" width=\"7%\">&nbsp;</td>\n	".
-                "<td class=\"medie\" width=\"22%\">&nbsp;</td>\n	".
-                "<td class=\"medie\" width=\"7%\">&nbsp;</td>\n	".
-                "<td class=\"difficili\" width=\"22%\"><a class=\"difficili\" href=\"index.php?id=".$db->record['id']."\">".$db->record['titolo']."</a></td>\n	".
-                "<td class=\"difficili\" width=\"7%\">Km ".$db->record['km']."</td>\n".
-                "</tr>\n"; 
-    }
-    elseif ($db->record['difficolta'] == 'M') {
-        echo
-        "<td class=\"facili\" width=\"22%\">&nbsp;</td>\n	".
-        "<td class=\"facili\" width=\"7%\">&nbsp;</td>\n	".
-        "<td class=\"medie\" width=\"22%\"><a class=\"medie\" href=\"index.php?id=".$db->record['id']."\">".$db->record['titolo']."</a></td>\n	".
-        "<td class=\"medie\" width=\"7%\">Km ".$db->record['km']."</td>\n	".
-        "<td class=\"difficili\" width=\"22%\">&nbsp;</td>\n	".
-        "<td class=\"difficili\" width=\"7%\">&nbsp;</td>\n".
-        "</tr>\n"; 
-    }
-    else { 
-        echo
-        "<td class=\"facili\" width=\"22%\"><a class=\"facili\" href=\"index.php?id=".$db->record['id']."\">".$db->record['titolo']."</a></td>\n	".
-        "<td class=\"facili\" width=\"7%\">Km ".$db->record['km']."</td>\n	".
-        "<td class=\"medie\" width=\"22%\">&nbsp;</td>\n	".
-        "<td class=\"medie\" width=\"7%\">&nbsp;</td>\n	".
-        "<td class=\"difficili\" width=\"22%\">&nbsp;</td>\n	".
-        "<td class=\"difficili\" width=\"7%\">&nbsp;</td>\n".
-        "</tr>\n"; 
-    }
-    //.date('d.m.Y H:i:s', $time);
-}
-    $db->close();
-    ?>
-</table>
-<br>
-<table width="90%" border=1 align="center" cellpadding="2">
-	<tr>
-		<td colspan="2" style="color:green" align="center">EVENTI</td>
-	</tr>
-		<tr>
-			<td class="data" width="13%">Data</td>
-			<td class="difficili">Titolo</td>
-		</tr>
-    <?php
-    unset($db);
-    require_once "lib/db_mysql.php";
-    $db = new db_local();
-    if ($_GET['limitev'] == '0') {
-        $db->query("SELECT *,UNIX_TIMESTAMP(dataeora) as 'data' FROM eventi WHERE DATE(dataeora) >= CURDATE() AND approvato = 1 ORDER BY dataeora;"); 
-    }
-    else {
-        $db->query("SELECT *,UNIX_TIMESTAMP(dataeora) as 'data' FROM eventi WHERE DATE(dataeora) >= CURDATE() AND approvato = 1 ORDER BY dataeora LIMIT 0,10 ;"); 
-    }
-    while ($db->next_record()) {
-        echo 
-        "<tr>\n".
-        "	<td class=\"data\">".date("d/m/Y", $db->record['data'])."</td>\n	".
-        "	<td class=\"difficili\"><a class=\"difficili\" href=\"index.php?evid=".$db->record['id']."\">".$db->record['titolo']."</a></td>\n	".
-        "</tr>\n";
-    }
-    $db->close();
-    ?>
-	</table>
-</div>
-<br>
-<div align= "right"><a href="admin.php" target="_parent"><img alt="Amministrazione" src="img/lucchetto.jpg" width="50" height="50"></a></div>
-<?php  
-makeTail();
-?>
+
 </body>
 </html>
