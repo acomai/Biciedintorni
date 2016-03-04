@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-<html lang="it">
-<!-- Gestisce la maggior parte delle funzioni nell'applicativo di Bici e Dintorni.
-Le funzioni sono associate a ruoli: Associato, Capogita, Amministratore -->
-<head>
-  <title>FIAB Torino Bici e Dintorni - gita</title>
-  <meta charset="utf-8">
-</head>
-<body>
+
 
 <?php 
 include_once("lib/db_mysql.php");
@@ -2783,5 +2775,3 @@ class Segretaria extends Amministratore {
 	}
 }
 ?>
- </body>
-</html>

@@ -1,12 +1,3 @@
-<!DOCTYPE html>
-<html lang="it">
-<!-- Programma che raggruppa una serie di funzioni, tra cui quella che gestisce
-l'iscrizione alle gite, e le impostazioni di testata e di piè di pagina per ogni pagina.  -->
-<head>
-  <title>FIAB Torino Bici e Dintorni - class.php</title>
-  <meta charset="utf-8">
-</head>
-<body>
 
 <?php
 
@@ -399,8 +390,6 @@ function makeTail()
 ?>
 <br><br><br><br><br><br>
 <div style="margin-bottom: 30px; text-align:center; color: #000000;">Pagina iniziale: <a href="http://www.biciedintorni.it/wordpress/">FIAB Torino Bici e Dintorni</a> - Email: <a href="mailto:info@biciedintorni.it">info@biciedintorni.it</a></div>
-</body>
-</html>
 <?php
 }
 ?>
