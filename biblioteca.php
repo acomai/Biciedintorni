@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="it">
-<!-- Punto di accesso alla biblioteca di Bici e Dintorni.  -->
+<!-- Punto di accesso alla biblioteca di Bici e Dintorni.
+Reimpostare, con liste per nazione, argomento, autore, titolo, editore, data  -->
 <head>
   <title>FIAB Torino Bici e Dintorni - biblioteca.php</title>
   <meta charset="utf-8">
@@ -70,6 +71,86 @@ if ($_GET['sez'] == 'cart') {
     include_once "lib/html/listalibri.php";
     makeTail();
     exit;
+} elseif ($_GET['sez'] == 'libri_anno') {
+   	makeHead("Biblioteca->Libri", "", "");
+    include_once "lib/db_mysql.php";
+    $db = new db_local();
+    $strqry = "SELECT libri.*, nazioni.id as idnaz, nazioni.nome as nazione, argomenti.nome as argomento FROM (libri INNER JOIN nazioni ON libri.idnazione=nazioni.id) INNER JOIN argomenti ON libri.idarg=argomenti.id";
+    if (is_numeric($_GET['idnaz'])) {
+    	$strWhere = " WHERE idnazione = '" . $_GET['idnaz'] . "'";
+    }
+   	if (is_numeric($_GET['idarg'])) {
+   		if ($strWhere == '') {
+            $strWhere = " WHERE idarg = '" . $_GET['idarg'] . "'";
+    	}
+    	else {
+    		$strWhere = $strWhere . " AND idarg = '" . $_GET['idarg'] . "'";
+    	}
+   	}
+    $db->query($strqry . $strWhere . " ORDER BY anno DESC,titolo");
+    include_once "lib/html/listalibri.php";
+    makeTail();
+    exit;
+    } elseif ($_GET['sez'] == 'libri_titolo') {
+    	makeHead("Biblioteca->Libri", "", "");
+    	include_once "lib/db_mysql.php";
+    	$db = new db_local();
+    	$strqry = "SELECT libri.*, nazioni.id as idnaz, nazioni.nome as nazione, argomenti.nome as argomento FROM (libri INNER JOIN nazioni ON libri.idnazione=nazioni.id) INNER JOIN argomenti ON libri.idarg=argomenti.id";
+    	if (is_numeric($_GET['idnaz'])) {
+    		$strWhere = " WHERE idnazione = '" . $_GET['idnaz'] . "'";
+    	}
+    	if (is_numeric($_GET['idarg'])) {
+    		if ($strWhere == '') {
+    			$strWhere = " WHERE idarg = '" . $_GET['idarg'] . "'";
+    		}
+    		else {
+    			$strWhere = $strWhere . " AND idarg = '" . $_GET['idarg'] . "'";
+    		}
+    	}
+    	$db->query($strqry . $strWhere . " ORDER BY titolo");
+    	include_once "lib/html/listalibri.php";
+    	makeTail();
+    	exit;
+    	} elseif ($_GET['sez'] == 'libri_autore') {
+    		makeHead("Biblioteca->Libri", "", "");
+    		include_once "lib/db_mysql.php";
+    		$db = new db_local();
+    		$strqry = "SELECT libri.*, nazioni.id as idnaz, nazioni.nome as nazione, argomenti.nome as argomento FROM (libri INNER JOIN nazioni ON libri.idnazione=nazioni.id) INNER JOIN argomenti ON libri.idarg=argomenti.id";
+    		if (is_numeric($_GET['idnaz'])) {
+    			$strWhere = " WHERE idnazione = '" . $_GET['idnaz'] . "'";
+    		}
+    		if (is_numeric($_GET['idarg'])) {
+    			if ($strWhere == '') {
+    				$strWhere = " WHERE idarg = '" . $_GET['idarg'] . "'";
+    			}
+    			else {
+    				$strWhere = $strWhere . " AND idarg = '" . $_GET['idarg'] . "'";
+    			}
+    		}
+    		$db->query($strqry . $strWhere . " ORDER BY autore, titolo");
+    		include_once "lib/html/listalibri.php";
+    		makeTail();
+    		exit;
+    		} elseif ($_GET['sez'] == 'libri_argomento') {
+    			makeHead("Biblioteca->Libri", "", "");
+    			include_once "lib/db_mysql.php";
+    			$db = new db_local();
+    			$strqry = "SELECT libri.*, nazioni.id as idnaz, nazioni.nome as nazione, argomenti.nome as argomento FROM (libri INNER JOIN nazioni ON libri.idnazione=nazioni.id) INNER JOIN argomenti ON libri.idarg=argomenti.id";
+    			if (is_numeric($_GET['idnaz'])) {
+    				$strWhere = " WHERE idnazione = '" . $_GET['idnaz'] . "'";
+    			}
+    			if (is_numeric($_GET['idarg'])) {
+    				if ($strWhere == '') {
+    					$strWhere = " WHERE idarg = '" . $_GET['idarg'] . "'";
+    				}
+    				else {
+    					$strWhere = $strWhere . " AND idarg = '" . $_GET['idarg'] . "'";
+    				}
+    			}
+    			$db->query($strqry . $strWhere . " ORDER BY argomento, titolo");
+    			include_once "lib/html/listalibri.php";
+    			makeTail();
+    			exit;
 }
 makeHead("Biblioteca", "", "");
 ?>
@@ -81,8 +162,13 @@ orari di apertura....vi auguriamo una buona lettura.</div>
 <br>
 <table width="40%" border="0" align="center" cellpadding="2">
 	<tr align="center">
-		<td><a href="biblioteca.php?sez=cart">Cartine</a></td> 
-		<td><a href="biblioteca.php?sez=libri">Libri</a></td> 
+		<td><a href="biblioteca.php?sez=cart">Cartine</a> | </td> 
+		<td><a href="biblioteca.php?sez=libri">Libri per nazione</a> | </td>
+		<td><a href="biblioteca.php?sez=libri_anno">Libri per data pubblicazione</a> | </td> 
+		<td><a href="biblioteca.php?sez=libri_titolo">Libri per titolo</a> | </td>
+		<td><a href="biblioteca.php?sez=libri_autore">Libri per autore</a> | </td> 
+		<td><a href="biblioteca.php?sez=libri_argomento">Libri per argomento</a></td>
+		
 	</tr>
 </table>
 </div>

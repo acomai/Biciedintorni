@@ -6,7 +6,7 @@
   <meta charset="utf-8">
 </head>
 <body>
-	<div align="center" id="title"><h4><a href="biblioteca.php">&#60;&#60;Indietro</a></h4></div>
+	<div align="center" id="title"><h4>FIAB Torino Bici e Dintorni - Lista libri - <a href="biblioteca.php">&#60;&#60;Indietro</a></h4></div>
 	<table>
 	  <tr>
 	    <td colspan="12" class="title">Numero di libri: <?php echo $db->num_rows();?></td>
