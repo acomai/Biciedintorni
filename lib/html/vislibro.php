@@ -1,9 +1,27 @@
+<!DOCTYPE html>
+<html lang="it">
+<!-- Biblioteca di Bici e Dintorni.
+Visualizzazione singolo libro  -->
+<head>
+  <title>FIAB Torino Bici e Dintorni - vislibro.php</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container-fluid">
+
 <?php if($db->next_record())
 { 
 	?>
-<div align="center" id="title"><h4><a href="biblioteca.php">&#60;&#60;Indietro</a></h4></div>
-<div align="center" id="title"><h2><?php echo "<b>".$db->record['titolo'] . "</b><br>" . $db->record['sottotitolo']; ?></h2></div>
-<br><br>
+
+<div class="row">
+	<div class="col-xs-12 text-center">FIAB Torino Bici e Dintorni - Visualizzazione libro - <a href="javascript:history.back()">Elenco libri</a> - <a href="biblioteca.php">Biblioteca</a></div>
+</div>
+<div class="row">
+	<div class="col-xs-12 text-center title"><h4><?php echo "<b>".$db->record['titolo'] . "</b><br>" . $db->record['sottotitolo']; ?></h4></div>
+</div>
+<br>
   <table id="Tvisevento" align="center" style="text-align: left;" border="1" cellpadding="2" cellspacing="2">
     <tbody>
       <tr>
@@ -60,3 +78,6 @@ else
 <?php 
 }
 ?>
+</div>
+</body>
+</html>

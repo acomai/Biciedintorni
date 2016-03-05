@@ -4,13 +4,30 @@
 <head>
   <title>FIAB Torino Bici e Dintorni - listalibri.php</title>
   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 </head>
 <body>
-	<div align="center" id="title"><h4>FIAB Torino Bici e Dintorni - Lista libri - <a href="biblioteca.php">&#60;&#60;Indietro</a></h4></div>
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-xs-12 text-center">FIAB Torino Bici e Dintorni - Lista libri - <a href="biblioteca.php">Biblioteca</a></div>
+	</div>
+		<div class="row">
+		<div class="col-xs-12">Numero di libri: <?php echo $db->num_rows();?></div>
+	</div>
+	<!-- Bozza di testata per gestire la lista con Bootstrap. Eliminare classificazione,
+	poi convertire la tabella sottostante in stile bootstrap
+	<div class="row">
+		<div class="col-xs-4 text-center">Titolo</div>
+		<div class="col-xs-1 text-center">Argomento</div>
+		<div class="col-xs-1 text-center">Nazione</div>
+		<div class="col-xs-1 text-center">Autore</div>
+		<div class="col-xs-1 text-center">Anno</div>
+		<div class="col-xs-1 text-center">Classificazione</div>
+		<div class="col-xs-3 text-center">Descrizione</div>
+	</div>	
+	 -->
 	<table>
-	  <tr>
-	    <td colspan="12" class="title">Numero di libri: <?php echo $db->num_rows();?></td>
-	  </tr>
 	  <tr>
 	    <th class="title">Titolo</th>
 	    <th class="title">Argomento</th>
@@ -48,5 +65,6 @@
 	$db->close();
 	unset($db);
 ?>
+</div>
 </body>
 </html>
