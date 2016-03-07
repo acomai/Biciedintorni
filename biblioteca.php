@@ -164,9 +164,9 @@ makeHead("Biblioteca", "", "");
 <div align="center">
 <h4>FIAB Torino Bici e Dintorni - Biblioteca</h4>
 <br>
-<div style="color:blue;">In questa sezione sono elencati le cartine e i libri 
-catalogati in biblioteca.<br>I soci possono prenderli a prestito
-<a href="http://www.biciedintorni.it/wordpress/contatti-2/"> in sede negli orari di apertura.</a></div></div>
+<div style="color:blue;">Abbiamo una delle biblioteche sulla bici, la mobilità urbana e il cicloturismo più ricche in Italia.</div>
+<p>I soci possono prendere a prestito i libri e le cartine,
+<a href="http://www.biciedintorni.it/wordpress/contatti-2/"> in sede negli orari di apertura.</a></p></div>
 <br>
 <!-- <table width="40%" border="0" align="center" cellpadding="2">
 	<tr align="center">
@@ -186,8 +186,10 @@ catalogati in biblioteca.<br>I soci possono prenderli a prestito
 <p align="center"><a href="biblioteca.php?sez=cart">Cartine</a> | Libri ordinati per: <a href="biblioteca.php?sez=libri_titolo">titolo</a> | 
 <a href="biblioteca.php?sez=libri_anno">anno pubblicazione</a> | <a href="biblioteca.php?sez=libri_argomento">tipo</a> | 
 <a href="biblioteca.php?sez=libri_autore">autore</a> | <a href="biblioteca.php?sez=libri">nazione</a></p>
-<p align="center">Ricerca nel titolo: <input id="titolo" type="text"> <output id="demo"></output>
-	<button type="button" onclick="cercaLibroPerTitolo()">Cerca</button></p>
+<p align="center">Ricerca nel titolo: <input id="titolo" type="text"> 
+<button type="button" onclick="cercaLibroPerTitolo()">Cerca</button></p> 
+<!-- <output id="demo"></output> -->
+	
 
 
 </div>
@@ -199,9 +201,9 @@ function cercaLibroPerTitolo() {
 	// Get the value of the input field with id="numb"
     titolo = document.getElementById("titolo").value;
     // inizializza output
-    document.getElementById("demo").innerHTML = "";
+    //document.getElementById("demo").innerHTML = "";
     // scrive in output l'input digitato
-    document.getElementById("demo").innerHTML = "termine digitato: " + titolo;
+    //document.getElementById("demo").innerHTML = "termine digitato: " + titolo;
     //preparazione per richiamo funzione php con parametro cognome. 
 	window.location.href = "libro_cerca_per_titolo.php?titolo=" + titolo;
 }
