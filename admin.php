@@ -193,7 +193,8 @@
 			$menu_biblio .="<button class=\"bottonimenu\" id=\"".$value."\" onmouseup=\"document.getElementById('".$value."').style.background = '#0000FF url(img/bottonelungo2.jpg) center no-repeat';\" onmousedown=\"document.getElementById('".$value."').style.background = '#FF0000 url(img/bottonelungo2.jpg) center no-repeat';\" onclick=\"window.location='".$dove."?fun=".$value."'\">".$key."</button><br><br>\n";
 		}
 	}
-	echo "<tr><td align=\"center\">$menu_gite</td><td align=\"center\">$menu_amm <button class=\"bottonimenu\" id=\"verbali\" onmouseup=\"document.getElementById('verbali').style.background = '#0000FF url(img/bottonelungo2.jpg) center no-repeat';\" onmousedown=\"document.getElementById('verbali').style.background = '#FF0000 url(img/bottonelungo2.jpg) center no-repeat';\" onclick=\"window.location='../index.php?option=com_content&task=view&id=27'\">Visualizza i Verbali</button><br><br><a href=\"logout.php\"><img src=\"img/logout.jpg\" title=\"LogOut\" alt=\"LogOut\"></a><br><br></td><td align=\"center\">$menu_biblio</td></tr>";
+	echo "<tr><td align=\"center\">$menu_gite</td><td align=\"center\">$menu_amm <a href=\"logout.php\"><img src=\"img/logout.jpg\" title=\"LogOut\" alt=\"LogOut\"></a></td><td align=\"center\">$menu_biblio</td></tr>";
+	//echo "<tr><td align=\"center\">$menu_gite</td><td align=\"center\">$menu_amm <button class=\"bottonimenu\" id=\"verbali\" onmouseup=\"document.getElementById('verbali').style.background = '#0000FF url(img/bottonelungo2.jpg) center no-repeat';\" onmousedown=\"document.getElementById('verbali').style.background = '#FF0000 url(img/bottonelungo2.jpg) center no-repeat';\" onclick=\"window.location='../index.php?option=com_content&task=view&id=27'\">Visualizza i Verbali</button><br><br><a href=\"logout.php\"><img src=\"img/logout.jpg\" title=\"LogOut\" alt=\"LogOut\"></a><br><br></td><td align=\"center\">$menu_biblio</td></tr>";
 ?>
 </table>
 </div>
