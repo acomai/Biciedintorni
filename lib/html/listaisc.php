@@ -21,7 +21,7 @@
 		while ($db->next_record()) {
 			echo "  <tr>";
 			//echo "    <td>".$db->record['nome']." ".substr($db->record['cognome'],0,1).".</td>";
-			echo "    <td>".$db->record['nome']." ".$db->record['cognome']." (Iscritta alla gita come non socia)</td>";
+			echo "    <td>".$db->record['nome']." ".$db->record['cognome']." (Non socio)</td>";
 			echo "    <td>".date("d/m/Y",$db->record['data']).".</td>";
 			echo "  </tr>";
 		}

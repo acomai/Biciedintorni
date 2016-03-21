@@ -192,6 +192,7 @@ function iscr_gita()
                 $email = addslashes(htmlentities($_POST['email']));
             }
             $datanascita = date("Y-m-d G:i:00", mktime(0, 0, 0, intval($mese), intval($giorno), intval($anno)));
+            /* Fino al 2015, i non soci potevano iscriversi ad una sola gita. Dal 2016, questo vincolo è stato rimosso.
             $db->query("SELECT * FROM nonsoci WHERE LOWER(nome) LIKE '%".strtolower($nome)."%' AND LOWER(cognome) LIKE '%".strtolower($cognome)."%' LIMIT 1");
             if($db->next_record()) {
                 makeHead("Gite");
@@ -202,6 +203,7 @@ function iscr_gita()
                 makeTail();
                 exit;
             }
+            */
             if(!$db->query("INSERT INTO nonsoci (nome,cognome,email,via,tel1,cell,citta,sesso,cap,prov,datanascita,carica) VALUES ('$nome','$cognome','$email','$via','$tel1','$cell','$citta','$sesso','$cap','$prov','$datanascita','NS');")) {
                 makeHead("Errore");
                 echo "<br><br><div id=\"msg\" align=\"center\" style=\"font-size:16px; color: #FF0000\">ERRORE inserimento dati, ti prego di contattare il WebMaster segnalando questo errore.</div>\n";
@@ -221,6 +223,7 @@ function iscr_gita()
                 makeTail();
                 exit;
             }
+            
             if(!$db->query("INSERT INTO iscrizioni (idgita,idassociato,idresp) VALUES (".$_GET['iscr'].",".intval($db->record['id']).",'".intval($db->record['id'])."-NS');")) {
                 makeHead("Errore");
                 echo "<br><br><div id=\"msg\" align=\"center\" style=\"font-size:16px; color: #FF0000\">ERRORE inserimento iscrizione, ti prego di contattare il WebMaster segnalando questo errore.</div>\n";
@@ -230,6 +233,7 @@ function iscr_gita()
                 makeTail();
                 exit;
             }
+            
             makeHead("Complimenti");
             echo "<br><br><div id=\"msg\" align=\"center\" style=\"font-size:16px; color: #0000FF\">COMPLIMENTI. Ti sei iscritto alla gita.</div>\n";
             echo "<br><br><div id=\"msg\" align=\"center\" style=\"font-size:16px;\"><a style='color: #0000FF;' href='index.php'>Ritorna alle gite.</a></div>\n";
