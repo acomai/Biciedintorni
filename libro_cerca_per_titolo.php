@@ -50,6 +50,11 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
+/* change character set to utf8 */
+if (!$conn->set_charset("utf8")) {
+	printf("Error loading character set utf8: %s\n", $conn->error);
+	exit();
+}
 // Ricerca libri con termine cercato
 
 //$sql = "SELECT id, titolo, anno, descrizione FROM libri WHERE titolo LIKE '%$titolo%' LIMIT 0,5 ;" ;
