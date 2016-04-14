@@ -440,54 +440,57 @@ class CapoGita extends Associato {
 	}
 
 	function settadati(&$query = null,$addrfile = null)
+	// modificata il 14/4/2016 per eliminare la funzione htmlentities()
 	{
 		if(get_magic_quotes_gpc() == 1)
 		{
-			$titolo = htmlentities($_POST['titolo']);
-			$tipogita = htmlentities($_POST['tipogita']);
-			$difficolta = htmlentities($_POST['difficolta']);
-			$tipobici = htmlentities($_POST['tipobici']);
-			$km = htmlentities($_POST['km']);
-			$costo = htmlentities($_POST['costo']);
-			$apl = htmlentities($_POST['apl']);
+			//$titolo = htmlentities($_POST['titolo']);
+			$titolo = $_POST['titolo'];
+			$tipogita = $_POST['tipogita'];
+			$difficolta = $_POST['difficolta'];
+			$tipobici = $_POST['tipobici'];
+			$km = $_POST['km'];
+			$costo = $_POST['costo'];
+			$apl = $_POST['apl'];
 			if($tipogita != 'B')
 			{
-				$apt = htmlentities($_POST['apt']);
-				$rpt = htmlentities($_POST['rpt']);
+				$apt = $_POST['apt'];
+				$rpt = $_POST['rpt'];
 			}
 			if($_POST['aas'] == "")
-			$aas = htmlentities($_POST['aas2']);
+			$aas = $_POST['aas2'];
 			else
-			$aas = htmlentities($_POST['aas']);
-			$rpl = htmlentities($_POST['rpl']);
-			$ral = htmlentities($_POST['ral']);
-			$itinerario = htmlentities($_POST['itinerario']);
-			$descrizione = htmlentities($_POST['descrizione']);
-			$note = htmlentities($_POST['note']);
+			$aas = $_POST['aas'];
+			$rpl = $_POST['rpl'];
+			$ral = $_POST['ral'];
+			$itinerario = $_POST['itinerario'];
+			$descrizione = $_POST['descrizione'];
+			$note = $_POST['note'];
 		}
 		else
 		{
-			$titolo = addslashes(htmlentities($_POST['titolo']));
-			$tipogita = addslashes(htmlentities($_POST['tipogita']));
-			$difficolta = addslashes(htmlentities($_POST['difficolta']));
-			$tipobici = addslashes(htmlentities($_POST['tipobici']));
-			$km = addslashes(htmlentities($_POST['km']));
-			$costo = addslashes(htmlentities($_POST['costo']));
-			$apl = addslashes(htmlentities($_POST['apl']));
+			//$titolo = addslashes(htmlentities($_POST['titolo']));
+			$titolo = addslashes($_POST['titolo']);
+			$tipogita = addslashes($_POST['tipogita']);
+			$difficolta = addslashes($_POST['difficolta']);
+			$tipobici = addslashes($_POST['tipobici']);
+			$km = addslashes($_POST['km']);
+			$costo = addslashes($_POST['costo']);
+			$apl = addslashes($_POST['apl']);
 			if($tipogita != 'B')
 			{
-				$apt = addslashes(htmlentities($_POST['apt']));
-				$rpt = addslashes(htmlentities($_POST['rpt']));
+				$apt = addslashes($_POST['apt']);
+				$rpt = addslashes($_POST['rpt']);
 			}
 			if($_POST['aas'] == "")
-			$aas = addslashes(htmlentities($_POST['aas2']));
+			$aas = addslashes($_POST['aas2']);
 			else
-			$aas = addslashes(htmlentities($_POST['aas']));
-			$rpl = addslashes(htmlentities($_POST['rpl']));
-			$ral = addslashes(htmlentities($_POST['ral']));
-			$itinerario = addslashes(htmlentities($_POST['itinerario']));
-			$descrizione = addslashes(htmlentities($_POST['descrizione']));
-			$note = addslashes(htmlentities($_POST['note']));
+			$aas = addslashes($_POST['aas']);
+			$rpl = addslashes($_POST['rpl']);
+			$ral = addslashes($_POST['ral']);
+			$itinerario = addslashes($_POST['itinerario']);
+			$descrizione = addslashes($_POST['descrizione']);
+			$note = addslashes($_POST['note']);
 		}
 		//GESTIONE UPLOAD FILE
 		if($_POST['elimg'] == '1')
@@ -2090,42 +2093,46 @@ class Amministratore extends CapoGita {
 	}
 	
 	function settadatilibro($query = null)
+	// modificata il 14/4/2016 per eliminare la call htmlentities()
 	{
 		if(get_magic_quotes_gpc() == 1)
 		{
-			$titolo = htmlentities($_POST['titolo']);
-			$sottotitolo = htmlentities($_POST['sottotitolo']);
-			$autore = htmlentities($_POST['autore']);
-			$editore = htmlentities($_POST['editore']);
-			$citta = htmlentities($_POST['citta']);
-			$anno = htmlentities($_POST['anno']);
-			$pagine = htmlentities($_POST['pagine']);
-			$lingua = htmlentities($_POST['lingua']);
-			$note = htmlentities($_POST['note']);
-			$costo = htmlentities($_POST['costo']);
-			$scaffale = htmlentities($_POST['scaffale']);
-			$classificazione = htmlentities($_POST['classificazione']);
-			$descrizione = htmlentities($_POST['descrizione']);
-			$idnazione = htmlentities($_POST['idnazione']);
-			$idarg = htmlentities($_POST['idarg']);
+			//$titolo = htmlentities($_POST['titolo']);
+			$titolo = $_POST['titolo'];
+			$sottotitolo = $_POST['sottotitolo'];
+			$autore = $_POST['autore'];
+			$editore = $_POST['editore'];
+			$citta = $_POST['citta'];
+			$anno = $_POST['anno'];
+			$pagine = $_POST['pagine'];
+			$lingua = $_POST['lingua'];
+			$note = $_POST['note'];
+			$costo = $_POST['costo'];
+			$scaffale = $_POST['scaffale'];
+			$classificazione = $_POST['classificazione'];
+			$descrizione = $_POST['descrizione'];
+			$idnazione = $_POST['idnazione'];
+			$idarg = $_POST['idarg'];
 		}
 		else
 		{
-			$titolo = addslashes(htmlentities($_POST['titolo']));
-			$sottotitolo = addslashes(htmlentities($_POST['sottotitolo']));
-			$autore = addslashes(htmlentities($_POST['autore']));
-			$editore = addslashes(htmlentities($_POST['editore']));
-			$citta = addslashes(htmlentities($_POST['citta']));
-			$anno = addslashes(htmlentities($_POST['anno']));
-			$pagine = addslashes(htmlentities($_POST['pagine']));
-			$lingua = addslashes(htmlentities($_POST['lingua']));
-			$note = addslashes(htmlentities($_POST['note']));
-			$costo = addslashes(htmlentities($_POST['costo']));
-			$scaffale = addslashes(htmlentities($_POST['scaffale']));
-			$classificazione = addslashes(htmlentities($_POST['classificazione']));
-			$descrizione = addslashes(htmlentities($_POST['descrizione']));
-			$idnazione = addslashes(htmlentities($_POST['idnazione']));
-			$idarg = addslashes(htmlentities($_POST['idarg']));
+			//$titolo = addslashes(htmlentities($_POST['titolo']));
+			$titolo = addslashes($_POST['titolo']);
+			$sottotitolo = addslashes($_POST['sottotitolo']);
+			$autore = addslashes($_POST['autore']);
+			$editore = addslashes($_POST['editore']);
+			$citta = addslashes($_POST['citta']);
+			$anno = addslashes($_POST['anno']);
+			$pagine = addslashes($_POST['pagine']);
+			$lingua = addslashes($_POST['lingua']);
+			$note = addslashes($_POST['note']);
+			$costo = addslashes($_POST['costo']);
+			$scaffale = addslashes($_POST['scaffale']);
+			$classificazione = addslashes($_POST['classificazione']);
+			$descrizione = addslashes($_POST['descrizione']);
+			//$descrizione = addslashes(htmlentities($_POST['descrizione']));
+			$idnazione = addslashes($_POST['idnazione']);
+			$idarg = addslashes($_POST['idarg']);
 		}
 		
 		if($_GET['fun'] == 'newlibro')

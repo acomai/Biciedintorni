@@ -18,12 +18,12 @@ $db2 = new db_local();
 while($db->next_record())
 {
 	$testo = "Ciao ".$db->record['nome'].",\n\nIscritti online alla gita '".$db->record['titolo']."'\n";
-	$query2 = "SELECT nome,cognome,cauzione,carica,idassociato,iscrizioni.idresp FROM anagrafiche,iscrizioni WHERE anagrafiche.id = idassociato AND idgita = ".$db->record['id']." and iscrizioni.idresp <> concat(iscrizioni.idassociato,'-NS') ORDER BY cognome,nome";
+	$query2 = "SELECT nome,cognome,cell,email,cauzione,carica,idassociato,iscrizioni.idresp FROM anagrafiche,iscrizioni WHERE anagrafiche.id = idassociato AND idgita = ".$db->record['id']." and iscrizioni.idresp <> concat(iscrizioni.idassociato,'-NS') ORDER BY cognome,nome";
 	$db2->query($query2);
 	$testo .= "Associati iscritti: ".$db2->num_rows()."\n\n"; 
 	while($db2->next_record())
 	{
-		$testo .= $db2->record['cognome']." ".$db2->record['nome'];
+		$testo .= $db2->record['cognome']." ".$db2->record['nome']." - cell: ".$db2->record['cell']." - email: ".$db2->record['email'];
 		if(($db2->record['cauzione'] != 'SI') && ($db2->record['carica'] == 'AS'))
 			$testo .= " ---> SENZA CAUZIONE\n";
 		else
