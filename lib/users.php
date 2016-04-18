@@ -2084,6 +2084,7 @@ class Amministratore extends CapoGita {
 				echo "<div align=\"center\" style=\"color: #FF0000;font-size:16\">Errore nella modifica del libro. (modlibro, query falsa)</div>";
 			$db->close();
 			unset($db);			
+			$this->listlibri();
 		}
 		else
 		{
@@ -2216,26 +2217,31 @@ if(is_numeric($_GET['list']))
 			$ordertype= "DESC";
 		if($db->query($sqlqry,true))
 		{ ?>
+		<h2 align="center">Elenco libri</h2>
 			<table style="width:900px;" align="center" border="1">
 				<tbody>
 					<tr>
+						<td align="center"><a href="<?php echo $_SERVER["PHP_SELF"]."?fun=modlibro&amp;order=id&amp;type=".$ordertype; ?>">Id</a></td>
 						<td align="center"><a href="<?php echo $_SERVER["PHP_SELF"]."?fun=modlibro&amp;order=titolo&amp;type=".$ordertype; ?>">Titolo</a></td>
 						<!-- <td align="center">Sottotitolo</td> -->
 						<td align="center"><a href="<?php echo $_SERVER["PHP_SELF"]."?fun=modlibro&amp;order=autore&amp;type=".$ordertype; ?>">Autore</a></td>
 						<!-- <td align="center">Editore</td> -->
-						<td align="center"><a href="<?php echo $_SERVER["PHP_SELF"]."?fun=modlibro&amp;order=citta&amp;type=".$ordertype; ?>">Citt&agrave;</a></td>
 						<td align="center"><a href="<?php echo $_SERVER["PHP_SELF"]."?fun=modlibro&amp;order=anno&amp;type=".$ordertype; ?>">Anno</a></td>
+						<td align="center"><a href="<?php echo $_SERVER["PHP_SELF"]."?fun=modlibro&amp;order=descrizione&amp;type=".$ordertype; ?>">Descrizione</a></td>
+						<td align="center"><a href="<?php echo $_SERVER["PHP_SELF"]."?fun=modlibro&amp;order=argomento&amp;type=".$ordertype; ?>">Argomento</a></td>
+						<td align="center"><a href="<?php echo $_SERVER["PHP_SELF"]."?fun=modlibro&amp;order=nazione&amp;type=".$ordertype; ?>">Nazione</a></td>
+						<td align="center">Modifica</td>
+						<td align="center">Elimina</td>
+						<td align="center"><a href="<?php echo $_SERVER["PHP_SELF"]."?fun=modlibro&amp;order=citta&amp;type=".$ordertype; ?>">Citt&agrave;</a></td>
+						
 						<td align="center"><a href="<?php echo $_SERVER["PHP_SELF"]."?fun=modlibro&amp;order=pagine&amp;type=".$ordertype; ?>">Pagine</a></td>
 						<td align="center"><a href="<?php echo $_SERVER["PHP_SELF"]."?fun=modlibro&amp;order=lingua&amp;type=".$ordertype; ?>">Lingua</a></td>
 						<!-- <td align="center">Note</td>
 						<td align="center">Costo</td> -->
 						<td align="center"><a href="<?php echo $_SERVER["PHP_SELF"]."?fun=modlibro&amp;order=scaffale&amp;type=".$ordertype; ?>">Scaffale</a></td>
 						<td align="center"><a href="<?php echo $_SERVER["PHP_SELF"]."?fun=modlibro&amp;order=class&amp;type=".$ordertype; ?>">Classificazione</a></td>
-						<td align="center"><a href="<?php echo $_SERVER["PHP_SELF"]."?fun=modlibro&amp;order=descrizione&amp;type=".$ordertype; ?>">Descrizione</a></td>
-						<td align="center"><a href="<?php echo $_SERVER["PHP_SELF"]."?fun=modlibro&amp;order=argomento&amp;type=".$ordertype; ?>">Argomento</a></td>
-						<td align="center"><a href="<?php echo $_SERVER["PHP_SELF"]."?fun=modlibro&amp;order=nazione&amp;type=".$ordertype; ?>">Nazione</a></td>
-						<td align="center">Modifica</td>
-						<td align="center">Elimina</td>
+						
+						
 					</tr>
 						<?php
 						$i = 0;
@@ -2246,23 +2252,27 @@ if(is_numeric($_GET['list']))
 							while($db->next_record())
 							{
 								//echo "<tr><td colspan=\"17\"><pre>".print_r($db->record)."</pre></td></tr>";
-								echo "<tr><td>".$db->record['titolo']."&nbsp;</td>\n						";
+								echo "<tr><td>".$db->record['id']."&nbsp;</td>\n						";
+								echo "<td>".$db->record['titolo']."&nbsp;</td>\n						";
 								//echo "<td>".$db->record['sottotitolo']."&nbsp;</td>\n						";
-								echo "<td>".$db->record['autore']."&nbsp;</td>\n						";
+								echo "<td>".$db->record['autore']."&nbsp;</td>\n	";
+								echo "<td>".$db->record['anno']."&nbsp;</td>\n	";
+								echo "<td>".$db->record['descrizione']."&nbsp;</td>\n						";
+								echo "<td>".$db->record['argomento']."&nbsp;</td>\n						";
+								echo "<td>".$db->record['nazione']."&nbsp;</td>\n						";
+								echo "<td><a href=\"admin.php?fun=modlibro&amp;id=".$db->record['id']."\">Modifica</a></td>\n						";
+								echo "<td><a href=\"\" onclick=\"javascript: eliminalibro(".$db->record['id']."); return false; \">Elimina</a></td>\n						";
 								//echo "<td>".$db->record['editore']."&nbsp;</td>\n						";
 								echo "<td>".$db->record['citta']."&nbsp;</td>\n						";
-								echo "<td>".$db->record['anno']."&nbsp;</td>\n						";
+								
 								echo "<td>".$db->record['pagine']."&nbsp;</td>\n						";
 								echo "<td>".$db->record['lingua']."&nbsp;</td>\n						";
 								//echo "<td>".$db->record['note']."&nbsp;</td>\n						";
 								//echo "<td>".$db->record['costo']."&nbsp;</td>\n						";
 								echo "<td>".$db->record['scaffale']."&nbsp;</td>\n						";
 								echo "<td>".$db->record['classificazione']."&nbsp;</td>\n						";
-								echo "<td>".$db->record['descrizione']."&nbsp;</td>\n						";
-								echo "<td>".$db->record['argomento']."&nbsp;</td>\n						";
-								echo "<td>".$db->record['nazione']."&nbsp;</td>\n						";
-								echo "<td><a href=\"admin.php?fun=modlibro&amp;id=".$db->record['id']."\">Modifica</a></td>\n						";
-								echo "<td><a href=\"\" onclick=\"javascript: eliminalibro(".$db->record['id']."); return false; \">Elimina</a></td>\n						";
+								
+								
 							}
 						}
 						?>

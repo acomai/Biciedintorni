@@ -2,6 +2,16 @@
 makeHead("","<script type=\"text/javascript\" src=\"../js/ajax.js\"></script>");
 */
 ?>
+<!DOCTYPE html>
+<html lang="it">
+<!-- Gestisce la modifica di un libro nell'applicativo di Bici e Dintorni.
+	Ci si arriva dall'area riservata, con profilo amministratore.  -->
+<head>
+  <title>FIAB Torino Bici e Dintorni - Modifica libro biblioteca</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+</head>
 <div id="title" align="center">Modifica Libro</div>
 <br>
 <form id="modlibro" method="post" action="admin.php?fun=modlibro&amp;save=1" name="modlibro">
@@ -9,27 +19,27 @@ makeHead("","<script type=\"text/javascript\" src=\"../js/ajax.js\"></script>");
     <tbody>
       <tr>
         <td>Titolo</td>
-        <td><input id="titolo" maxlength="50" size="20" name="titolo" value="<?php echo $db->record['titolo']; ?>"></td>
+        <td><input id="titolo" maxlength="50" size="50" name="titolo" value="<?php echo $db->record['titolo']; ?>"></td>
       </tr>
       <tr>
         <td>Sottotitolo</td>
-        <td><input id="sottotitolo" maxlength="50" size="20" name="sottotitolo" value="<?php echo $db->record['sottotitolo']; ?>"></td>
+        <td><input id="sottotitolo" maxlength="50" size="50" name="sottotitolo" value="<?php echo $db->record['sottotitolo']; ?>"></td>
       </tr>
       <tr>
         <td>Autore</td>
-        <td><input id="autore" maxlength="50" size="20" name="autore" value="<?php echo $db->record['autore']; ?>"></td>
+        <td><input id="autore" maxlength="50" size="50" name="autore" value="<?php echo $db->record['autore']; ?>"></td>
       </tr>
       <tr>
         <td>Editore</td>
-        <td><input id="editore" maxlength="50" size="20" name="editore" value="<?php echo $db->record['editore']; ?>"></td>
+        <td><input id="editore" maxlength="50" size="50" name="editore" value="<?php echo $db->record['editore']; ?>"></td>
       </tr>
       <tr>
         <td>Citt&agrave;</td>
-        <td><input id="citta" maxlength="50" size="20" name="citta" value="<?php echo $db->record['citta']; ?>"></td>
+        <td><input id="citta" maxlength="50" size="50" name="citta" value="<?php echo $db->record['citta']; ?>"></td>
       </tr>
       <tr>
         <td>Anno</td>
-        <td><input id="anno" name="anno" maxlength="4" size="20" value="<?php echo $db->record['anno']; ?>"></td>
+        <td><input id="anno" name="anno" maxlength="4" size="4" value="<?php echo $db->record['anno']; ?>"></td>
       </tr>
       <tr>
         <td>Pagine</td>
@@ -49,15 +59,15 @@ makeHead("","<script type=\"text/javascript\" src=\"../js/ajax.js\"></script>");
       </tr>
       <tr>
         <td>Scaffale</td>
-        <td><input maxlength="50" size="20" name="scaffale" value="<?php echo $db->record['scaffale']; ?>"></td>
+        <td><input maxlength="50" size="50" name="scaffale" value="<?php echo $db->record['scaffale']; ?>"></td>
       </tr>
       <tr>
         <td>Classificazione</td>
-        <td><input maxlength="255" size="20" name="classificazione" value="<?php echo $db->record['classificazione']; ?>"></td>
+        <td><input maxlength="50" size="50" name="classificazione" value="<?php echo $db->record['classificazione']; ?>"></td>
       </tr>
       <tr>
         <td>Descrizione</td>
-        <td><textarea name="descrizione" rows="10" cols="19"><?php echo $db->record['descrizione']; ?></textarea></td>
+        <td><textarea name="descrizione" rows="5" cols="50"><?php echo $db->record['descrizione']; ?></textarea></td>
       </tr>
       <tr>
         <td>Nazione</td>
