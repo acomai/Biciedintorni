@@ -2217,7 +2217,8 @@ if(is_numeric($_GET['list']))
 			$ordertype= "DESC";
 		if($db->query($sqlqry,true))
 		{ ?>
-		<h2 align="center">Elenco libri</h2>
+		<h2 align="center">FIAB Torino Bici e Dintorni - Elenco libri biblioteca</h2>
+
 			<table style="width:900px;" align="center" border="1">
 				<tbody>
 					<tr>
