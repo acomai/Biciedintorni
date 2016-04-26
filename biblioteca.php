@@ -240,13 +240,14 @@ if ($result->num_rows > 0) {
 echo "<hr />";
 
 // Elenco delle nazioni a cui si riferiscono libri presenti in biblioteca
-$sql = "SELECT nome FROM nazioni ORDER BY nome;" ;
+$sql = "SELECT nome, id FROM nazioni ORDER BY nome;" ;
 $result = $conn->query($sql);
 echo "<strong>Nazioni su cui esistono libri nella nostra biblioteca: </strong>";
 if ($result->num_rows > 0) {
 	// output data of each row
 	while ($row = $result->fetch_assoc()) {
-		echo $row["nome"]. " | ";
+		$idnaz = $row['id'];
+		echo "<a href='libro_cerca_per_nazione.php?nazione=$idnaz'>". $row["nome"]. "</a>". " | ";
 	}
 } else {
 	echo "0 results";
