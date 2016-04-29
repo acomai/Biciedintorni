@@ -44,8 +44,9 @@
 							if(!$db->query("UPDATE anagrafiche SET pw = '".$_POST["password"]."' WHERE user = '".$login."' LIMIT 1;",true))
 								echo "ERRORE PW";*/
 							if($_POST["email"] != '')
-								mail($_POST["email"],"Bici&Dintorni - Cambio Password.",
+								mail($_POST["email"],"FIAB Torino Bici e Dintorni - Cambio Password.",
 										"Ciao ".$login.",\n".
+										"\n".
 										"hai modificato la tua password, questi sono i tuoi nuovi dati:\n".
 										"nomeutente: ".$login." \n".
 										"password: ".$_POST["password"]);
@@ -56,7 +57,7 @@
 				else
 				{
 					echo "<html><head><title>Cambio password</title></head><body>";
-					echo "La password puÚ contenere solo numeri e lettere e deve essere di minimo 8 caratteri.";
+					echo "La password puÔøΩ contenere solo numeri e lettere e deve essere di minimo 8 caratteri.";
 				}
 			}
 			else
@@ -72,13 +73,11 @@
 		$act .= "passch.php";
 	makeHead("Cambio password");
 ?>
-<center>Se inserisci l'indirizzo email ti verr‡ spedita una mail con il tuo username e la tua password modificata.</center>
+<h2><center>FIAB Torino Bici e Dintorni - area riservata - modifica password</center></h2>
+
 <form method="post" action="<?php echo $act; ?>">
 	<table align="center" border="0">
-	  <tr>
-		<td >Inserisci la tua Email dove vorrai essere contattato da Bici&amp;Dintorni [Opzionale]:</td>
-		<td><input size="50" name="email" maxlength="100" value="<?php echo $db->record['email']; ?>"></td>
-	  </tr>
+	  
 	  <tr>
 		<td >Nuova Password [Obbligatorio]:</td>
 		<td><input type="password" size="20" name="password" maxlength="20"></td>
@@ -86,6 +85,10 @@
 	  <tr>
 		<td>Ripeti Nuova Password [Obbligatorio]:</td>
 		<td><input type="password" size="20" name="password2" maxlength="20"></td>
+	  </tr>
+	  <tr>
+		<td>Email [Opzionale, se la inserisci ti verr√† spedita la nuova password]:</td>
+		<td><input size="50" name="email" maxlength="100" value="<?php echo $db->record['email']; ?>"></td>
 	  </tr>
 	  <tr>
 		<td align="center" colspan="2">

@@ -34,9 +34,9 @@
 							"From: WebMaster Bici&Dintorni <webmaster@biciedintorni.it>\r\n" .
 							"Reply-To: <webmaster@biciedintorni.it>\r\n" .
 							"X-Mailer: Mailer/Bici&Dintorni\r\n");
-					if(mail($email, "Richiesta Password - Bici&Dintorni", "Qualcuno ha richiesto la modifica della propria password.<br>".
-							"Se questa richiesta è autentica, cliccare sul link seguente per ricevere un'e-mail con i dati.<br>".
-							"<a href='http://www.biciedintorni.it/application/admin.php?reqpass=1&sub=2&code=".$reqpass."'>Richiedi nuova password</a>",
+					if(mail($email, "Richiesta Password - FIAB Torino Bici e Dintorni", "Qualcuno ha richiesto la modifica della password. ".
+							"Se questa richiesta è autentica, cliccare sul link seguente per ricevere una email con i dati: ".
+							"'http://www.biciedintorni.it/application/admin.php?reqpass=1&sub=2&code=".$reqpass."'",
 							"From: WebMaster Bici&Dintorni <webmaster@biciedintorni.it>\r\n" .
 							"Reply-To: <webmaster@biciedintorni.it>\r\n" .
 							"X-Mailer: Mailer/Bici&Dintorni\r\n"))
@@ -88,10 +88,10 @@
 							"From: WebMaster Bici&Dintorni <webmaster@biciedintorni.it>\r\n" .
 							"Reply-To: <webmaster@biciedintorni.it>\r\n" .
 							"X-Mailer: Mailer/Bici&Dintorni\r\n");
-					if(mail($email, "Modifica Password - Bici&Dintorni", "La modifica della propria password è avvenuta correttamente.<br>".
-							"Ecco i suoi nuovi dati:<br>".
-							"User: ".$user."\r\n<br>".
-							"Password: ".$pass."\r\n<br>",
+					if(mail($email, "Modifica Password - FIAB Torino Bici e Dintorni", "La modifica della password è avvenuta correttamente. ".
+							"Ecco i suoi nuovi dati. "."\r\n".
+							"User: ".$user."\r\n".
+							"Password: ".$pass."\r\n",
 							"From: WebMaster Bici&Dintorni <webmaster@biciedintorni.it>\r\n" .
 							"Reply-To: <webmaster@biciedintorni.it>\r\n" .
 							"X-Mailer: Mailer/Bici&Dintorni\r\n"))
@@ -193,8 +193,11 @@
 			$menu_biblio .="<button class=\"bottonimenu\" id=\"".$value."\" onmouseup=\"document.getElementById('".$value."').style.background = '#0000FF url(img/bottonelungo2.jpg) center no-repeat';\" onmousedown=\"document.getElementById('".$value."').style.background = '#FF0000 url(img/bottonelungo2.jpg) center no-repeat';\" onclick=\"window.location='".$dove."?fun=".$value."'\">".$key."</button><br><br>\n";
 		}
 	}
-	echo "<tr><td align=\"center\">$menu_gite</td><td align=\"center\">$menu_amm <a href=\"logout.php\"><img src=\"img/logout.jpg\" title=\"LogOut\" alt=\"LogOut\"></a></td><td align=\"center\">$menu_biblio</td></tr>";
-	//echo "<tr><td align=\"center\">$menu_gite</td><td align=\"center\">$menu_amm <button class=\"bottonimenu\" id=\"verbali\" onmouseup=\"document.getElementById('verbali').style.background = '#0000FF url(img/bottonelungo2.jpg) center no-repeat';\" onmousedown=\"document.getElementById('verbali').style.background = '#FF0000 url(img/bottonelungo2.jpg) center no-repeat';\" onclick=\"window.location='../index.php?option=com_content&task=view&id=27'\">Visualizza i Verbali</button><br><br><a href=\"logout.php\"><img src=\"img/logout.jpg\" title=\"LogOut\" alt=\"LogOut\"></a><br><br></td><td align=\"center\">$menu_biblio</td></tr>";
+	//echo "<tr><td align=\"center\">$menu_gite</td><td align=\"center\">$menu_amm <a href=\"logout.php\"><img src=\"img/logout.jpg\" title=\"LogOut\" alt=\"LogOut\"></a></td><td align=\"center\">$menu_biblio</td></tr>";
+	echo "<tr><td align=\"center\">$menu_gite</td><td align=\"center\">$menu_amm <a href=\"http://www.biciedintorni.it/wordpress/associazione/verbali/\"><button class=\"bottonimenu\" id=\"verbali\" onmouseup=\"document.getElementById('verbali').style.background = '#0000FF url(img/bottonelungo2.jpg)
+	center no-repeat';\" onmousedown=\"document.getElementById('verbali').style.background = '#FF0000 url(img/bottonelungo2.jpg) center no-repeat';\" onclick=\"http://www.biciedintorni.it/wordpress/associazione/verbali/\">Visualizza i Verbali</button></a><br><br><a href=\"logout.php\"><img src=\"img/logout.jpg\" title=\"LogOut\" alt=\"LogOut\"></a><br><br></td><td align=\"center\">$menu_biblio</td></tr>";
+	//echo "<tr><td align=\"center\">$menu_gite</td><td align=\"center\">$menu_amm <button class=\"bottonimenu\" id=\"verbali\" onmouseup=\"document.getElementById('verbali').style.background = '#0000FF url(img/bottonelungo2.jpg) 
+	//center no-repeat';\" onmousedown=\"document.getElementById('verbali').style.background = '#FF0000 url(img/bottonelungo2.jpg) center no-repeat';\" onclick=\"window.location='../index.php?option=com_content&task=view&id=27'\">Visualizza i Verbali</button><br><br><a href=\"logout.php\"><img src=\"img/logout.jpg\" title=\"LogOut\" alt=\"LogOut\"></a><br><br></td><td align=\"center\">$menu_biblio</td></tr>";
 ?>
 </table>
 </div>

@@ -102,23 +102,26 @@ class Associato {
 		$db->query("SELECT * from anagrafiche WHERE approvato = 1 AND id > 0 AND (anagrafiche.a".date("Y")." = 1 OR ".date("m")." <= 3) and id = '".$this->matricola."';");
 		if(!$db->next_record())
 		{
-			echo "<br><br><div id=\"msg\" align=\"center\" style=\"color: #FF0000\">Il tuo utente non risulta approvato, forse non hai ancora rinnovato per quest'anno. Se hai fatto l'iscrizione per quest'anno da poco...il piu presto verrai abilitato. Nel frattempo contatta la sede o il capogita per iscriverti. Ci scusiamo per il disagio...riprova fra breve ad entrare sul sito, se sarai fortunato ;) qualcuno ti avr&agrave; abilitato...</div>";
+			echo "<br><br><div id=\"msg\" align=\"center\" style=\"color: #FF0000\">Non puoi iscriverti come socio,
+				forse non hai ancora rinnovato per quest'anno. Fai Logout e iscriviti come non socio. 
+				In caso di problemi scrivi a info@biciedintorni.it.</div>";
+		} else {
+				echo "<div id=\"msg\" align=\"center\">Chi vuoi iscrivere a questa gita?</div>";
+				echo "<br><br><div id=\"msg\" align=\"center\">\n";
+				$db->query("SELECT * from anagrafiche WHERE approvato = 1 AND id > 0 AND (anagrafiche.a".date("Y")." = 1 OR ".date("m")." <= 3) ORDER BY cognome,nome;");
+				echo "\t<select size=\"1\" name=\"associato\" id=\"associato\">\n";
+				while($db->next_record())
+				{
+					if(intval($db->record['id']) == intval($this->matricola))
+					$s = "selected ";
+					echo "\t\t\t<option ".$s."value=\"".intval($db->record['id'])."\">".$db->record['cognome']." ".$db->record['nome']."</option>\n";
+					$s = "";
+				}
+				echo "  	</select>\n</div>";
+				echo "<br><div align=\"center\"><a href=\"\" onclick=\"el = prendiElementoDaId('associato'); iscrivi(".$idgita.",el.value); return false; \">OK</a></div>\n<br><br><br><br><br><br><br><br>";
+				$db->close();
+				unset($db);
 		}
-		echo "<div id=\"msg\" align=\"center\">Chi vuoi iscrivere a questa gita?</div>";
-		echo "<br><br><div id=\"msg\" align=\"center\">\n";
-		$db->query("SELECT * from anagrafiche WHERE approvato = 1 AND id > 0 AND (anagrafiche.a".date("Y")." = 1 OR ".date("m")." <= 3) ORDER BY cognome,nome;");
-		echo "\t<select size=\"1\" name=\"associato\" id=\"associato\">\n";
-		while($db->next_record())
-		{
-			if(intval($db->record['id']) == intval($this->matricola))
-			$s = "selected ";
-			echo "\t\t\t<option ".$s."value=\"".intval($db->record['id'])."\">".$db->record['cognome']." ".$db->record['nome']."</option>\n";
-			$s = "";
-		}
-		echo "  	</select>\n</div>";
-		echo "<br><div align=\"center\"><a href=\"\" onclick=\"el = prendiElementoDaId('associato'); iscrivi(".$idgita.",el.value); return false; \">OK</a></div>\n<br><br><br><br><br><br><br><br>";
-		$db->close();
-		unset($db);
 	}
 
 	function modifica_dati()
