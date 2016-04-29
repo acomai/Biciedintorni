@@ -4,7 +4,7 @@
 	Ci si arriva dalle pagine delle gite, con "Iscriviti", oppure chiedendo di entrare
 	nell'area riservata.  -->
 <head>
-  <title>FIAB Torino Bici e Dintorni - recupero password area soci</title>
+  <title>FIAB Torino Bici e Dintorni - richiesta reimpostazione password area riservata</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
@@ -30,7 +30,7 @@ include_once(dirname(__FILE__)."/class.php");
  //makeHead("Amministrazione - Recupero password"); ?>
 
 <div class="row">
-		<div class="col-xs-12 text-center"><h3>FIAB Torino Bici e Dintorni - Recupero password area soci</h3></div></div>
+		<div class="col-xs-12 text-center"><h3>FIAB Torino Bici e Dintorni - Reimpostazione password area soci</h3></div></div>
   <form class="form-group" name="login" method="post" action="http://www.biciedintorni.it/application/admin.php?reqpass=1&sub=1">
 	<!-- <table align="center" width="200px">
 	  <tr class="row">
@@ -58,7 +58,7 @@ include_once(dirname(__FILE__)."/class.php");
 	  </tr>
 	</table> -->
 	  <div class="row">
-		<div class="col-xs-12 text-center">Per recuperare la password dovete compilare i campi sottostanti.<br>Il sistema cercherà nel database i vostri dati e se esistono vi invierà automaticamente una e-mail.</div>
+		<div class="col-xs-12 text-center">Per reimpostare la password dovete compilare i campi sottostanti.<br>Il sistema cercherà nel database i vostri dati e se esistono vi invierà automaticamente una email.</div>
 	  </div>
 	  <div class="row">
 		<div class="col-xs-12"><input class="form-control" type="text" placeholder="nome" 
