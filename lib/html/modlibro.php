@@ -12,10 +12,15 @@ makeHead("","<script type=\"text/javascript\" src=\"../js/ajax.js\"></script>");
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 </head>
+
 <div align="center"><strong>FIAB Torino Bici e Dintorni - Modifica Libro</strong>
 <script>
     document.write(' - <a href="' + document.referrer + '">Indietro</a>');
 </script></div>
+<?php 
+$login = $_SESSION['login'];
+echo "<div align='center'>Ciao, <strong>" . $login . "</strong></div>";
+?>
 <br>
 <form id="modlibro" method="post" action="admin.php?fun=modlibro&amp;save=1" name="modlibro">
   <table align="center" style="text-align: left;" border="1" cellpadding="2" cellspacing="2">
@@ -134,4 +139,5 @@ makeHead("","<script type=\"text/javascript\" src=\"../js/ajax.js\"></script>");
     </tbody>
   </table>
 </form>
+
 <br>
