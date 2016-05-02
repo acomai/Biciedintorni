@@ -3,7 +3,7 @@
 <!-- Gestisce la visualizzazione gite nell'applicativo di Bici e Dintorni.
 	Consente l'iscrizione.  -->
 <head>
-  <title>FIAB Torino Bici e Dintorni - gita</title>
+  <!--  title>FIAB Torino Bici e Dintorni - gita - <?php echo $db->record['titolo']; ?></title>-->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
@@ -30,8 +30,9 @@ if($db->next_record())
 									/*else 
 										echo ", Nessun iscritto a questa gita.";*/
 									
-makeHead("Gita - ".$db->record['titolo'],"","onload=\"init();\"");
+makeHead("Bici e Dintorni - ".$db->record['titolo'],"","onload=\"init();\"");
 ?></div>
+
 <div id="title" align="center"><?php echo $db->record['titolo']; ?></div>
 <div id="tdresp" align="center">Capogita: <?php if ($db->record['email'] != '') {
         	 echo "<a href=\"mail.php?id=".$db->record['resp']."\" title\"Invia email al capogita\">".$db->record['nome']." ".$db->record['cognome']."</a>";
