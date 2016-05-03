@@ -18,8 +18,29 @@ makeHead("","<script type=\"text/javascript\" src=\"../js/ajax.js\"></script>");
     document.write(' - <a href="' + document.referrer + '">Indietro</a>');
 </script></div>
 <?php 
+include_once("lib/class.php");
 $login = $_SESSION['login'];
-echo "<div align='center'>Ciao, <strong>" . $login . "</strong></div>";
+
+if ($_GET['sez'] == 'consulta') {
+	makeHead("Consultazione profilo utente", "", "");
+	consulta_profilo();
+	makeTail();
+	exit;
+}
+unset($db2);
+$db2 = new db_local();
+$db2->query("SELECT * FROM anagrafiche WHERE user = '$login';");
+{
+	while ($db2->next_record())
+	{
+		$id = $db2->record['id'];
+		
+	}
+}
+//echo "<div align='center'>Ciao, <strong>" . $login . "</strong>
+//<a href='/application/lib/html/consulta_profilo.php?user=$id'> consulta il tuo profilo</a></div>";
+echo "<div align='center'>Ciao, <strong>" . $login . "</strong>
+<a href='admin.php?fun=consulta_profilo'> consulta il tuo profilo</a></div>";
 ?>
 <br>
 <form id="modlibro" method="post" action="admin.php?fun=modlibro&amp;save=1" name="modlibro">

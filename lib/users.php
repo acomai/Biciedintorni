@@ -31,12 +31,88 @@ class Associato {
 			$this->approvato = $record['approvato'];
 			$this->dataiscrizione = $record['dataiscrizione'];
 
-			$this->menu = array("Le tue iscrizioni"=>"iscrizioni","Modifica dati personali"=>"moddati","Visualizza associati"=>"visass","Aggiungi un evento"=>"newevento","Modifica un evento"=>"modevento","Elimina un evento"=>"delevento","Segnala un errore nel sito"=>"bugreport","Visualizza tutti gli eventi"=>"listaeventi");
+			$this->menu = array("Le tue iscrizioni"=>"iscrizioni","Modifica dati personali"=>"moddati","Visualizza associati"=>"visass","Aggiungi un evento"=>"newevento","Modifica un evento"=>"modevento","Elimina un evento"=>"delevento","Segnala un errore nel sito"=>"bugreport","Visualizza tutti gli eventi"=>"listaeventi","Consulta il tuo profilo"=>"consulta_profilo");
 			return true;
 		}
 		else
 		return false;
 	}
+	
+	function consulta_profilo()
+	{
+		$user = $_SESSION['login'];
+		echo "<div align='center'><strong>FIAB Torino Bici e Dintorni - Consultazione profilo</strong></div>";
+		echo "<br>";
+		echo "<div align='center'>Verifica i tuoi dati. Se è necessaria qualche modifica, 
+				segnala il cambiamento desiderato con una mail a 
+				<a href='mailto:info@biciedintorni.it'>info@biciedintorni.it</a></div>";
+		echo "<br>";
+		$db = new db_local();
+		$db->query("SELECT * FROM anagrafiche WHERE user = '$user' ;");
+		if($db->next_record())
+		{
+			$nome = $this->nome;
+			$cognome = $this->cognome;
+
+			echo "nome = " . $this->nome . "<br>";			
+			echo "cognome = " . $this->cognome . "<br>";
+			echo "username = ".  $this->user . "<br>";
+			echo "citta = " . $this->citta . "<br>";
+			echo "cap = " . $this->cap . "<br>";
+			echo "via = " . $this->via . "<br>";
+			echo "data di nascita = " . $this->datanascita . "<br>";
+			echo "cellulare = " . $this->cell . "<br>";
+			echo "altro tel (1) = " . $this->tel1 . "<br>";
+			echo "altro tel (2) = " . $this->tel2 . "<br>";
+			echo "email = " . $this->email . "<br>";
+			
+			switch ($this->carica) {
+				case 'A': $carica = "Amministrazione";
+				break;
+				case 'S': $carica = "Segreteria";
+				break;
+				case 'C': $carica = "Capogita";
+				break;
+				case 'VS': $carica = "Volontario Sede";
+				break;
+				case 'VG': $carica = "Volontario Giornalino";
+				break;
+				case 'VG': $carica = "Volontario Altro";
+				break;
+				case 'AS': $carica = "Associato";
+				break;
+				default: $carica = "Non specificata";
+				break;
+			}
+			echo "ruolo = " . $carica . "<br>";
+			echo "data di iscrizione = " . $this->dataiscrizione . "<br>";
+			$a2013 = $this->a2013;
+			echo "Anni di iscrizione: ";
+			if ($this->a2007 == "1") {
+				echo "2007 " ;
+			}
+			if ($this->a2008 == "1") {
+				echo "2008 ";
+			}
+			if ($this->a2009 == 1) echo "2009 ";
+			if ($this->a2010 == 1) echo "2010 ";
+			if ($this->a2011 == 1) echo "2011 ";
+			if ($this->a2012 == 1) echo "2012 ";
+			if ($a2013 == "1") echo "2013 ";
+			if ($this->a2014 == 1) echo "2014 ";
+			if ($this->a2015 == "1") echo "2015 ";
+			if ($this->a2016 == 1) echo "2016 ";
+			if ($this->a2017 == 1) echo "2017 ";
+			if ($this->a2018 == 1) echo "2018 ";
+			if ($this->a2019 == 1) echo "2019 ";
+			if ($this->a2020 == 1) echo "2020 ";
+			
+			 
+			echo "<br><br>";
+
+		}
+	}
+	
 	function esegui_query($query)
 	{
 		$db = new db_local();

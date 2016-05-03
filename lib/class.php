@@ -21,7 +21,7 @@
 
 
 //funzioni limitate
-$fun_amm = array("iscrizioni","listagite","listaeventi","iscritti","newass","modass","etichette","listautenti","mailcollettive");
+$fun_amm = array("iscrizioni","listagite","listaeventi","iscritti","newass","modass","etichette","listautenti","mailcollettive","consulta_profilo");
 //$fun_amm = array("iscrizioni","listagite","listaeventi","iscritti","newass","modass");
 //$fun_amm = array("newass");
 $fun_gite = array("newgita","modgita","newevento","modevento");
