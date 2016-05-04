@@ -21,10 +21,10 @@
 
 
 //funzioni limitate
-$fun_amm = array("iscrizioni","listagite","listaeventi","iscritti","newass","modass","etichette","listautenti","mailcollettive","consulta_profilo");
+$fun_amm = array("newass","modass","etichette","listautenti","mailcollettive","consulta_profilo");
 //$fun_amm = array("iscrizioni","listagite","listaeventi","iscritti","newass","modass");
 //$fun_amm = array("newass");
-$fun_gite = array("newgita","modgita","newevento","modevento");
+$fun_gite = array("iscrizioni","newgita","modgita","listagite","iscritti","newevento","modevento","listaeventi",);
 $fun_biblio = array("modlibro","newlibro","modcartina","newcartina","newnazione","newargomento");
 $fun_mail = array("newmail","modmail");
 $fun_gruppi = array("newgruppo","modgruppo","menuprincipale");

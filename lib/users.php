@@ -22,7 +22,11 @@ class Associato {
 			$this->pw = $record['pw'];
 			$this->passch = $record['passch'];
 			$this->via = $record['via'];
+			$this->citta = $record['citta'];
+			$this->cap = $record['cap'];
+			$this->prov = $record['prov'];
 			$this->datanascita = $record['datanascita'];
+			$this->cell = $record['cell'];
 			$this->tel1 = $record['tel1'];
 			$this->tel2 = $record['tel2'];
 			$this->email = $record['email'];
@@ -30,6 +34,20 @@ class Associato {
 			$this->saldo = $record['saldo'];
 			$this->approvato = $record['approvato'];
 			$this->dataiscrizione = $record['dataiscrizione'];
+			$this->a2007 = $record['a2007'];
+			$this->a2008 = $record['a2008'];
+			$this->a2009 = $record['a2009'];
+			$this->a2010 = $record['a2010'];
+			$this->a2011 = $record['a2011'];
+			$this->a2012 = $record['a2012'];
+			$this->a2013 = $record['a2013'];
+			$this->a2014 = $record['a2014'];
+			$this->a2015 = $record['a2015'];
+			$this->a2016 = $record['a2016'];
+			$this->a2017 = $record['a2017'];
+			$this->a2018 = $record['a2018'];
+			$this->a2019 = $record['a2019'];
+			$this->a2020 = $record['a2020'];
 
 			$this->menu = array("Le tue iscrizioni"=>"iscrizioni","Modifica dati personali"=>"moddati","Visualizza associati"=>"visass","Aggiungi un evento"=>"newevento","Modifica un evento"=>"modevento","Elimina un evento"=>"delevento","Segnala un errore nel sito"=>"bugreport","Visualizza tutti gli eventi"=>"listaeventi","Consulta il tuo profilo"=>"consulta_profilo");
 			return true;
@@ -51,20 +69,20 @@ class Associato {
 		$db->query("SELECT * FROM anagrafiche WHERE user = '$user' ;");
 		if($db->next_record())
 		{
-			$nome = $this->nome;
-			$cognome = $this->cognome;
-
-			echo "nome = " . $this->nome . "<br>";			
-			echo "cognome = " . $this->cognome . "<br>";
-			echo "username = ".  $this->user . "<br>";
-			echo "citta = " . $this->citta . "<br>";
-			echo "cap = " . $this->cap . "<br>";
-			echo "via = " . $this->via . "<br>";
-			echo "data di nascita = " . $this->datanascita . "<br>";
-			echo "cellulare = " . $this->cell . "<br>";
-			echo "altro tel (1) = " . $this->tel1 . "<br>";
-			echo "altro tel (2) = " . $this->tel2 . "<br>";
-			echo "email = " . $this->email . "<br>";
+			echo "<div><table align='center' style='text-align: left;' border='0' cellpadding='2' cellspacing='2'>";
+			echo "<tbody>";
+			echo "<tr><td>username</td><td><strong>".  $this->user . "</strong></td></tr>";
+			echo "<tr><td>nome</td><td>" . $this->nome . "</td></tr>";			
+			echo "<tr><td>cognome</td><td>" . $this->cognome . "</td></tr>";
+			echo "<tr><td>data di nascita</td><td>" . $this->datanascita . "</td></tr>";
+			echo "<tr><td>indirizzo</td><td>" . $this->via . "</td></tr>";
+			echo "<tr><td>cap</td><td>" . $this->cap . "</td></tr>";
+			echo "<tr><td>comune</td><td>" . $this->citta . "</td></tr>";
+			echo "<tr><td>provincia</td><td>" . $this->prov . "</td></tr>";
+			echo "<tr><td>cellulare</td><td>" . $this->cell . "</td></tr>";
+			echo "<tr><td>altro tel (1)</td><td>" . $this->tel1 . "</td></tr>";
+			echo "<tr><td>altro tel (2)</td><td>" . $this->tel2 . "</td></tr>";
+			echo "<tr><td>email</td><td>" . $this->email . "</td></tr>";
 			
 			switch ($this->carica) {
 				case 'A': $carica = "Amministrazione";
@@ -79,15 +97,15 @@ class Associato {
 				break;
 				case 'VG': $carica = "Volontario Altro";
 				break;
-				case 'AS': $carica = "Associato";
+				case 'AS': $carica = "Socio";
 				break;
 				default: $carica = "Non specificata";
 				break;
 			}
-			echo "ruolo = " . $carica . "<br>";
-			echo "data di iscrizione = " . $this->dataiscrizione . "<br>";
+			echo "<tr><td>ruolo</td><td>" . $carica . "</td></tr>";
+
 			$a2013 = $this->a2013;
-			echo "Anni di iscrizione: ";
+			echo "<tr><td>Anni di iscrizione</td><td>";
 			if ($this->a2007 == "1") {
 				echo "2007 " ;
 			}
@@ -107,7 +125,7 @@ class Associato {
 			if ($this->a2019 == 1) echo "2019 ";
 			if ($this->a2020 == 1) echo "2020 ";
 			
-			 
+			echo "</td></tr></tbody></table></div>"; 
 			echo "<br><br>";
 
 		}

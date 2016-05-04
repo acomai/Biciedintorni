@@ -165,7 +165,8 @@
 
 <h1><em>my</em> Bici&amp;Dintorni [area riservata]
 </h1>
-<div id="welcome">Bentornato/a <b><? echo $user->nome." ".$user->cognome; ?></b></div>
+<div id="welcome">Ciao, <b><a href="admin.php?fun=consulta_profilo"><?echo $user->nome." ".$user->cognome; 
+?></a></b></div>
 <p>Consulta i <a href="http://www.biciedintorni.it/wordpress/associazione/verbali/">verbali delle assemblee e dei consigli direttivi</a></p>
 <p>Scarica la <a href="http://www.biciedintorni.it/wordpress/associazione/modulistica-interna/">modulistica ad uso interno</a></p>
 <div align="center"><?php echo $user->get_area(); ?></div>
