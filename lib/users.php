@@ -566,7 +566,7 @@ class CapoGita extends Associato {
 			$km = $_POST['km'];
 			$costo = $_POST['costo'];
 			$apl = $_POST['apl'];
-			if($tipogita != 'B')
+			if($tipogita != 'B' && $tipogita != 'C')
 			{
 				$apt = $_POST['apt'];
 				$rpt = $_POST['rpt'];
@@ -591,7 +591,7 @@ class CapoGita extends Associato {
 			$km = addslashes($_POST['km']);
 			$costo = addslashes($_POST['costo']);
 			$apl = addslashes($_POST['apl']);
-			if($tipogita != 'B')
+			if($tipogita != 'B' && $tipogita != 'C')
 			{
 				$apt = addslashes($_POST['apt']);
 				$rpt = addslashes($_POST['rpt']);
@@ -680,7 +680,7 @@ class CapoGita extends Associato {
 		//echo date("d / F / Y H:i",$dataeora);
 		//return;
 		$id = $_POST['invio'];
-		if($tipogita != 'B')
+		if($tipogita != 'B' && $tipogita != 'C')
 		{
 			if($_GET['fun'] == 'newgita')
 			$query = "INSERT INTO gite (titolo,tipogita,dataeora,durata,tipobici,difficolta,km,perc,idcreat,idresp,maxp,costo,itinerario,descrizione,note,pathfile,apl,apt,aas,aao,rpl,rpo,rpt,ral,rao,approvata) VALUES ('".$titolo."','".$tipogita."','".$dataeora."','".$durata."','".$tipobici."','".$difficolta."','".$km."','".$perc."','".$this->matricola."','".$resp."','".$maxp."','".$costo."','".$itinerario."','".$descrizione."','".$note."','".$pathfile."','".$apl."','".$apt."','".$aas."','".$aao."','".$rpl."','".$rpo."','".$rpt."','".$ral."','".$rao."','".$approvata."');";

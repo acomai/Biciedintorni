@@ -91,18 +91,28 @@ if($db->next_record())
         			<option value="B" selected>Solo bici</option>
         			<option value="BT">Bici + Treno</option>
             		<option value="N">Vedi note</option>
+            		<option value="C">Camminata</option>
         	<?php }
         		elseif ($db->record['tipogita'] == 'BT')
         			{ ?>
         			<option value="B">Solo bici</option>
         			<option value="BT" selected>Bici + Treno</option>
             		<option value="N">Vedi note</option>
+            		<option value="C">Camminata</option>
+        	<?php }
+        		elseif ($db->record['tipogita'] == 'C')
+        			{ ?>
+        	        <option value="B">Solo bici</option>
+        	        <option value="BT">Bici + Treno</option>
+        	        <option value="N">Vedi note</option>
+        	        <option value="C" selected>Camminata</option>
         	<?php }
         			else 
         			{ ?>
         			<option value="B">Solo bici</option>
         			<option value="BT">Bici + Treno</option>
             		<option value="N" selected>Vedi note</option>
+            		<option value="C">Camminata</option>
         	<?php }  ?>
           </select>
         </td>
@@ -134,6 +144,7 @@ if($db->next_record())
 			<option value="V" <?php echo ($db->record['tipobici'] == 'V'?'selected':'');?>>Con Cambio</option>
 			<option value="C" <?php echo ($db->record['tipobici'] == 'C'?'selected':'');?>>Citt&agrave;</option>
 			<option value="M" <?php echo ($db->record['tipobici'] == 'M'?'selected':'');?>>MTB</option>
+			<option value="N" <?php echo ($db->record['tipobici'] == 'N'?'selected':'');?>>No bici (camminata)</option>
           </select>
         </td>
       </tr>

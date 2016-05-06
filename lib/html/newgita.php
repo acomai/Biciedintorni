@@ -68,6 +68,7 @@
             <option value="B" selected>Solo bici</option>
             <option value="BT">Bici + Treno</option>
             <option value="N">Vedi note</option>
+            <option value="C">Camminata</option>
           </select>
         </td>
         <td id="tddifficolta" class="title">Difficolt&agrave;</td>
@@ -98,6 +99,7 @@
             <option value="V">Con cambio</option>
             <option value="C">Citt&agrave;</option>
             <option value="M">MTB</option>
+            <option value="N">No bici (camminata)</option>
           </select>
         </td>
       </tr>
