@@ -1,6 +1,6 @@
 <?php
 	$db = new db_local();
-	$db->query("SELECT dataeora,titolo FROM eventi ORDER BY dataeora;");
+	$db->query("SELECT dataeora,titolo FROM eventi WHERE approvato = '1' ORDER BY dataeora DESC;");
 	echo "<table style=\"\" border=\"1\" align=\"center\">\n";
 	echo "  <tr>\n";
 	echo "    <td colspan=\"2\" class=\"title\">Numero di eventi: ".$db->num_rows()."</td>\n";

@@ -49,11 +49,18 @@ class Associato {
 			$this->a2019 = $record['a2019'];
 			$this->a2020 = $record['a2020'];
 
-			$this->menu = array("Le tue iscrizioni"=>"iscrizioni","Modifica dati personali"=>"moddati","Visualizza associati"=>"visass","Aggiungi un evento"=>"newevento","Modifica un evento"=>"modevento","Elimina un evento"=>"delevento","Segnala un errore nel sito"=>"bugreport","Visualizza tutti gli eventi"=>"listaeventi","Consulta il tuo profilo"=>"consulta_profilo");
+			$this->menu = array("Le tue iscrizioni"=>"iscrizioni","Modifica dati personali"=>"moddati",
+					"Visualizza associati"=>"visass","Segnala un errore nel sito"=>"bugreport",
+					"Visualizza gli eventi"=>"listaeventi","Consulta il tuo profilo"=>"consulta_profilo",
+					"Consulta la biblioteca"=>"consulta_biblio","Modulistica interna associazione"=>"modulistica_interna");
 			return true;
 		}
 		else
 		return false;
+	}
+	
+	function consulta_biblio() {
+		include ("biblioteca.php");
 	}
 	
 	function consulta_profilo()
@@ -223,6 +230,12 @@ class Associato {
 
 	}
 
+	function modulistica_interna()
+	{
+		$ch = curl_init("http://www.biciedintorni.it/wordpress/associazione/modulistica-interna/");
+		curl_exec($ch);
+	}
+	
 	function newevento()
 	{
 		if(!is_numeric($_POST['invio']))
@@ -527,9 +540,13 @@ class CapoGita extends Associato {
 	function CapoGita($record = null)
 	{
 		$this->Associato($record);
-		$this->menu = array_merge($this->menu,array("Aggiungi una gita"=>"newgita","Modifica una gita"=>"modgita","Visualizza iscritti ad una gita"=>"iscritti","Visualizza tutte le gite"=>"listagite"));
+		$this->menu = array_merge($this->menu,array("Aggiungi una gita"=>"newgita",
+				"Modifica una gita"=>"modgita","Visualizza iscritti ad una gita"=>"iscritti",
+				"Visualizza tutte le gite"=>"listagite"));
 		$this->rand = rand();
 	}
+	
+
 
 	function listagite()
 	{
@@ -979,7 +996,7 @@ class Amministratore extends CapoGita {
 		$this->menu['modass'] = "Modifica/Elimina/Approva un associato";
 		$this->menu = array_flip ($this->menu);
 		//$this->menu = array_merge($this->menu,array("Approva un associato"=>"appass","Approva un evento"=>"appevento","Modifica i dati di un associato"=>"modass","Aggiungi un nuovo associato"=>"newass","Elimina un associato"=>"delass","Recupera un associato eliminato"=>"recass","Statistiche"=>"stat"));
-		$this->menu = array_merge($this->menu,array("Approva un evento"=>"appevento","Aggiungi un nuovo associato"=>"newass","Recupera un associato eliminato"=>"recass","Statistiche"=>"stat","File Indirizzi per Etichette"=>"etichette","File Excel Lista Utenti"=>"listautenti","Modifica/Elimina un libro"=>"modlibro","Aggiungi un libro"=>"newlibro","Modifica/Elimina una cartina"=>"modcartina","Aggiungi una cartina"=>"newcartina"));
+		$this->menu = array_merge($this->menu,array("Aggiungi un evento"=>"newevento","Modifica un evento"=>"modevento","Elimina un evento"=>"delevento","Approva un evento"=>"appevento","Aggiungi un nuovo associato"=>"newass","Recupera un associato eliminato"=>"recass","Statistiche"=>"stat","File Indirizzi per Etichette"=>"etichette","File Excel Lista Utenti"=>"listautenti","Modifica/Elimina un libro"=>"modlibro","Aggiungi un libro"=>"newlibro","Modifica/Elimina una cartina"=>"modcartina","Aggiungi una cartina"=>"newcartina"));
 		$this->menu = array_merge($this->menu,array("E-Mail Collettive"=>"mailcollettive","Nuova E-Mail Collettiva"=>"newmail","Modifica/Elimina E-Mail"=>"modmail","Calendario Invii"=>"calendario","Crea Gruppo"=>"newgruppo","Modifica/Elimina Gruppo"=>"modgruppo","Ritorna al menu principale"=>"menuprincipale"));
 	}
 
