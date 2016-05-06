@@ -225,13 +225,14 @@ if ($conn->connect_error) {
 	die("Connection failed: " . $conn->connect_error);
 }
 // Elenco delle tipologie di libro presenti in biblioteca
-$sql = "SELECT nome FROM argomenti ORDER BY nome;" ;
+$sql = "SELECT nome, id FROM argomenti ORDER BY nome;" ;
 $result = $conn->query($sql);
 echo "<strong>Tipologie di libri: </strong>";
 if ($result->num_rows > 0) {
 	// output data of each row
 	while ($row = $result->fetch_assoc()) {
-		echo $row["nome"]. " | ";
+		$idarg = $row['id'];
+		echo "<a href='libro_cerca_per_argomento.php?arg=$idarg'>". $row["nome"]. "</a>". " | ";
 	}
 } else {
 	echo "0 results";
