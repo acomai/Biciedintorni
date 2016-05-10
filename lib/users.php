@@ -996,7 +996,14 @@ class Amministratore extends CapoGita {
 		$this->menu['modass'] = "Modifica/Elimina/Approva un associato";
 		$this->menu = array_flip ($this->menu);
 		//$this->menu = array_merge($this->menu,array("Approva un associato"=>"appass","Approva un evento"=>"appevento","Modifica i dati di un associato"=>"modass","Aggiungi un nuovo associato"=>"newass","Elimina un associato"=>"delass","Recupera un associato eliminato"=>"recass","Statistiche"=>"stat"));
-		$this->menu = array_merge($this->menu,array("Aggiungi un evento"=>"newevento","Modifica un evento"=>"modevento","Elimina un evento"=>"delevento","Approva un evento"=>"appevento","Aggiungi un nuovo associato"=>"newass","Recupera un associato eliminato"=>"recass","Statistiche"=>"stat","File Indirizzi per Etichette"=>"etichette","File Excel Lista Utenti"=>"listautenti","Modifica/Elimina un libro"=>"modlibro","Aggiungi un libro"=>"newlibro","Modifica/Elimina una cartina"=>"modcartina","Aggiungi una cartina"=>"newcartina"));
+		$this->menu = array_merge($this->menu,array("Aggiungi un evento"=>"newevento",
+				"Modifica un evento"=>"modevento","Elimina un evento"=>"delevento",
+				"Approva un evento"=>"appevento","Aggiungi un nuovo associato"=>"newass",
+				"Recupera un associato eliminato"=>"recass","Statistiche"=>"stat",
+				"File Indirizzi per Etichette"=>"etichette","File Excel Lista Utenti"=>"listautenti",
+				"Modifica/Elimina un libro"=>"modlibro","Aggiungi un libro"=>"newlibro",
+				"Prestiti libro"=>"prestitilibro","Modifica/Elimina una cartina"=>"modcartina",
+				"Aggiungi una cartina"=>"newcartina"));
 		$this->menu = array_merge($this->menu,array("E-Mail Collettive"=>"mailcollettive","Nuova E-Mail Collettiva"=>"newmail","Modifica/Elimina E-Mail"=>"modmail","Calendario Invii"=>"calendario","Crea Gruppo"=>"newgruppo","Modifica/Elimina Gruppo"=>"modgruppo","Ritorna al menu principale"=>"menuprincipale"));
 	}
 
@@ -2122,6 +2129,13 @@ class Amministratore extends CapoGita {
 		return $vartest;
 	}
 	
+	function prestitilibro() {
+		// da modificare, scrivendo un programma per la gestione prestiti, che prenda in input l'id
+		$idlibro = $_GET['id'];
+		include ("biblioteca.php");
+	}
+	
+	
 	function newlibro()
 	{
 		$save = $_GET['save'];
@@ -2345,6 +2359,7 @@ if(is_numeric($_GET['list']))
 						<td align="center"><a href="<?php echo $_SERVER["PHP_SELF"]."?fun=modlibro&amp;order=descrizione&amp;type=".$ordertype; ?>">Descrizione</a></td>
 						<td align="center"><a href="<?php echo $_SERVER["PHP_SELF"]."?fun=modlibro&amp;order=argomento&amp;type=".$ordertype; ?>">Argomento</a></td>
 						<td align="center"><a href="<?php echo $_SERVER["PHP_SELF"]."?fun=modlibro&amp;order=nazione&amp;type=".$ordertype; ?>">Nazione</a></td>
+						<td align="center">Prestiti</td>
 						<td align="center">Modifica</td>
 						<td align="center">Elimina</td>
 						<td align="center"><a href="<?php echo $_SERVER["PHP_SELF"]."?fun=modlibro&amp;order=citta&amp;type=".$ordertype; ?>">Citt&agrave;</a></td>
@@ -2375,6 +2390,7 @@ if(is_numeric($_GET['list']))
 								echo "<td>".$db->record['descrizione']."&nbsp;</td>\n						";
 								echo "<td>".$db->record['argomento']."&nbsp;</td>\n						";
 								echo "<td>".$db->record['nazione']."&nbsp;</td>\n						";
+								echo "<td><a href=\"admin.php?fun=prestitilibro&amp;id=".$db->record['id']."\">Prestiti</a></td>\n						";
 								echo "<td><a href=\"admin.php?fun=modlibro&amp;id=".$db->record['id']."\">Modifica</a></td>\n						";
 								echo "<td><a href=\"\" onclick=\"javascript: eliminalibro(".$db->record['id']."); return false; \">Elimina</a></td>\n						";
 								//echo "<td>".$db->record['editore']."&nbsp;</td>\n						";

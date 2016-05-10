@@ -6,10 +6,10 @@ Shortcode: [listagite2]
 include_once(dirname(__FILE__)."/../lib/db_mysql.php");
 $snipdb = new db_local();
 if($_GET['limit'] == '0')
-	$snipdb->query("SELECT *,UNIX_TIMESTAMP(dataeora) as 'data' FROM Sql145958_1.gite WHERE YEAR(dataeora) = ".date("Y")." AND approvata = 1  ORDER BY dataeora;");
+	$snipdb->query("SELECT *,UNIX_TIMESTAMP(dataeora) as 'data' FROM Sql145958_1.gite WHERE YEAR(dataeora) = ".date("Y")." AND approvata = 1 AND tipogita = 'C' ORDER BY dataeora;");
 else
 
-	$snipdb->query("SELECT *,UNIX_TIMESTAMP(dataeora) as 'data' FROM Sql145958_1.gite WHERE DATE(dataeora) >= CURDATE() AND approvata = 1 ORDER BY dataeora LIMIT 0,30 ;");
+	$snipdb->query("SELECT *,UNIX_TIMESTAMP(dataeora) as 'data' FROM Sql145958_1.gite WHERE DATE(dataeora) >= CURDATE() AND approvata = 1 AND tipogita = 'C' ORDER BY dataeora LIMIT 0,30 ;");
 ?>
 <div style="color: blue;">
 	<a style="font-size: 16px;"

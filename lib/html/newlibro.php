@@ -16,39 +16,40 @@ makeHead("","<script type=\"text/javascript\" src=\"../js/ajax.js\"></script>");
 <script>
     document.write(' - <a href="' + document.referrer + '">Indietro</a>');
 </script></div>
+<br>
 <form id="newlibro" method="post" action="admin.php?fun=newlibro&amp;save=1" name="newlibro">
-  <table align="center" style="text-align: left;" border="1" cellpadding="2" cellspacing="2">
+  <table align="center" style="text-align: left;" border="0" cellpadding="2" cellspacing="2">
     <tbody>
       <tr>
-        <td>Titolo</td>
+        <td><strong>Titolo</strong></td>
         <td><input id="titolo" maxlength="50" size="50" name="titolo" required></td>
       </tr>
       <tr>
-        <td>Sottotitolo</td>
+        <td><strong>Sottotitolo</strong></td>
         <td><input id="sottotitolo" maxlength="50" size="50" name="sottotitolo"></td>
       </tr>
       <tr>
-        <td>Autore</td>
+        <td><strong>Autore</strong></td>
         <td><input id="autore" maxlength="50" size="50" name="autore"></td>
       </tr>
       <tr>
-        <td>Editore</td>
+        <td><strong>Editore</strong></td>
         <td><input id="editore" maxlength="50" size="50" name="editore"></td>
       </tr>
       <tr>
-        <td>Citt&agrave;</td>
+        <td><strong>Citt&agrave;</strong></td>
         <td><input id="citta" maxlength="50" size="50" name="citta"></td>
       </tr>
       <tr>
-        <td>Anno</td>
+        <td><strong>Anno</strong></td>
         <td><input id="anno" name="anno" maxlength="4" size="4"></td>
       </tr>
       <tr>
-        <td>Descrizione</td>
+        <td><strong>Descrizione</strong></td>
         <td><textarea name="descrizione" rows="5" cols="48"></textarea></td>
       </tr>
       <tr>
-        <td>Nazione</td>
+        <td><strong>Nazione</strong></td>
         <td>
         <select size="1" name="idnazione">
         <?php
@@ -66,7 +67,7 @@ makeHead("","<script type=\"text/javascript\" src=\"../js/ajax.js\"></script>");
         </td>
       </tr>
       <tr>
-        <td>Argomento</td>
+        <td><strong>Argomento</strong></td>
         <td><select size="1" style="width: 300px" name="idarg">
         <?php
         	unset($db2);
@@ -82,11 +83,11 @@ makeHead("","<script type=\"text/javascript\" src=\"../js/ajax.js\"></script>");
         </select></td>
       </tr>
       <tr>
-        <td>Pagine</td>
+        <td><strong>Pagine</strong></td>
         <td><input id="pagine" maxlength="20" size="20" name="pagine"></td>
       </tr>
       <tr>
-        <td>Lingua principale</td>
+        <td><strong>Lingua principale</strong></td>
         <td><select id="lingua" name="lingua" style="width: 300px">
         	<option value="Italiano">Italiano</option>
   			<option value="Francese">Francese</option>
@@ -99,19 +100,19 @@ makeHead("","<script type=\"text/javascript\" src=\"../js/ajax.js\"></script>");
       </tr>
 
       <tr>
-        <td>Costo</td>
+        <td><strong>Costo</strong></td>
         <td><input maxlength="20" size="20" name="costo"></td>
       </tr>
       <tr>
-        <td>Scaffale</td>
+        <td><strong>Scaffale</strong></td>
         <td><input maxlength="50" size="50" name="scaffale"></td>
       </tr>
       <tr>
-        <td>Classificazione</td>
+        <td><strong>Classificazione</strong></td>
         <td><input maxlength="255" size="50" name="classificazione"></td>
       </tr>
       <tr>
-        <td>Note</td>
+        <td><strong>Note</strong></td>
         <td><input maxlength="50" size="50" name="note"></td>
       </tr>
       <tr>

@@ -25,7 +25,7 @@ $fun_amm = array("newass","modass","etichette","listautenti","mailcollettive","c
 //$fun_amm = array("iscrizioni","listagite","listaeventi","iscritti","newass","modass");
 //$fun_amm = array("newass");
 $fun_gite = array("iscrizioni","newgita","modgita","listagite","iscritti","newevento","modevento","listaeventi",);
-$fun_biblio = array("modlibro","newlibro","modcartina","newcartina","newnazione","newargomento","consulta_biblio");
+$fun_biblio = array("modlibro","newlibro","modcartina","newcartina","newnazione","newargomento","consulta_biblio", "prestitilibro");
 $fun_mail = array("newmail","modmail");
 $fun_gruppi = array("newgruppo","modgruppo","menuprincipale");
 $mesi = array("1"=>"Gennaio","2"=>"Febbraio","3"=>"Marzo","4"=>"Aprile","5"=>"Maggio","6"=>"Giugno","7"=>"Luglio","8"=>"Agosto","9"=>"Settembre","10"=>"Ottobre","11"=>"Novembre","12"=>"Dicembre");
