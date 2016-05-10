@@ -2130,9 +2130,10 @@ class Amministratore extends CapoGita {
 	}
 	
 	function prestitilibro() {
-		// da modificare, scrivendo un programma per la gestione prestiti, che prenda in input l'id
-		$idlibro = $_GET['id'];
-		include ("biblioteca.php");
+		// richiamo della funzione senza id specifico, per visualizzare l'elenco dei prestiti in corso
+		$handle = curl_init("http://www.biciedintorni.it/application/prestitilibro.php");
+		curl_exec($handle);
+		
 	}
 	
 	
@@ -2390,7 +2391,7 @@ if(is_numeric($_GET['list']))
 								echo "<td>".$db->record['descrizione']."&nbsp;</td>\n						";
 								echo "<td>".$db->record['argomento']."&nbsp;</td>\n						";
 								echo "<td>".$db->record['nazione']."&nbsp;</td>\n						";
-								echo "<td><a href=\"admin.php?fun=prestitilibro&amp;id=".$db->record['id']."\">Prestiti</a></td>\n						";
+								echo "<td><a href=\"prestitilibro.php?id=".$db->record['id']."\">Prestiti</a></td>\n						";
 								echo "<td><a href=\"admin.php?fun=modlibro&amp;id=".$db->record['id']."\">Modifica</a></td>\n						";
 								echo "<td><a href=\"\" onclick=\"javascript: eliminalibro(".$db->record['id']."); return false; \">Elimina</a></td>\n						";
 								//echo "<td>".$db->record['editore']."&nbsp;</td>\n						";
