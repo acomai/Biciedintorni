@@ -22,65 +22,15 @@
  * @license  Proprietà FIAB Torino Bici e Dintorni
  * @link     http://www.biciedintorni.it/
  */
-$id= $_GET['id'];
-echo "id libro = " . $id;
-?>
-<div align="center">
-<h4>FIAB Torino Bici e Dintorni - Biblioteca</h4>
-<br>
-<div style="color:blue;">Abbiamo una delle biblioteche sulla bici, la mobilità urbana e il cicloturismo più ricche in Italia.</div>
-<p>I soci possono prendere a prestito i libri e le cartine,
-<a href="http://www.biciedintorni.it/wordpress/contatti-2/"> in sede negli orari di apertura.</a></p></div>
-<br>
-<!-- <table width="40%" border="0" align="center" cellpadding="2">
-	<tr align="center">
-		<td><a href="biblioteca.php?sez=cart">Cartine</a> | </td> 
-		<td>Libri ordinati per: </td>
-		<td><a href="biblioteca.php?sez=libri_titolo">titolo</a> | </td>
-		<td><a href="biblioteca.php?sez=libri_anno">anno pubblicazione</a> | </td>
-		<td><a href="biblioteca.php?sez=libri_argomento">tipo</a> | </td>
-		<td><a href="biblioteca.php?sez=libri_autore">autore</a> | </td>
-		<td><a href="biblioteca.php?sez=libri">nazione</a></td>
-	</tr>
-	<tr align="center">
-		<td>Ricerca nel titolo: <input id="titolo_parz" type="text" required> 
-					<output id="demo"></output> <button type="button" onclick="cercaLibroPerTitolo()">Cerca</button></td>
-	</tr>
-</table>  -->
-<p align="center"><a href="biblioteca.php?sez=cart">Cartine</a> | Libri ordinati per: <a href="biblioteca.php?sez=libri_titolo">titolo</a> | 
-<a href="biblioteca.php?sez=libri_anno">anno pubblicazione</a> | <a href="biblioteca.php?sez=libri_argomento">tipo</a> | 
-<a href="biblioteca.php?sez=libri_autore">autore</a> | <a href="biblioteca.php?sez=libri">nazione</a></p>
-<p align="center">Ricerca nel titolo: <input id="titolo" type="text"> 
-<button type="button" onclick="cercaLibroPerTitolo()">Cerca</button></p> 
-<!-- <output id="demo"></output> -->
-	
+$idlibro = $_GET['id'];
 
+echo "id libro = ";
 
-</div>
-<br>
-<script>
-
-function cercaLibroPerTitolo() {
-	//da fare.
-	// Get the value of the input field with id="numb"
-    titolo = document.getElementById("titolo").value;
-    // inizializza output
-    //document.getElementById("demo").innerHTML = "";
-    // scrive in output l'input digitato
-    //document.getElementById("demo").innerHTML = "termine digitato: " + titolo;
-    //preparazione per richiamo funzione php con parametro cognome. 
-	window.location.href = "libro_cerca_per_titolo.php?titolo=" + titolo;
-}
-</script>
-<!--<div align= "right"><a href="admin.php" target="_parent"><img alt="Amministrazione" src="img/lucchetto.jpg" width="50" height="50"></a></div>-->
-<?php  
-// elenco argomenti
+//parametri connessione al DB
 $servername = "62.149.150.56";
 $username = "Sql145958";
 $password = "c36d0fc2";
 $dbname = "Sql145958_1";
-
-
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
@@ -88,15 +38,17 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) {
 	die("Connection failed: " . $conn->connect_error);
 }
-// Elenco delle tipologie di libro presenti in biblioteca
-$sql = "SELECT nome, id FROM argomenti ORDER BY nome;" ;
+// Ricerca del libro sul DB
+$sql = "SELECT id, titolo, autore, anno FROM libri WHERE id = $idlibro;" ;
 $result = $conn->query($sql);
-echo "<strong>Tipologie di libri: </strong>";
+
 if ($result->num_rows > 0) {
 	// output data of each row
 	while ($row = $result->fetch_assoc()) {
-		$idarg = $row['id'];
-		echo "<a href='libro_cerca_per_argomento.php?arg=$idarg'>". $row["nome"]. "</a>". " | ";
+		$titolo = $row['titolo'];
+		$autore = $row['autore'];
+		$anno = $row['anno'];
+		echo $idlibro . " - " . $titolo . " - " . $autore . " - " . $anno;
 	}
 } else {
 	echo "0 results";
@@ -104,24 +56,49 @@ if ($result->num_rows > 0) {
 
 echo "<hr />";
 
-// Elenco delle nazioni a cui si riferiscono libri presenti in biblioteca
-$sql = "SELECT nome, id FROM nazioni ORDER BY nome;" ;
+// Ricerca dei prestiti del libro sul DB
+$sql = "SELECT * FROM prestiti WHERE idlibro = $idlibro ORDER BY dataprestito DESC;" ;
 $result = $conn->query($sql);
-echo "<strong>Nazioni su cui esistono libri nella nostra biblioteca: </strong>";
+
 if ($result->num_rows > 0) {
 	// output data of each row
 	while ($row = $result->fetch_assoc()) {
-		$idnaz = $row['id'];
-		echo "<a href='libro_cerca_per_nazione.php?nazione=$idnaz'>". $row["nome"]. "</a>". " | ";
+		$associato = $row['idassociato'];
+		// trova nome e cognome del socio
+		$sql2 = "SELECT id, nome, cognome FROM anagrafiche WHERE id = $associato";
+		$result2 = $conn->query($sql2);
+		while ($row2 = $result2->fetch_assoc()){
+			$nomesocio = $row2['nome']; 
+			$cognomesocio = $row2['cognome'];
+		}
+		$dataprestitodadb = strtotime($row['dataprestito']);
+		$dataprestito = date("d/M/Y", $dataprestitodadb);
+		$datarestituzionedadb = strtotime($row['datarestituzione']);
+		$datarestituzione = date("d/M/Y", $datarestituzionedadb);
+		// inserire test per datarestituzione = null
+		echo "prestito a: " . $associato . " - " . $nomesocio . " " . $cognomesocio . 
+		" - dal: " . $dataprestito . " - al: " . $datarestituzione . "<br>";
 	}
 } else {
-	echo "0 results";
+	echo "Nessun prestito per il libro";
 }
 
 echo "<hr />";
 
-makeTail();
-exit;
+// Elenco associati per selezionare chi intende prendere il libro in prestito
+$sql = "SELECT id,cognome,nome from anagrafiche WHERE approvato = 1 AND id > 0 AND (anagrafiche.a".date("Y")." = 1 OR ".date("m")." <= 3) ORDER BY cognome,nome;";
+$result = $conn->query($sql);
+echo "<form action='prestalibro.php' method='get'>";
+echo "<input type='hidden' name='idlibro' value=$idlibro>";
+echo "chi vuole prenderlo in prestito? ";
+echo "<select name='socio'>\n";
+while ($row = $result->fetch_assoc())
+{
+	echo "\t\t\t<option value=\"".intval($row['id'])."\">".$row['cognome']." ".$row['nome']."</option>\n";
+}
+echo "  	</select>";
+echo "<input type='submit' value='Presta'>";
+echo "</form>";
 ?>
 
 
