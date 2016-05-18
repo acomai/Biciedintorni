@@ -10,7 +10,6 @@ Visualizzazione singolo libro  -->
 </head>
 <body>
 <div class="container-fluid">
-
 <?php if($db->next_record())
 { 
 	?>
@@ -70,7 +69,7 @@ Visualizzazione singolo libro  -->
       </tr>
     </tbody>
   </table>
-<?php 
+  <?php 
 }
 else 
 {?>
@@ -79,5 +78,46 @@ else
 }
 ?>
 </div>
+
+<?php 
+$idlibro = $db->record['id'];
+
+//verifica se il libro è registrato come "in prestito"
+
+//parametri connessione al DB
+$servername = "62.149.150.56";
+$username = "Sql145958";
+$password = "c36d0fc2";
+$dbname = "Sql145958_1";
+
+// Create connection
+$conn2 = new mysqli($servername, $username, $password, $dbname);
+// Check connection
+if ($conn2->connect_error) {
+	die("Connection failed: " . $conn2->connect_error);
+}
+
+// impostazione flag che indica se il libro risulta in prestito
+$inprestito = false;
+
+$sql2 = "SELECT * FROM prestiti WHERE idlibro = $idlibro ORDER BY dataprestito DESC;" ;
+$result2 = $conn2->query($sql2);
+
+if ($result2->num_rows > 0) {
+	// output data of each row
+	while ($row = $result2->fetch_assoc()) {			
+		//test per datarestituzione = null
+		if (is_null($row['datarestituzione'])) {
+			$inprestito = true;
+		}		
+	}
+} 
+
+if ($inprestito) {
+	echo "<h3 style='color:red; text-align:center'>Il libro è in prestito</h3>";
+}
+?>
+
+
 </body>
 </html>
