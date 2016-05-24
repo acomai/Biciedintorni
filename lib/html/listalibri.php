@@ -19,8 +19,9 @@
 	<!-- Testata per gestire la lista con Bootstrap. -->
 	<div class="row">
 		<div class="col-xs-3 text-center"><strong>Titolo</strong></div>
-		<div class="col-xs-1 text-center"><strong>Anno</strong></div>		
-		<div class="col-xs-2 text-center"><strong>Tipo</strong></div>
+		<div class="col-xs-1 text-center"><strong>Anno</strong></div>
+		<div class="col-xs-1 text-center"><strong>Classif.</strong></div>		
+		<div class="col-xs-1 text-center"><strong>Tipo</strong></div>
 		<div class="col-xs-1 text-center"><strong>Nazione</strong></div>
 		<div class="col-xs-2 text-center"><strong>Autore</strong></div>
 		<div class="col-xs-3 text-center"><strong>Descrizione</strong></div>
@@ -41,7 +42,8 @@
 		echo "<div class='col-xs-3'>" . "<a href=\"biblioteca.php?fun=vislibro&amp;id=". $db->record['id'] . "\">" .
 		$db->record['titolo'] . "</a></b><br>" . $db->record['sottotitolo'] . "<br><br></div>";
 		echo "<div class='col-xs-1'>" . $db->record['anno'] . "</div>";
-		echo "<div class='col-xs-2'><a href=\"biblioteca.php?sez=libri&amp;idarg=". $db->record['idarg'] . "\">" . $db->record['argomento'] . "</a></div>";
+		echo "<div class='col-xs-1'>" . $db->record['classificazione'] . "</div>";
+		echo "<div class='col-xs-1'><a href=\"biblioteca.php?sez=libri&amp;idarg=". $db->record['idarg'] . "\">" . $db->record['argomento'] . "</a></div>";
 		echo "<div class='col-xs-1'><a href=\"biblioteca.php?sez=libri&amp;idnaz=". $db->record['idnaz'] . "\">" . $db->record['nazione'] . "</a></div>";
 		echo "<div class='col-xs-2'>" . $db->record['autore'] . "</div>";
 		echo "<div class='col-xs-3'>" . $db->record['descrizione'] . "</div>";

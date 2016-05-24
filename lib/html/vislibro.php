@@ -67,6 +67,10 @@ Visualizzazione singolo libro  -->
         <td id="tdscaffale" class="title">Scaffale</td>
         <td><?php echo $db->record['scaffale'];?></td>
       </tr>
+      <tr>
+        <td id="tdclassificazione" class="title">Classificazione</td>
+        <td><?php echo $db->record['classificazione'];?></td>
+      </tr>
     </tbody>
   </table>
   <?php 

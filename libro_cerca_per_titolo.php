@@ -58,7 +58,7 @@ if (!$conn->set_charset("utf8")) {
 // Ricerca libri con termine cercato
 
 //$sql = "SELECT id, titolo, anno, descrizione FROM libri WHERE titolo LIKE '%$titolo%' LIMIT 0,5 ;" ;
-$sql = "SELECT id, titolo, anno, descrizione FROM libri WHERE titolo LIKE '%$titolo%';" ;
+$sql = "SELECT id, titolo, anno, descrizione, classificazione FROM libri WHERE titolo LIKE '%$titolo%' ORDER BY titolo ;" ;
 
 $result = $conn->query($sql);
 
@@ -93,17 +93,17 @@ echo "</table>";
 if ($result->num_rows > 0) {
 	// output data of each row
 	echo "<div class='row'>";
-		echo "<div class='col-xs-1'>" . "id" . "</div>";
 		echo "<div class='col-xs-4'>" . "Titolo" . "</div>";
 		echo "<div class='col-xs-1'>" . "Anno" . "</div>";
-		echo "<div class='col-xs-6'>" . "Descrizione" . "</div>";
+		echo "<div class='col-xs-2'>" . "Classificazione" . "</div>";
+		echo "<div class='col-xs-5'>" . "Descrizione" . "</div>";
 	echo "</div>";
 	while ($row = $result->fetch_assoc()) {
 		echo "<div class='row'>";
-		echo "<div class='col-xs-1'>" . $row["id"]. "</div>";
 		echo "<div class='col-xs-4'>" . "<a href=\"biblioteca.php?fun=vislibro&amp;id=" . $row['id'] . "\">" . $row["titolo"]. "</a>" . "</div>";
 		echo "<div class='col-xs-1'>" . $row["anno"]. "</div>";
-		echo "<div class='col-xs-6'>" . $row["descrizione"]. "</div>";
+		echo "<div class='col-xs-2'>" . $row["classificazione"]. "</div>";
+		echo "<div class='col-xs-5'>" . $row["descrizione"]. "</div>";
 		echo "</div>";
 		//"id: " . $row["id"]. " - Ragione sociale: " . $row["rag_sociale"]. " - Indirizzo: " . $row["indirizzo"]. "<br>";
 	}
