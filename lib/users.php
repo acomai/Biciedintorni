@@ -2362,7 +2362,6 @@ if(is_numeric($_GET['list']))
 						<td align="center"><a href="<?php echo $_SERVER["PHP_SELF"]."?fun=modlibro&amp;order=anno&amp;type=".$ordertype; ?>">Anno</a></td>
 						<td align="center"><a href="<?php echo $_SERVER["PHP_SELF"]."?fun=modlibro&amp;order=descrizione&amp;type=".$ordertype; ?>">Descrizione</a></td>
 						<td align="center">Prestiti</td>
-						<td align="center">Modifica</td>
 						<td align="center">Elimina</td>
 						<td align="center"><a href="<?php echo $_SERVER["PHP_SELF"]."?fun=modlibro&amp;order=argomento&amp;type=".$ordertype; ?>">Argomento</a></td>
 						<td align="center"><a href="<?php echo $_SERVER["PHP_SELF"]."?fun=modlibro&amp;order=nazione&amp;type=".$ordertype; ?>">Nazione</a></td>
@@ -2389,13 +2388,12 @@ if(is_numeric($_GET['list']))
 								//echo "<tr><td colspan=\"17\"><pre>".print_r($db->record)."</pre></td></tr>";
 								echo "<tr><td>".$db->record['classificazione']."&nbsp;</td>\n						";
 								echo "<td>".$db->record['id']."&nbsp;</td>\n						";
-								echo "<td>".$db->record['titolo']."&nbsp;</td>\n						";
+								echo "<td><a href=\"admin.php?fun=modlibro&amp;id=".$db->record['id']."\">".$db->record['titolo']."&nbsp;</a></td>\n						";
 								//echo "<td>".$db->record['sottotitolo']."&nbsp;</td>\n						";
 								echo "<td>".$db->record['autore']."&nbsp;</td>\n	";
 								echo "<td>".$db->record['anno']."&nbsp;</td>\n	";
 								echo "<td>".$db->record['descrizione']."&nbsp;</td>\n						";
 								echo "<td><a href=\"prestitilibro.php?id=".$db->record['id']."\">Prestiti</a></td>\n						";
-								echo "<td><a href=\"admin.php?fun=modlibro&amp;id=".$db->record['id']."\">Modifica</a></td>\n						";
 								echo "<td><a href=\"\" onclick=\"javascript: eliminalibro(".$db->record['id']."); return false; \">Elimina</a></td>\n						";
 								echo "<td>".$db->record['argomento']."&nbsp;</td>\n						";
 								echo "<td>".$db->record['nazione']."&nbsp;</td>\n						";

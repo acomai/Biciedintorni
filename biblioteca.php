@@ -26,13 +26,14 @@ Reimpostare, con liste per nazione, argomento, autore, titolo, editore, data  --
 
 require_once "lib/class.php";
 
-
+/* Funzione eliminata. Le cartine sono gestite come tipologia specifica di libri.
 if ($_GET['fun'] == 'viscart') {
     makeHead("Biblioteca->Cartina", "", "");
     vis_cart();
     makeTail();
     exit;
 }
+*/
 
 if ($_GET['fun'] == 'vislibro') {
     makeHead("Biblioteca->Libro", "", "");
@@ -183,7 +184,7 @@ makeHead("Biblioteca", "", "");
 					<output id="demo"></output> <button type="button" onclick="cercaLibroPerTitolo()">Cerca</button></td>
 	</tr>
 </table>  -->
-<p align="center"><a href="biblioteca.php?sez=cart">Cartine</a> | Libri ordinati per: <a href="biblioteca.php?sez=libri_titolo">titolo</a> | 
+<p align="center">Libri ordinati per: <a href="biblioteca.php?sez=libri_titolo">titolo</a> | 
 <a href="biblioteca.php?sez=libri_anno">anno pubblicazione</a> | <a href="biblioteca.php?sez=libri_argomento">tipo</a> | 
 <a href="biblioteca.php?sez=libri_autore">autore</a> | <a href="biblioteca.php?sez=libri">nazione</a></p>
 <p align="center">Ricerca nel titolo: <input id="titolo" type="text"> 

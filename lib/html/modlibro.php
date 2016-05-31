@@ -44,30 +44,30 @@ $db2->query("SELECT * FROM anagrafiche WHERE user = '$login';");
       </tr>
       <tr>
         <td><strong>Titolo</strong></td>
-        <td><input id="titolo" maxlength="50" size="50" name="titolo" value="<?php echo $db->record['titolo']; ?>"></td>
+        <td><input id="titolo" maxlength="80" size="80" name="titolo" value="<?php echo $db->record['titolo']; ?>"></td>
       </tr>
       <tr>
         <td><strong>Sottotitolo</strong></td>
-        <td><input id="sottotitolo" maxlength="50" size="50" name="sottotitolo" value="<?php echo $db->record['sottotitolo']; ?>"></td>
+        <td><input id="sottotitolo" maxlength="80" size="80" name="sottotitolo" value="<?php echo $db->record['sottotitolo']; ?>"></td>
       </tr>
       <tr>
         <td><strong>Autore</strong></td>
-        <td><input id="autore" maxlength="50" size="50" name="autore" value="<?php echo $db->record['autore']; ?>"></td>
+        <td><input id="autore" maxlength="80" size="80" name="autore" value="<?php echo $db->record['autore']; ?>"></td>
       </tr>
       <tr>
         <td><strong>Editore</strong></td>
-        <td><input id="editore" maxlength="50" size="50" name="editore" value="<?php echo $db->record['editore']; ?>"></td>
+        <td><input id="editore" maxlength="80" size="80" name="editore" value="<?php echo $db->record['editore']; ?>"></td>
       </tr>
       <tr>
         <td><strong>Citt&agrave;</strong></td>
-        <td><input id="citta" maxlength="50" size="50" name="citta" value="<?php echo $db->record['citta']; ?>"></td>
+        <td><input id="citta" maxlength="80" size="80" name="citta" value="<?php echo $db->record['citta']; ?>"></td>
       </tr>
       <tr>
         <td><strong>Anno</strong></td>
         <td><input id="anno" name="anno" maxlength="4" size="4" value="<?php echo $db->record['anno']; ?>"></td>
       </tr>
         <td><strong>Descrizione</strong></td>
-        <td><textarea name="descrizione" rows="5" cols="50"><?php echo $db->record['descrizione']; ?></textarea></td>
+        <td><textarea name="descrizione" rows="3" cols="80"><?php echo $db->record['descrizione']; ?></textarea></td>
       </tr>
       <tr>
         <td><strong>Nazione</strong></td>
@@ -141,7 +141,7 @@ $db2->query("SELECT * FROM anagrafiche WHERE user = '$login';");
       <tr>
       <tr>
         <td><strong>Note</strong></td>
-        <td><input maxlength="50" size="50" name="note" value="<?php echo $db->record['note']; ?>"></td>
+        <td><input maxlength="80" size="80" name="note" value="<?php echo $db->record['note']; ?>"></td>
       </tr>
       <tr>
         <td align="left"> </td>

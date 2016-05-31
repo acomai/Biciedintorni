@@ -8,8 +8,9 @@
   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 </head>
 <body>
-
-
+<div align="center">
+<h3>FIAB Torino Bici e Dintorni - Biblioteca</h3>
+</div>
 
 <?php
 /**
@@ -120,7 +121,7 @@ function visualizzazione_libro() {
 	echo "<h3>Libro</h3>";
 	
 	
-	echo "id = ";
+	echo "- ";
 	
 	//parametri connessione al DB
 	$servername = "62.149.150.56";
@@ -151,7 +152,7 @@ function visualizzazione_libro() {
 			$titolo = $row['titolo'];
 			$autore = $row['autore'];
 			$anno = $row['anno'];
-			echo $idlibro . " - " . $titolo . " - " . $autore . " - " . $anno;
+			echo $idlibro . " - " . "<a href='admin.php?fun=modlibro&id=$idlibro'>" . $titolo . "</a> - " . $autore . " - " . $anno;
 		}
 	} else {
 		echo "0 results";
@@ -174,14 +175,16 @@ function visualizzazione_libro() {
 		while ($row = $result->fetch_assoc()) {
 			$associato = $row['idassociato'];
 			// trova nome e cognome del socio
-			$sql2 = "SELECT id, nome, cognome FROM anagrafiche WHERE id = $associato";
+			$sql2 = "SELECT id, nome, cognome, tel1, email FROM anagrafiche WHERE id = $associato";
 			$result2 = $conn->query($sql2);
 			while ($row2 = $result2->fetch_assoc()){
 				$nomesocio = $row2['nome']; 
 				$cognomesocio = $row2['cognome'];
+				$telefono = $row2['tel1'];
+				$email = $row2['email'];
 			}
 			$dataprestitodadb = strtotime($row['dataprestito']);
-			$dataprestito = date("d M Y", $dataprestitodadb);
+			$dataprestito = date("d-m-Y", $dataprestitodadb);
 			
 			//test per datarestituzione = null
 			if (is_null($row['datarestituzione'])) {
@@ -189,11 +192,11 @@ function visualizzazione_libro() {
 				$inprestito = true;
 			} else {
 				$datarestituzionedadb = strtotime($row['datarestituzione']);
-				$datarestituzione = date("d M Y", $datarestituzionedadb);
+				$datarestituzione = date("d-m-Y", $datarestituzionedadb);
 			}
 					
-			echo "- " . $associato . " - " . $nomesocio . " " . $cognomesocio . 
-			" - " . $dataprestito . " - " . $datarestituzione . "<br>";
+			echo "- " . $associato . " - " . "<a href='admin.php?fun=modass&id=$associato'>" . $nomesocio . " " . $cognomesocio . 
+			"</a> - tel: " . $telefono . " - email <a href='mailto:$email'>" . $email . "</a> - dal: " . $dataprestito . " - al: " . $datarestituzione . "<br>";
 		}
 	} else {
 		echo "Nessun prestito per il libro";
