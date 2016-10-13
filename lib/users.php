@@ -2322,6 +2322,8 @@ class Amministratore extends CapoGita {
 											$order = " ORDER BY nazioni.nome" . $ordertype;
 											elseif ($_GET['order'] == "editore")
 											$order = " ORDER BY editore" . $ordertype;
+												elseif ($_GET['order'] == "classificazione")
+												$order = " ORDER BY classificazione" . $ordertype;
 		
 			$sqlqry = "SELECT libri.*,argomenti.nome as argomento,nazioni.nome as nazione FROM libri,argomenti,nazioni WHERE argomenti.id = idarg AND nazioni.id = idnazione".$order.";";
 		//$sqlqry = "SELECT * FROM anagrafiche WHERE carica != 'NS' ORDER BY cognome ASC,nome ASC,a".date("Y")." DESC;";
