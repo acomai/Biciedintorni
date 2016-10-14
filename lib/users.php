@@ -1002,8 +1002,7 @@ class Amministratore extends CapoGita {
 				"Recupera un associato eliminato"=>"recass","Statistiche"=>"stat",
 				"File Indirizzi per Etichette"=>"etichette","File Excel Lista Utenti"=>"listautenti",
 				"Modifica/Elimina un libro"=>"modlibro","Aggiungi un libro"=>"newlibro",
-				"Libri in prestito"=>"prestitilibro","Modifica/Elimina una cartina"=>"modcartina",
-				"Aggiungi una cartina"=>"newcartina"));
+				"Libri in prestito"=>"prestitilibro"));
 		$this->menu = array_merge($this->menu,array("E-Mail Collettive"=>"mailcollettive","Nuova E-Mail Collettiva"=>"newmail","Modifica/Elimina E-Mail"=>"modmail","Calendario Invii"=>"calendario","Crea Gruppo"=>"newgruppo","Modifica/Elimina Gruppo"=>"modgruppo","Ritorna al menu principale"=>"menuprincipale"));
 	}
 

@@ -19,7 +19,7 @@
 	<body>
 		<div class="container-fluid">
 			<header>
-				<h1>Elenco soci dell'anno successivo a quello in corso</h1>
+				<h1>Elenco soci dell'anno 2017</h1>
 			</header>
 
 				<button class="btn" type="button" onclick="javascript:location.href='http://www.biciedintorni.it/application/admin.php?fun=modass'">Menu anagrafiche</button>
