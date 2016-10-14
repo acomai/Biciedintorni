@@ -44,13 +44,25 @@ while ($snipdb->next_record()) {
 					href="http://www.biciedintorni.it/application/index.php?id=<?php echo $snipdb->record['id']; ?>"><?php echo $snipdb->record['titolo']; ?></a></span></td>
 			<td align="center"><?php echo $snipdb->record['km']; ?></td>
 			<td><img
-				src="http://www.biciedintorni.it/wordpress/wp-content/uploads/2012/02/<?php 
-if($snipdb->record['difficolta'] == 'D' || $snipdb->record['difficolta'] == 'X')
-	echo 'bici-impegnativa.png" alt="impegnativa"';
-elseif ($snipdb->record['difficolta'] == 'M')
-	echo 'bici-media.png" alt="media"';
-else
-	echo 'bici-facile.png" alt="facile"';
+				src="http://www.biciedintorni.it/wordpress/wp-content/uploads/2016/10/<?php 
+if ($snipdb->record['tipogita'] != 'C')
+	if($snipdb->record['difficolta'] == 'D' || $snipdb->record['difficolta'] == 'X')
+		echo 'bici-impegnativa.png" alt="impegnativa" style="width:30px;height:30px;"';
+	elseif ($snipdb->record['difficolta'] == 'M')
+		echo 'bici-media.png" alt="media" style="width:30px;height:30px;"';
+	elseif ($snipdb->record['difficolta'] == 'U')
+		echo 'bici-moltofacile.png" alt="media" style="width:30px;height:30px;"';
+	else
+		echo 'bici-facile.png" alt="facile" style="width:30px;height:30px;"';
+else 
+	if($snipdb->record['difficolta'] == 'D' || $snipdb->record['difficolta'] == 'X')
+		echo 'piedi-impegnativa.png" alt="impegnativa" style="width:30px;height:30px;"';
+		elseif ($snipdb->record['difficolta'] == 'M')
+		echo 'piedi-media.png" alt="media" style="width:30px;height:30px;"';
+		elseif ($snipdb->record['difficolta'] == 'U')
+		echo 'piedi-moltofacile.png" alt="media" style="width:30px;height:30px;"';
+		else
+			echo 'piedi-facile-1.png" alt="facile" style="width:30px;height:30px;"';
 ?>/>
 			</td>
 		</tr>
