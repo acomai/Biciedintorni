@@ -150,7 +150,7 @@ function iscr_gita()
         }
         if ($_POST['nonsocio'] == 1) {
             //echo "nome=>".$_POST['nome']."<  cognome=>".$_POST['cognome']."<  tel=>".$_POST['tel1']."<  email=>".$_POST['nome']."<";
-            if(!$_POST['nome'] || !$_POST['cognome'] || !$_POST['email'] || !$_POST['tel1']) {
+            if(!$_POST['nome'] || !$_POST['cognome'] || !$_POST['email'] || !$_POST['tel1'] || !$_POST['regolamento']) {
                 //header("Location: admin.php?iscr=" . $_GET['iscr']);
                 makeHead("Gite");
                 echo "<br><br><div id=\"msg\" align=\"center\" style=\"font-size:16px; color: #FF0000\">Attenzione devi inserire tutti i campi marcati in rosso.</div>\n";
@@ -204,7 +204,7 @@ function iscr_gita()
                 exit;
             }
             */
-            if(!$db->query("INSERT INTO nonsoci (nome,cognome,email,via,tel1,cell,citta,sesso,cap,prov,datanascita,carica) VALUES ('$nome','$cognome','$email','$via','$tel1','$cell','$citta','$sesso','$cap','$prov','$datanascita','NS');")) {
+            if(!$db->query("INSERT INTO nonsoci (nome,cognome,email,via,tel1,cell,citta,sesso,cap,prov,datanascita,carica) VALUES ('$nome','$cognome','$email','$via','$tel1','$cell','$comune','$sesso','$cap','$prov','$datanascita','NS');")) {
                 makeHead("Errore");
                 echo "<br><br><div id=\"msg\" align=\"center\" style=\"font-size:16px; color: #FF0000\">ERRORE inserimento dati, ti prego di contattare il WebMaster segnalando questo errore.</div>\n";
                 echo "<br><br><div id=\"msg\" align=\"center\" style=\"font-size:16px;\"><a style='color: #0000FF;' href='admin.php?iscr=".$_GET['iscr']."'>Ritorna all'iscrizione.</a></div>\n";

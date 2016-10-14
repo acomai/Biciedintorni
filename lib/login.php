@@ -121,7 +121,7 @@ if (is_numeric($_GET['iscr']))
 			      </tr>
 			      <tr>
 			        <td>Indirizzo: </td>
-			        <td><input maxlength="255" size="20" tabindex="5" name="indirizzo"></td>
+			        <td><input maxlength="255" size="20" tabindex="5" name="via"></td>
 			      </tr>
 			      <tr>
 			        <td>Cellulare: </td>
@@ -175,6 +175,10 @@ if (is_numeric($_GET['iscr']))
 			          ?>
 			        </select>
 			        </td>
+			      </tr>
+			      <tr>
+			        <td class="obbligatori">Ho preso visione del <a href="http://www.biciedintorni.it/wordpress/associazione/le-gite/">regolamento gite</a> *: </td>
+			        <td><input input type="checkbox" tabindex="5" name="regolamento" required></td>
 			      </tr>
 			      <tr>
 			        <td><button tabindex="16" name="reset" type="reset">Reset</button></td>
