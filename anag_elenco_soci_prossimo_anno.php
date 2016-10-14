@@ -19,7 +19,7 @@
 	<body>
 		<div class="container-fluid">
 			<header>
-				<h1>Elenco anagrafiche senza iscrizioni in archivio Bici e Dintorni</h1>
+				<h1>Elenco soci dell'anno successivo a quello in corso</h1>
 			</header>
 
 				<button class="btn" type="button" onclick="javascript:location.href='http://www.biciedintorni.it/application/admin.php?fun=modass'">Menu anagrafiche</button>
@@ -35,7 +35,7 @@
  *
  * PHP version 5.3
  * Programma che fornisce l'elenco completo delle anagrafiche nel db di
- * Bici e Dintorni che non sono mai state associate a Bici e Dintorni
+ * Bici e Dintorni che sono iscritte per l'anno successivo a quello in corso
  *
  * @category Programma
  * @package  Root
@@ -58,9 +58,7 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-$sql = "SELECT id, nome, cognome FROM anagrafiche WHERE a2007 = '0' && a2008 = '0' && a2009 = '0' 
-        		 && a2010 = '0' && a2011 = '0' && a2012 = '0' && a2013 = '0'  && a2014 = '0' 
-        		&& a2015 = '0' && a2016 = '0' && a2017 = '0' ORDER BY cognome, nome;" ;
+$sql = "SELECT id, nome, cognome FROM anagrafiche WHERE a2017 = '1' ORDER BY cognome, nome;" ;
 $result = $conn->query($sql);
 echo "<table style='width:100%'>";
 if ($result->num_rows > 0) {

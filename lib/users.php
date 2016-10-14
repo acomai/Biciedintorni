@@ -1538,7 +1538,10 @@ class Amministratore extends CapoGita {
 		} 
 		if($db->query($sqlqry,true))
 		{ ?>
-		<p>Nuove funzioni: <a href="/application/anag_cerca.html">Ricerca per cognome</a> | <a href="/application/anag_elenco_completo.php">Elenco completo anagrafiche</a> | <a href="/application/anag_elenco_maisoci.php">Elenco anagrafiche mai iscritte all'associazione</a></p>
+		<p>Nuove funzioni: <a href="/application/anag_cerca.html">Ricerca per cognome</a> | 
+		<a href="/application/anag_elenco_completo.php">Elenco completo anagrafiche</a> | 
+		<a href="/application/anag_elenco_maisoci.php">Elenco anagrafiche mai iscritte all'associazione</a> |
+		<a href="/application/anag_elenco_soci_prossimo_anno.php">Anagrafiche iscritte per il 2017</a></p>
 			<table align="center" border="1">
 				<tbody>
 					<tr>
