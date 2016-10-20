@@ -73,7 +73,7 @@ makeHead("Bici e Dintorni - ".$db->record['titolo'],"","onload=\"init();\"");
     <tbody>
       <tr>
       	<td colspan="3"><input type="hidden" value='<?php echo $db->record['id']; ?>' name="iscr">&nbsp;</td>
-        <td align="right"><button type="submit" style="color: #0000FF;">Iscriviti</button></td>
+        <td align="right">Da leggere: <a href="http://www.biciedintorni.it/wordpress/associazione/le-gite/">come si partecipa alle gite</a>  <button type="submit" style="color: #0000FF;">Iscriviti</button></td>
       </tr>
 	  <tr>
       	<td class="title">Itinerario</td>
