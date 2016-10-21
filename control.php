@@ -23,7 +23,7 @@ while($db->next_record())
 	$testo .= "Associati iscritti: ".$db2->num_rows()."\n\n"; 
 	while($db2->next_record())
 	{
-		$testo .= $db2->record['cognome']." ".$db2->record['nome']." Cell: ".$db2->record['cell']." Email: ".$db2->record['email'];
+		$testo .= $db2->record['cognome']." ".$db2->record['nome']." _ Cell: ".$db2->record['cell']." _ Email: ".$db2->record['email'];
 		if(($db2->record['cauzione'] != 'SI') && ($db2->record['carica'] == 'AS'))
 			$testo .= " ---> SENZA CAUZIONE\n";
 		else
