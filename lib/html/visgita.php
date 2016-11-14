@@ -108,9 +108,11 @@ makeHead("Bici e Dintorni - ".$db->record['titolo'],"","onload=\"init();\"");
         	if($db->record['tipobici'] == 'T')
         		echo "Tutte";
         	elseif ($db->record['tipobici'] == 'V')
-        		echo "Con cambio";
+        		echo "Da viaggio";
         	elseif ($db->record['tipobici'] == 'C')
         		echo "Da citt&agrave";
+        	elseif ($db->record['tipobici'] == 'N')
+        		echo "No bici (camminata)";
         	else
         		echo "MTB";
          ?></td>
