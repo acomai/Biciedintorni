@@ -113,8 +113,10 @@ makeHead("Bici e Dintorni - ".$db->record['titolo'],"","onload=\"init();\"");
         		echo "Da citt&agrave";
         	elseif ($db->record['tipobici'] == 'N')
         		echo "No bici (camminata)";
+        	elseif ($db->record['tipobici'] == 'M')
+        		echo "Mountain bike";
         	else
-        		echo "MTB";
+        		echo "errore sw";
          ?></td>
 	  </tr>
       <tr>

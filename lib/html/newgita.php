@@ -96,9 +96,9 @@
         <td>
           <select size="1" name="tipobici">
             <option value="T" selected>Tutte</option>
-            <option value="V">Con cambio</option>
-            <option value="C">Citt&agrave;</option>
-            <option value="M">MTB</option>
+            <option value="V">Da viaggio</option>
+            <option value="C">Da citt&agrave;</option>
+            <option value="M">Mountain bike</option>
             <option value="N">No bici (camminata)</option>
           </select>
         </td>

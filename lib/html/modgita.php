@@ -141,9 +141,9 @@ if($db->next_record())
         <td>
           <select size="1" name="tipobici">
 			<option value="T" <?php echo ($db->record['tipobici'] == 'T'?'selected':'');?>>Tutte</option>
-			<option value="V" <?php echo ($db->record['tipobici'] == 'V'?'selected':'');?>>Con Cambio</option>
-			<option value="C" <?php echo ($db->record['tipobici'] == 'C'?'selected':'');?>>Citt&agrave;</option>
-			<option value="M" <?php echo ($db->record['tipobici'] == 'M'?'selected':'');?>>MTB</option>
+			<option value="V" <?php echo ($db->record['tipobici'] == 'V'?'selected':'');?>>Da viaggio</option>
+			<option value="C" <?php echo ($db->record['tipobici'] == 'C'?'selected':'');?>>Da citt&agrave;</option>
+			<option value="M" <?php echo ($db->record['tipobici'] == 'M'?'selected':'');?>>Mountain bike</option>
 			<option value="N" <?php echo ($db->record['tipobici'] == 'N'?'selected':'');?>>No bici (camminata)</option>
           </select>
         </td>
