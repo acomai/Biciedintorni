@@ -196,10 +196,10 @@ makeHead("Bici e Dintorni - ".$db->record['titolo'],"","onload=\"init();\"");
       	<td colspan="4" align="center" style="border: 0; color: #006600;">&nbsp;</td>
       </tr>
       	<td colspan="3" id="tdnote" class="title">Note</td>
-      	<td id="tdcosto" class="title">Costo</td>
+      	<td id="tdcosto" class="title">Costo soci</td>
       </tr>
       	<td colspan="3"><?php echo $db->record['note']; ?></td>
-        <td><?php echo $db->record['costo']; ?>&euro;</td>
+        <td><?php echo $db->record['costo']; ?> &euro; <br>(supplemento di 5.00 &euro; per i non soci)</td>
       </tr>
       <tr>
         <td id="tdfile" class="title" colspan="4" align="center">File allegato</td>
