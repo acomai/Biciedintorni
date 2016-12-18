@@ -1,13 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="it">
 	<head>
-		<meta charset="utf-8">
+		<!--  meta charset="utf-8" -->
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
 		<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame
 		Remove this if you use the .htaccess -->
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-		<title>Bici e Dintorni - Anagrafiche dei mai soci</title>
+		<title>Bici e Dintorni - Anagrafiche dei soci dell'anno 2017</title>
 		<meta name="description" content="">
 		<meta name="author" content="Adriano">
 
@@ -57,7 +58,7 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
-
+$conn ->set_charset("utf8");
 $sql = "SELECT id, nome, cognome FROM anagrafiche WHERE a2017 = '1' ORDER BY cognome, nome;" ;
 $result = $conn->query($sql);
 echo "<table style='width:100%'>";

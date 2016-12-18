@@ -53,7 +53,7 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-
+$conn ->set_charset("utf8");
 $sql = "SELECT id, nome, cognome FROM anagrafiche ORDER BY cognome, nome;" ;
 $result = $conn->query($sql);
 echo "<table style='width:100%'>";

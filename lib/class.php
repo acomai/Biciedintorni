@@ -161,7 +161,9 @@ function iscr_gita()
                 exit;
             }
             if(get_magic_quotes_gpc() == 1) {
-                $nome = htmlentities($_POST['nome']);
+            	// modificata il 18/12/2016 per eliminare la funzione htmlentities()
+                //$nome = htmlentities($_POST['nome']);
+                $nome = $_POST['nome'];
                 $cognome = htmlentities($_POST['cognome']);
                 $via = htmlentities($_POST['via']);
                 $tel1 = htmlentities($_POST['tel1']);
@@ -177,7 +179,7 @@ function iscr_gita()
             }
             else 
             {
-                $nome = addslashes(htmlentities($_POST['nome']));
+                $nome = addslashes($_POST['nome']);
                 $cognome = addslashes(htmlentities($_POST['cognome']));
                 $via = addslashes(htmlentities($_POST['via']));
                 $tel1 = addslashes(htmlentities($_POST['tel1']));

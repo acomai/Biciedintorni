@@ -1720,46 +1720,49 @@ class Amministratore extends CapoGita {
 	}
 
 	function settadatiass(&$query,$addrfile, $passmail)
+	// modificata il 18/12/2016 per eliminare la funzione htmlentities()
 	{
 		if(get_magic_quotes_gpc() == 1)
 		{
-			$nome = htmlentities($_POST['nome']);
-			$cognome = htmlentities($_POST['cognome']);
-			$user = htmlentities($_POST['username']);
-			$sesso = htmlentities($_POST['sesso']);
-			$via = htmlentities($_POST['indirizzo']);
-			$cap = htmlentities($_POST['cap']);
-			$citta = htmlentities($_POST['citta']);
-			$prov = htmlentities($_POST['prov']);
-			$tel1 = htmlentities($_POST['tel1']);
-			$tel2 = htmlentities($_POST['tel2']);
-			$cell = htmlentities($_POST['cell']);
-			$email = htmlentities($_POST['email']);
-			$carica = htmlentities($_POST['carica']);
-			$saldo = htmlentities($_POST['saldo']);
-			$tiposocio = htmlentities($_POST['tiposocio']);
-			$cauzione = htmlentities($_POST['cauzione']);
-			$note = htmlentities($_POST['note']);
+			//$cognome = htmlentities($_POST['cognome']);
+			$nome = ($_POST['nome']);
+			$cognome = ($_POST['cognome']);
+			$user = ($_POST['username']);
+			$sesso = ($_POST['sesso']);
+			$via = ($_POST['indirizzo']);
+			$cap = ($_POST['cap']);
+			$citta = ($_POST['citta']);
+			$prov = ($_POST['prov']);
+			$tel1 = ($_POST['tel1']);
+			$tel2 = ($_POST['tel2']);
+			$cell = ($_POST['cell']);
+			$email = ($_POST['email']);
+			$carica = ($_POST['carica']);
+			$saldo = ($_POST['saldo']);
+			$tiposocio = ($_POST['tiposocio']);
+			$cauzione = ($_POST['cauzione']);
+			$note = ($_POST['note']);
 		}
 		else
 		{
-			$nome = addslashes(htmlentities($_POST['nome']));
-			$cognome = addslashes(htmlentities($_POST['cognome']));
-			$user = addslashes(htmlentities($_POST['username']));
-			$sesso = addslashes(htmlentities($_POST['sesso']));
-			$via = addslashes(htmlentities($_POST['indirizzo']));
-			$cap = addslashes(htmlentities($_POST['cap']));
-			$citta = addslashes(htmlentities($_POST['citta']));
-			$prov = addslashes(htmlentities($_POST['prov']));
-			$tel1 = addslashes(htmlentities($_POST['tel1']));
-			$tel2 = addslashes(htmlentities($_POST['tel2']));
-			$cell = addslashes(htmlentities($_POST['cell']));
-			$email = addslashes(htmlentities($_POST['email']));
-			$carica = addslashes(htmlentities($_POST['carica']));
-			$saldo = addslashes(htmlentities($_POST['saldo']));
-			$tiposocio = addslashes(htmlentities($_POST['tiposocio']));
-			$cauzione = addslashes(htmlentities($_POST['cauzione']));
-			$note = addslashes(htmlentities($_POST['note']));
+			//$cognome = addslashes(htmlentities($_POST['cognome']));
+			$nome = addslashes($_POST['nome']);
+			$cognome = addslashes($_POST['cognome']);
+			$user = addslashes($_POST['username']);
+			$sesso = addslashes($_POST['sesso']);
+			$via = addslashes($_POST['indirizzo']);
+			$cap = addslashes($_POST['cap']);
+			$citta = addslashes($_POST['citta']);
+			$prov = addslashes($_POST['prov']);
+			$tel1 = addslashes($_POST['tel1']);
+			$tel2 = addslashes($_POST['tel2']);
+			$cell = addslashes($_POST['cell']);
+			$email = addslashes($_POST['email']);
+			$carica = addslashes($_POST['carica']);
+			$saldo = addslashes($_POST['saldo']);
+			$tiposocio = addslashes($_POST['tiposocio']);
+			$cauzione = addslashes($_POST['cauzione']);
+			$note = addslashes($_POST['note']);
 		}
 		if($tiposocio == 'FA')
 			$idcapo = intval($_POST['idcapo']);
