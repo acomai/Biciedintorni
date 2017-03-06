@@ -86,10 +86,12 @@
 		<td>Ripeti Nuova Password [Obbligatorio]:</td>
 		<td><input type="password" size="20" name="password2" maxlength="20"></td>
 	  </tr>
+	  <!-- eliminare perché complica il processo creando un loop operativo per l'utente
 	  <tr>
 		<td>Email [Opzionale, se la inserisci ti verrà spedita la nuova password]:</td>
 		<td><input size="50" name="email" maxlength="100" value="<?php echo $db->record['email']; ?>"></td>
 	  </tr>
+	  -->
 	  <tr>
 		<td align="center" colspan="2">
 		<input type="submit" value="Cambia"> 
