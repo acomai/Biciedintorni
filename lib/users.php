@@ -209,7 +209,8 @@ class Associato {
 		} else {
 				echo "<div id=\"msg\" align=\"center\">Chi vuoi iscrivere a questa gita?</div>";
 				echo "<br><br><div id=\"msg\" align=\"center\">\n";
-				$db->query("SELECT * from anagrafiche WHERE approvato = 1 AND id > 0 AND (anagrafiche.a".date("Y")." = 1 OR ".date("m")." <= 3) ORDER BY cognome,nome;");
+				//$db->query("SELECT * from anagrafiche WHERE approvato = 1 AND id > 0 AND (anagrafiche.a".date("Y")." = 1 OR ".date("m")." <= 3) ORDER BY cognome,nome;");
+				$db->query("SELECT * from anagrafiche WHERE approvato = 1 AND id > 0 AND (anagrafiche.a".date("Y")." = 1) ORDER BY cognome,nome;");
 				echo "\t<select size=\"1\" name=\"associato\" id=\"associato\">\n";
 				while($db->next_record())
 				{
