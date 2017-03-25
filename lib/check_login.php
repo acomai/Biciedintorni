@@ -30,12 +30,13 @@
 	// use entered data
 		session_start();
 	// encrypt entered login & password
-		if(!check(&$entered_user,&$entered_password))
+		//if(!check(&$entered_user,&$entered_password)) - eliminata in quanto con la versione 5.4 php non ammette piÃ¹ call-by-reference
+		if(!check($entered_user,$entered_password))
 		{
 			$message = "Username o Password non validi.";
 			mail("webmaster@biciedintorni.it", "Bici&Dintorni, LogIn - dati non consentiti.", "Ciao Antonino,\n".
 							"qualcuno sta cercando di inserire questi dati".
-							"ma la funzione check è uscita ritornando FALSE:\n".
+							"ma la funzione check ï¿½ uscita ritornando FALSE:\n".
 							"ip:".$_SERVER['REMOTE_ADDR']."\n".
 							"nomeutente: $entered_user \n".
 							"password: $entered_password",
@@ -61,7 +62,7 @@
 		if ($db->record["approvato"] != 1)
 		{
 			// Utente sospeso
-			$message = "A questo utente non è permesso aver accesso a questa pagina";
+			$message = "A questo utente non ï¿½ permesso aver accesso a questa pagina";
 			mail("webmaster@biciedintorni.it", "Bici&Dintorni, LogIn - utente non approvato.", 
 							"Ciao Antonino,\n".
 							"qualcuno sta cercando di inserire questi dati ma non ï¿½ un utente approvato:\n".
@@ -118,7 +119,7 @@
 			{
 				mail("webmaster@biciedintorni.it", "Bici&Dintorni, LogIn - accesso di un Amministratore.", 
 							"Ciao Antonino,\n".
-							"un amministratore è stato autenticato usando i seguenti dati:\n".
+							"un amministratore ï¿½ stato autenticato usando i seguenti dati:\n".
 							"ip:".$_SERVER['REMOTE_ADDR']."\n".
 							"nomeutente: $entered_user \n".
 							"password: $entered_password.\n".
@@ -157,7 +158,7 @@
 		$message = "Username o Password non validi.";
 		mail("webmaster@biciedintorni.it", "Bici&Dintorni, LogIn - utente non esistente o password sbagliata.", 
 							"Ciao Antonino,\n".
-							"qualcuno ha cercanto di inserire questi dati ma non è stata trovata una corrispondenza nel database:\n".
+							"qualcuno ha cercanto di inserire questi dati ma non ï¿½ stata trovata una corrispondenza nel database:\n".
 							"ip:".$_SERVER['REMOTE_ADDR']."\n".
 							"entered_user: $entered_user \n".
 							'$login: '.$login." \n".

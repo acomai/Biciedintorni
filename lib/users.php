@@ -245,7 +245,8 @@ class Associato {
 			return;
 		}
 		$db = new db_local();
-		$this->settadatievento(&$query);
+		//$this->settadatievento(&$query);
+		$this->settadatievento($query);
 		if($db->query($query))
 			echo "<div align=\"center\" style=\"color: #0000FF\"><h2>Inserimento evento avvenuto con successo.</h2></div>";
 		else
@@ -821,7 +822,8 @@ class CapoGita extends Associato {
 		echo "<div align=\"center\" style=\"color: #FF0000; display: none;\">DEBUG: new gita, _POST['invio'] = TRUE</div>";
 		$db = new db_local();
 		echo "<div align=\"center\" style=\"color: #FF0000; display: none;\">DEBUG: new gita, richiamo settadati</div>";
-		$this->settadati(&$query);
+		$query = null;
+		$this->settadati($query);
 		echo "<div align=\"center\" style=\"color: #FF0000; display: none;\">DEBUG: new gita, esecuzione query di inserimento</div>";
 		if($db->query($query))
 		{
@@ -892,7 +894,8 @@ class CapoGita extends Associato {
 				echo "<div align=\"center\" style=\"color: #FF0000\">Errore nella modifica della gita. (TITOLO NON IMPOSTATO)<br>Per piacere modifica nuovamente la gita.</div>";
 				return;
 			}
-			$this->settadati(&$query,$db->record['pathfile']);
+			$query = null;
+			$this->settadati($query,$db->record['pathfile']);
 			//echo "<br>".$query."<br>";
 			//echo "<script>alert('miiiiiii ok')</script>";
 			//exit;
@@ -1420,7 +1423,10 @@ class Amministratore extends CapoGita {
 				makeTail();
 				exit;
 			}
-			$this->settadatiass(&$query,$db->record['pathfile'],&$sendmail);
+			$query = null;
+			$sendmail = null;
+			$this->settadatiass($query,$db->record['pathfile'],$sendmail);
+			//$this->settadatiass(&$query,$db->record['pathfile'],&$sendmail);
 			//echo "<br>".$query."<br>";
 			//echo "<script>alert('miiiiiii ok')</script>";
 			//exit;
@@ -1685,8 +1691,10 @@ class Amministratore extends CapoGita {
 			/*echo "<script>alert(\"L'inserimento degli associati non e' disponibile 2\"); window.close();</script>";
 			makeTail();
 			exit;*/
-			$query = " ";
-			$this->settadatiass(&$query,null,&$sendmail);
+			$query = null;
+			$sendmail = null;
+			$this->settadatiass($query,$db->record['pathfile'],$sendmail);
+			//$this->settadatiass(&$query,null,&$sendmail);
 			//echo "<div>".$query."</div>";
 			$db = new db_local();
 			if (!$db->query($query))
@@ -1720,7 +1728,7 @@ class Amministratore extends CapoGita {
 		}
 	}
 
-	function settadatiass(&$query,$addrfile, $passmail)
+	function settadatiass(&$query,$addrfile, &$passmail)
 	// modificata il 18/12/2016 per eliminare la funzione htmlentities()
 	{
 		if(get_magic_quotes_gpc() == 1)
@@ -1876,8 +1884,8 @@ class Amministratore extends CapoGita {
 		}
 		else
 		{
-			$query = " ";
-			$this->settadaticartina(&$query);
+			$query = null;
+			$this->settadaticartina($query);
 			//echo "<div>".$query."</div>";
 			$db = new db_local();
 			if (!$db->query($query))
@@ -1931,7 +1939,8 @@ class Amministratore extends CapoGita {
 				makeTail();
 				exit;
 			}
-			$this->settadaticartina(&$query);
+			$query = null;
+			$this->settadaticartina($query);
 			//echo "<br>".$query."<br>";
 			//echo "<script>alert('miiiiiii ok')</script>";
 			//exit;
@@ -1951,7 +1960,7 @@ class Amministratore extends CapoGita {
 		}
 	}
 	
-	function settadaticartina($query = null)
+	function settadaticartina(&$query = null)
 	{
 		if(get_magic_quotes_gpc() == 1)
 		{
@@ -2153,7 +2162,8 @@ class Amministratore extends CapoGita {
 		else
 		{
 			$query = " ";
-			$this->settadatilibro(&$query);
+			$query = null;
+			$this->settadatilibro($query);
 			//echo "<div>".$query."</div>";
 			$db = new db_local();
 			if (!$db->query($query))
@@ -2207,7 +2217,9 @@ class Amministratore extends CapoGita {
 				makeTail();
 				exit;
 			}
-			$this->settadatilibro(&$query);
+			//$this->settadatilibro(&$query);
+			$query = null;
+			$this->settadatilibro($query);
 			//echo "<br>".$query."<br>";
 			//echo "<script>alert('miiiiiii ok')</script>";
 			//exit;
@@ -2228,7 +2240,8 @@ class Amministratore extends CapoGita {
 		}
 	}
 	
-	function settadatilibro($query = null)
+	function settadatilibro(&$query = null)
+	//function settadatilibro($query = null)
 	// modificata il 14/4/2016 per eliminare la call htmlentities()
 	{
 		if(get_magic_quotes_gpc() == 1)
