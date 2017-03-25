@@ -164,34 +164,34 @@ function iscr_gita()
             	// modificata il 18/12/2016 per eliminare la funzione htmlentities()
                 //$nome = htmlentities($_POST['nome']);
                 $nome = $_POST['nome'];
-                $cognome = htmlentities($_POST['cognome']);
-                $via = htmlentities($_POST['via']);
-                $tel1 = htmlentities($_POST['tel1']);
-                $cell = htmlentities($_POST['cell']);
-                $comune = htmlentities($_POST['comune']);
-                $sesso = htmlentities($_POST['sesso']);
-                $cap = htmlentities($_POST['cap']);
-                $prov = htmlentities($_POST['prov']);
-                $giorno = htmlentities($_POST['giorno']);
-                $mese = htmlentities($_POST['mese']);
-                $anno = htmlentities($_POST['anno']);
-                $email = htmlentities($_POST['email']);
+                $cognome = ($_POST['cognome']);
+                $via = ($_POST['via']);
+                $tel1 = ($_POST['tel1']);
+                $cell = ($_POST['cell']);
+                $comune = ($_POST['comune']);
+                $sesso = ($_POST['sesso']);
+                $cap = ($_POST['cap']);
+                $prov = ($_POST['prov']);
+                $giorno = ($_POST['giorno']);
+                $mese = ($_POST['mese']);
+                $anno = ($_POST['anno']);
+                $email = ($_POST['email']);
             }
             else 
             {
                 $nome = addslashes($_POST['nome']);
-                $cognome = addslashes(htmlentities($_POST['cognome']));
-                $via = addslashes(htmlentities($_POST['via']));
-                $tel1 = addslashes(htmlentities($_POST['tel1']));
-                $cell = addslashes(htmlentities($_POST['cell']));
-                $comune = addslashes(htmlentities($_POST['comune']));
-                $sesso = addslashes(htmlentities($_POST['sesso']));
-                $cap = addslashes(htmlentities($_POST['cap']));
-                $prov = addslashes(htmlentities($_POST['prov']));
-                $giorno = addslashes(htmlentities($_POST['giorno']));
-                $mese = addslashes(htmlentities($_POST['mese']));
-                $anno = addslashes(htmlentities($_POST['anno']));
-                $email = addslashes(htmlentities($_POST['email']));
+                $cognome = addslashes($_POST['cognome']);
+                $via = addslashes($_POST['via']);
+                $tel1 = addslashes($_POST['tel1']);
+                $cell = addslashes($_POST['cell']);
+                $comune = addslashes($_POST['comune']);
+                $sesso = addslashes($_POST['sesso']);
+                $cap = addslashes($_POST['cap']);
+                $prov = addslashes($_POST['prov']);
+                $giorno = addslashes($_POST['giorno']);
+                $mese = addslashes($_POST['mese']);
+                $anno = addslashes($_POST['anno']);
+                $email = addslashes($_POST['email']);
             }
             $datanascita = date("Y-m-d G:i:00", mktime(0, 0, 0, intval($mese), intval($giorno), intval($anno)));
             /* Fino al 2015, i non soci potevano iscriversi ad una sola gita. Dal 2016, questo vincolo è stato rimosso.

@@ -207,7 +207,8 @@ function visualizzazione_libro() {
 	// Elenco associati per selezionare chi intende prendere il libro in prestito
 	if ($inprestito) {
 		echo "<h3>Restituzione</h3>";
-		echo "<form method='post' action='".htmlentities($_SERVER["PHP_SELF"])."?fun=restituzione'>";
+		//echo "<form method='post' action='".htmlentities($_SERVER["PHP_SELF"])."?fun=restituzione'>";
+		echo "<form method='post' action='".$_SERVER["PHP_SELF"]."?fun=restituzione'>";
 		echo "<input type='hidden' name='idlibro' value=$idlibro>";
 		echo "<input type='submit' name='restituzione' value='Segna come restituito'>";
 		echo "</form>";
@@ -215,8 +216,8 @@ function visualizzazione_libro() {
 		echo "<h3>Nuovo prestito</h3>";
 		$sql = "SELECT id,cognome,nome from anagrafiche WHERE approvato = 1 AND id > 0 AND (anagrafiche.a".date("Y")." = 1 OR ".date("m")." <= 3) ORDER BY cognome,nome;";
 		$result = $conn->query($sql);
-		echo "<form method='post' action='".htmlentities($_SERVER["PHP_SELF"])."?fun=prestito'>";
-		//echo "<form action='prestalibro.php' method='get'>";
+		//echo "<form method='post' action='".htmlentities($_SERVER["PHP_SELF"])."?fun=prestito'>";
+		echo "<form method='post' action='".$_SERVER["PHP_SELF"]."?fun=prestito'>";
 		echo "<input type='hidden' name='idlibro' value=$idlibro>";
 		echo "A chi? ";
 		echo "<select name='idsocio'>\n";

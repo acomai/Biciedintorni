@@ -86,7 +86,7 @@ if (is_numeric($_GET['iscr']))
 	<tr>
 		<td valign="top">2)&nbsp;&nbsp;&nbsp;</td><td>Per le gite con trasporto (bici + treno oppure bici + bus) e/o 
 		con pernottamento il saldo della quota va versato entro le ore 18,30 del venerdì precedente alla gita, presso 
-		la sede di via Andorno 35/b a Torino, oppure con bonifico (IBAN IT27T0760101000000033663105, indicando nella 
+		la sede di via Andorno 35/b a Torino, oppure con bonifico (IBAN IT57Z0335901600100000147119, indicando nella 
 		causale "iscrizione alla gita XXXXXX").<br><br>
 		Per le gite che non richiedono trasporto né pernottamento la quota gita, maggiorata di 5 euro per i non soci,
 		può essere versata al Capogita prima della partenza.</td>
@@ -144,7 +144,7 @@ if (is_numeric($_GET['iscr']))
 			        <td><input maxlength="50" size="20" tabindex="5" name="prov"></td>
 			      </tr>
 			      <tr>
-			        <td>Data di nascita: </td>
+			        <td class="obbligatori">Data di nascita*: </td>
 			        <td>
 			        <span id="giorni"><select tabindex="6" size="1" name="giorno">
 			        	<option selected="selected">--</option>

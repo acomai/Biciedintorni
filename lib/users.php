@@ -165,7 +165,7 @@ class Associato {
 				if($idassociato != $this->matricola)
 				echo "Questa persona &egrave; gia iscritta a questa gita.";
 				else
-				echo "Sei gia iscritto a questa gita.";
+				echo "Sei già iscritto a questa gita.";
 			}
 			else
 			if($db->query("INSERT INTO iscrizioni (idgita,idassociato,idresp) VALUES ($idgita,$idassociato,'$this->matricola');"))
@@ -198,7 +198,7 @@ class Associato {
 		//makeHead("Iscrizione","<meta http-equiv=\"refresh\" content=\"5;url=admin.php\">");
 		if($db->next_record())
 		{
-			echo "<br><br><div id=\"msg\" align=\"center\" style=\"color: #FF0000\">Sei gia iscritto a questa gita.</div>";
+			echo "<br><br><div id=\"msg\" align=\"center\" style=\"color: #FF0000\">Sei già iscritto a questa gita.</div>";
 		}
 		$db->query("SELECT * from anagrafiche WHERE approvato = 1 AND id > 0 AND (anagrafiche.a".date("Y")." = 1 OR ".date("m")." <= 3) and id = '".$this->matricola."';");
 		if(!$db->next_record())
@@ -292,7 +292,7 @@ class Associato {
 				echo "<div align=\"center\" style=\"color: #FF0000\">Errore nella modifica della gita. (TITOLO NON IMPOSTATO)<br>Per piacere modifica nuovamente la gita.</div>";
 				return;
 			}
-			$this->settadatievento(&$query,$db->record['pathfile']);
+			$this->settadatievento($query,$db->record['pathfile']);
 			//echo "<br>".$query."<br>";
 			//echo "<script>alert('miiiiiii ok')</script>";
 			//exit;
@@ -322,13 +322,13 @@ class Associato {
 
 		if(get_magic_quotes_gpc() == 1)
 		{
-			$titolo = htmlentities($_POST['titolo']);
-			$descrizione = htmlentities($_POST['descrizione']);
+			$titolo = ($_POST['titolo']);
+			$descrizione = ($_POST['descrizione']);
 		}
 		else
 		{
-			$titolo = addslashes(htmlentities($_POST['titolo']));
-			$descrizione = addslashes(htmlentities($_POST['descrizione']));
+			$titolo = addslashes(($_POST['titolo']));
+			$descrizione = addslashes(($_POST['descrizione']));
 		}
 		//GESTIONE UPLOAD FILE
 		if($_POST['elimg'] == '1')
@@ -1955,37 +1955,37 @@ class Amministratore extends CapoGita {
 	{
 		if(get_magic_quotes_gpc() == 1)
 		{
-			$titolo = htmlentities($_POST['titolo']);
-			$sottotitolo = htmlentities($_POST['sottotitolo']);
-			$autore = htmlentities($_POST['autore']);
-			$editore = htmlentities($_POST['editore']);
-			$citta = htmlentities($_POST['citta']);
-			$anno = htmlentities($_POST['anno']);
-			$lingua = htmlentities($_POST['lingua']);
-			$note = htmlentities($_POST['note']);
-			$costo = htmlentities($_POST['costo']);
-			$scaffale = htmlentities($_POST['scaffale']);
-			$classificazione = htmlentities($_POST['classificazione']);
-			$descrizione = htmlentities($_POST['descrizione']);
-			$idnazione = htmlentities($_POST['idnazione']);
-			$scala = htmlentities($_POST['scala']);
+			$titolo = $_POST['titolo'];
+			$sottotitolo = $_POST['sottotitolo'];
+			$autore = $_POST['autore'];
+			$editore = $_POST['editore'];
+			$citta = $_POST['citta'];
+			$anno = $_POST['anno'];
+			$lingua = $_POST['lingua'];
+			$note = $_POST['note'];
+			$costo = $_POST['costo'];
+			$scaffale = $_POST['scaffale'];
+			$classificazione = $_POST['classificazione'];
+			$descrizione = $_POST['descrizione'];
+			$idnazione = $_POST['idnazione'];
+			$scala = $_POST['scala'];
 		}
 		else
 		{
-			$titolo = addslashes(htmlentities($_POST['titolo']));
-			$sottotitolo = addslashes(htmlentities($_POST['sottotitolo']));
-			$autore = addslashes(htmlentities($_POST['autore']));
-			$editore = addslashes(htmlentities($_POST['editore']));
-			$citta = addslashes(htmlentities($_POST['citta']));
-			$anno = addslashes(htmlentities($_POST['anno']));
-			$lingua = addslashes(htmlentities($_POST['lingua']));
-			$note = addslashes(htmlentities($_POST['note']));
-			$costo = addslashes(htmlentities($_POST['costo']));
-			$scaffale = addslashes(htmlentities($_POST['scaffale']));
-			$classificazione = addslashes(htmlentities($_POST['classificazione']));
-			$descrizione = addslashes(htmlentities($_POST['descrizione']));
-			$idnazione = addslashes(htmlentities($_POST['idnazione']));
-			$scala = addslashes(htmlentities($_POST['scala']));
+			$titolo = addslashes($_POST['titolo']);
+			$sottotitolo = addslashes($_POST['sottotitolo']);
+			$autore = addslashes($_POST['autore']);
+			$editore = addslashes($_POST['editore']);
+			$citta = addslashes($_POST['citta']);
+			$anno = addslashes($_POST['anno']);
+			$lingua = addslashes($_POST['lingua']);
+			$note = addslashes($_POST['note']);
+			$costo = addslashes($_POST['costo']);
+			$scaffale = addslashes($_POST['scaffale']);
+			$classificazione = addslashes($_POST['classificazione']);
+			$descrizione = addslashes($_POST['descrizione']);
+			$idnazione = addslashes($_POST['idnazione']);
+			$scala = addslashes($_POST['scala']);
 		}
 		
 		if($_GET['fun'] == 'newcartina')
@@ -2477,12 +2477,12 @@ if(is_numeric($_GET['list']))
 			{
 				if(get_magic_quotes_gpc() == 1)
 				{
-					$oggetto = htmlentities($_POST['oggetto']);
+					$oggetto = $_POST['oggetto'];
 					$corpo = $_POST['corpo'];
 				}
 				else
 				{
-					$oggetto = addslashes(htmlentities($_POST['oggetto']));
+					$oggetto = addslashes($_POST['oggetto']);
 					$corpo = addslashes($_POST['corpo']);
 				}
 				$giorno = intval($_POST['giorno']);
@@ -2571,12 +2571,12 @@ if(is_numeric($_GET['list']))
 				}
 				if(get_magic_quotes_gpc() == 1)
 				{
-					$oggetto = htmlentities($_POST['oggetto']);
+					$oggetto = $_POST['oggetto'];
 					$corpo = $_POST['corpo'];
 				}
 				else
 				{
-					$oggetto = addslashes(htmlentities($_POST['oggetto']));
+					$oggetto = addslashes($_POST['oggetto']);
 					$corpo = addslashes($_POST['corpo']);
 				}
 				$giorno = intval($_POST['giorno']);
@@ -2709,13 +2709,13 @@ if(is_numeric($_GET['list']))
 			{
 				if(get_magic_quotes_gpc() == 1)
 				{
-					$nome = htmlentities($_POST['nome']);
-					$descrizione = htmlentities($_POST['descri']);
+					$nome = $_POST['nome'];
+					$descrizione = $_POST['descri'];
 				}
 				else
 				{
-					$nome = addslashes(htmlentities($_POST['nome']));
-					$descrizione = addslashes(htmlentities($_POST['descri']));
+					$nome = addslashes($_POST['nome']);
+					$descrizione = addslashes($_POST['descri']);
 				}
 				include_once("lib/db_mysql.php");
 				$db = new db_local();
@@ -2788,13 +2788,13 @@ if(is_numeric($_GET['list']))
 				}
 				if(get_magic_quotes_gpc() == 1)
 				{
-					$nome = htmlentities($_POST['nome']);
-					$descrizione = htmlentities($_POST['descri']);
+					$nome = $_POST['nome'];
+					$descrizione = $_POST['descri'];
 				}
 				else
 				{
-					$nome = addslashes(htmlentities($_POST['nome']));
-					$descrizione = addslashes(htmlentities($_POST['descri']));
+					$nome = addslashes($_POST['nome']);
+					$descrizione = addslashes($_POST['descri']);
 				}
 				$query = "UPDATE gruppimail set nome = '".$nome."', descrizione='".$descrizione."' WHERE id = ".$_POST['id']." ;";
 				if($db->query($query))
