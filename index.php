@@ -106,17 +106,17 @@
 ?>
 <div align="center">
 <br>
-	<div style="color:blue; font-size:16px;">Ecco l'elenco delle prossime gite</div>
+	
 	<div style="color:blue;">
-		<a style="font-size:16px;" href="index.php?limit=0" title="Elenco gite <?php echo date("Y");?>">[Visualizza tutte le gite del <?php echo date("Y");?>]</a>
+		<a style="font-size:16px;" href="index.php?limit=0" title="Elenco gite <?php echo date("Y");?>">[Tutte le gite del <?php echo date("Y");?>]</a>
 		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 	<?php if(date("m") >= 11) { ?>
-		<a style="font-size:16px;" href="index.php?limit=<?php echo (date("Y")+1); ?>" title="Elenco gite <?php echo (date("Y")+1);?>">[Visualizza tutte le gite del <?php echo (date("Y")+1);?>]</a>
+		<a style="font-size:16px;" href="index.php?limit=<?php echo (date("Y")+1); ?>" title="Elenco gite <?php echo (date("Y")+1);?>">[Tutte le gite del <?php echo (date("Y")+1);?>]</a>
 		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 	<?php } ?>
-		<a style="font-size:16px;" href="index.php?fun=creadoc" title="Crea Un documento Doc con tutte le gite approvate.">[Scarica doc promemoria gite <?php echo date("Y");?>]</a>
+		
 	</div>
-	<div style="color:blue;font-size:16px;">Prossime Gite:</div>
+
   <table width="90%" border=1 align="center" cellpadding="2">
     <tr>
     	<td colspan="7" style="color:green" align="center">GITE</td>

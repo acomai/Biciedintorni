@@ -15,17 +15,14 @@ else
 	<a style="font-size: 16px;"
 		href="http://www.biciedintorni.it/application/index.php?limit=0"
 		title="Elenco gite">[Visualizza tutte le gite del <?php echo date("Y");?>]
-	</a>�����
+	</a>
 	<?php if(date("m") >= 11) {?>
 	<a style="font-size: 16px;"
 		href="http://www.biciedintorni.it/application/index.php?limit=<?php echo (date("Y")+1);?>"
 		title="Elenco gite">[Visualizza tutte le gite del <?php echo (date("Y")+1);?>]
-	</a>�����
-	<?php } ?>
-	<a style="font-size: 16px;"
-		href="http://www.biciedintorni.it/application/index.php?fun=creadoc"
-		title="Crea Un documento Doc con tutte le gite approvate.">[Scarica doc promemoria gite <?php echo date("Y");?>]
 	</a>
+	<?php } ?>
+	
 </div>
 <table>
 	<tbody>
