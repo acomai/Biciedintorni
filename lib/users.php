@@ -174,6 +174,8 @@ class Associato {
 				echo "Complimenti. Hai iscritto la persona a questa gita.\n";
 				else
 				echo "Complimenti. Ti sei iscritto a questa gita.\n";
+				
+				/* eliminato perché non è più necessario confermare le iscrizioni in sede.
 				$db->query("SELECT * from anagrafiche WHERE id = '".$idassociato."' AND carica = 'AS' AND cauzione <> 'SI';");
 				if($db->next_record())
 				{
@@ -182,6 +184,7 @@ class Associato {
 					else
 					echo "ATTENZIONE\nNon hai versato la cauzione quindi dovrai confermare questa iscrizione in sede.";
 				}
+				*/
 			}
 			else
 			echo "C'&egrave; stato un'errore imprevisto nell'iscrizione, contatta il Webmaster dalla sezione contattaci del sito.";
