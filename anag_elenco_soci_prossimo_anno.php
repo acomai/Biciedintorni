@@ -20,7 +20,7 @@
 	<body>
 		<div class="container-fluid">
 			<header>
-				<h1>Elenco soci dell'anno 2017</h1>
+				<h1>Elenco soci dell'anno 2018</h1>
 			</header>
 
 				<button class="btn" type="button" onclick="javascript:location.href='http://www.biciedintorni.it/application/admin.php?fun=modass'">Menu anagrafiche</button>
@@ -59,7 +59,7 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 $conn ->set_charset("utf8");
-$sql = "SELECT id, nome, cognome FROM anagrafiche WHERE a2017 = '1' ORDER BY cognome, nome;" ;
+$sql = "SELECT id, nome, cognome FROM anagrafiche WHERE a2018 = '1' ORDER BY cognome, nome;" ;
 $result = $conn->query($sql);
 echo "<table style='width:100%'>";
 if ($result->num_rows > 0) {
