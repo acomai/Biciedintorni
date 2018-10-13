@@ -1550,7 +1550,7 @@ class Amministratore extends CapoGita {
 		<p>Nuove funzioni: <a href="/application/anag_cerca.html">Ricerca per cognome</a> | 
 		<a href="/application/anag_elenco_completo.php">Elenco completo anagrafiche</a> | 
 		<a href="/application/anag_elenco_maisoci.php">Elenco anagrafiche mai iscritte all'associazione</a> |
-		<a href="/application/anag_elenco_soci_prossimo_anno.php">Anagrafiche iscritte per il 2018</a></p>
+		<a href="/application/anag_elenco_soci_prossimo_anno.php">Anagrafiche iscritte per il 2019</a></p>
 			<table align="center" border="1">
 				<tbody>
 					<tr>
